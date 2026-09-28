@@ -2,7 +2,9 @@ import { profile } from "@/data/profile";
 
 export function HeroStats() {
   return (
-    <section aria-label="Profile statistics" className="border-y border-white/10 py-6 sm:py-7">
+    <section aria-label="Profile statistics" className="hero-stats border-y border-white/10 py-6 sm:py-7">
+      {/* centered over the stats grid, i.e. on the line between RAPEX and 20+ */}
+      <p className="hero-stats-title mb-4 text-center text-[10px] font-medium tracking-[0.25em] text-white/40">PRODUCT / VISUAL / DIGITAL</p>
       <div className="grid grid-cols-2 gap-x-5 gap-y-7 sm:grid-cols-4 sm:gap-x-0 sm:gap-y-0">
         {profile.stats.map((stat) => {
           const value = stat.verified && stat.value ? stat.value : "—";
@@ -12,7 +14,7 @@ export function HeroStats() {
           </div>;
         })}
       </div>
-      <p className="mt-6 border-t border-white/[0.07] pt-4 text-[9px] font-medium tracking-[0.3em] text-white/30">PRODUCT <span className="px-1 text-white/15">•</span> VISUAL <span className="px-1 text-white/15">•</span> DIGITAL</p>
+      <p className="hero-stats-strip text-[9px] font-medium tracking-[0.3em] text-white/45">PRODUCT <span className="px-1 text-white/15">•</span> VISUAL <span className="px-1 text-white/15">•</span> DIGITAL</p>
     </section>
   );
 }

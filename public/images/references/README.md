@@ -1,0 +1,1 @@
+Reference placeholder folder for future images and media assets.\n
