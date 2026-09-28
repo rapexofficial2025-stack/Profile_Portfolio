@@ -1,0 +1,10 @@
+# never rewrite line endings in binary assets (the resume PDF has no NUL bytes, so git would guess "text")
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.jfif binary
+*.webp binary
+*.ico binary
+*.mp3 binary
+*.mp4 binary
