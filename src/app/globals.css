@@ -727,9 +727,9 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 6.8rem;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.3rem;
   margin-top: 1rem;
-  padding: 0.72rem 0.72rem 0.68rem;
+  padding: 0.72rem 0.5rem 0.68rem 0.72rem;
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 1rem;
   background: rgba(15, 20, 30, 0.58);
@@ -737,9 +737,9 @@ body {
 }
 
 .digital-clock-info { min-width: 0; }
-.digital-clock-kicker { font-size: 0.45rem; font-weight: 800; letter-spacing: 0.2em; color: rgba(196,181,253,0.8); }
+.digital-clock-kicker { font-size: 0.45rem; font-weight: 800; letter-spacing: 0.1em; color: rgba(196,181,253,0.8); white-space: nowrap; }
 .digital-clock-time { display: block; margin-top: 0.28rem; font-variant-numeric: tabular-nums; font-size: 1rem; font-weight: 800; letter-spacing: 0.04em; color: rgba(255,255,255,0.88); }
-.digital-clock-date { display: flex; flex-direction: column; gap: 0.12rem; margin-top: 0.38rem; font-size: 0.43rem; font-weight: 650; letter-spacing: 0.04em; color: rgba(167,175,191,0.7); }
+.digital-clock-date { display: flex; flex-direction: column; gap: 0.12rem; margin-top: 0.38rem; font-size: 0.43rem; font-weight: 650; letter-spacing: 0.04em; color: rgba(167,175,191,0.7); white-space: nowrap; }
 .digital-clock .theme-switch-wrap { position: static; width: 6.8rem; align-self: center; }
 .digital-clock .theme-boolean-switch { height: 1.55rem; transform: none; }
 .digital-clock .theme-boolean-switch:hover,
@@ -1143,6 +1143,12 @@ body {
 
 /* open the site at 75% scale, like browser zoom at 75% */
 html { zoom: 0.75; }
+
+/* the header card (name + profile photo) renders visibly bigger than the rest of the page */
+.hero-section { zoom: 1.18; }
+
+/* the sidebar/nav is exempt: its own zoom cancels out the page's, so it renders at true 100% */
+.sidebar-scrollbar { zoom: 1.333333; }
 
 /* page background lives on <body> so negative-z glows and depth-mixed bubbles can sit between page layers */
 body { background: #070A0F; }

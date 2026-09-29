@@ -147,3 +147,9 @@ Creating turbopack project { dir: 'D:\\Portfolio', testMode: true }
  GET /work/category/visual-art 200 in 376ms (next.js: 121ms, generate-params: 52ms, application-code: 202ms)
  GET /work/category/visual-art 200 in 96ms (next.js: 26ms, generate-params: 10ms, application-code: 61ms)
  GET /work/category/visual-art 200 in 65ms (next.js: 11ms, generate-params: 9ms, application-code: 44ms)
+✓ Compiled in 6.6s
+ GET /api/hearts?cid=d5773cf7-17da-4d36-879b-f0c7e2bbe731 500 in 2.0s (next.js: 1707ms, application-code: 320ms)
+ GET /api/hearts?cid=d5773cf7-17da-4d36-879b-f0c7e2bbe731 500 in 97ms (next.js: 54ms, application-code: 44ms)
+ GET / 200 in 83ms (next.js: 23ms, application-code: 60ms)
+✓ Compiled in 886ms
+ GET / 200 in 73ms (next.js: 17ms, application-code: 56ms)

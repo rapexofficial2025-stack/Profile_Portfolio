@@ -1666,3 +1666,1199 @@ https://react.dev/link/hydration-mismatch
 [browser] Image with src "/images/work/work-web-development.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
 [browser] Image with src "/images/work/work-mobile-apps.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
 [browser] Image with src "/images/work/work-photography.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/home/HeroSection.tsx:30:1
+Error: Merge conflict marker encountered.
+  28 |   })}</span>;
+  29 |   return (
+> 30 | <<<<<<< HEAD
+     | ^^^^^^^
+  31 |     <section className="hero-section light-hero relative isolate z-2">
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/ProfilePortrait.tsx:22:1
+Error: Merge conflict marker encountered.
+  20 | =======
+  21 |       className="relative mx-auto aspect-[4/5] w-full max-w-[36rem] lg:max-w-[38rem]"
+> 22 | >>>>>>> origin/master
+     | ^^^^^^^
+  23 |     >
+  24 |       <div className="portrait-glow pointer-events-none absolute inset-[8%_5%_8%] rounded-...
+  25 |       <div className="absolute inset-0">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/home/ProfilePortrait.tsx [Client Component Browser]
+    ./src/components/home/HeroVisual.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/home/ProfilePortrait.tsx [Client Component SSR]
+    ./src/components/home/HeroVisual.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/home/HeroSection.tsx:34:7
+Error: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+> 34 | >>>>>>> origin/master
+     |       ^
+  35 |       <div className="hero-backdrop pointer-events-none absolute -inset-x-6 -top-9 bottom-...
+  36 |       <div className="mb-7 xl:hidden"><AvailabilityBadge /></div>
+  37 |       <div className="relative z-10 grid items-center gap-10 xl:grid-cols-[minmax(0,1.02fr...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/HeroSection.tsx:60:1
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  58 |     </section>
+  59 |   );
+> 60 | }
+     | ^
+  61 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/home/HeroSection.tsx:30:1
+Error: Merge conflict marker encountered.
+  28 |   })}</span>;
+  29 |   return (
+> 30 | <<<<<<< HEAD
+     | ^^^^^^^
+  31 |     <section className="hero-section light-hero relative isolate z-2">
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/ProfilePortrait.tsx:22:1
+Error: Merge conflict marker encountered.
+  20 | =======
+  21 |       className="relative mx-auto aspect-[4/5] w-full max-w-[36rem] lg:max-w-[38rem]"
+> 22 | >>>>>>> origin/master
+     | ^^^^^^^
+  23 |     >
+  24 |       <div className="portrait-glow pointer-events-none absolute inset-[8%_5%_8%] rounded-...
+  25 |       <div className="absolute inset-0">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/home/ProfilePortrait.tsx [Client Component Browser]
+    ./src/components/home/HeroVisual.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/home/ProfilePortrait.tsx [Client Component SSR]
+    ./src/components/home/HeroVisual.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/home/HeroSection.tsx:34:7
+Error: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+> 34 | >>>>>>> origin/master
+     |       ^
+  35 |       <div className="hero-backdrop pointer-events-none absolute -inset-x-6 -top-9 bottom-...
+  36 |       <div className="mb-7 xl:hidden"><AvailabilityBadge /></div>
+  37 |       <div className="relative z-10 grid items-center gap-10 xl:grid-cols-[minmax(0,1.02fr...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/HeroSection.tsx:60:1
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  58 |     </section>
+  59 |   );
+> 60 | }
+     | ^
+  61 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/home/HeroSection.tsx:30:1
+Error: Merge conflict marker encountered.
+  28 |   })}</span>;
+  29 |   return (
+> 30 | <<<<<<< HEAD
+     | ^^^^^^^
+  31 |     <section className="hero-section light-hero relative isolate z-2">
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/ProfilePortrait.tsx:22:1
+Error: Merge conflict marker encountered.
+  20 | =======
+  21 |       className="relative mx-auto aspect-[4/5] w-full max-w-[36rem] lg:max-w-[38rem]"
+> 22 | >>>>>>> origin/master
+     | ^^^^^^^
+  23 |     >
+  24 |       <div className="portrait-glow pointer-events-none absolute inset-[8%_5%_8%] rounded-...
+  25 |       <div className="absolute inset-0">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/home/ProfilePortrait.tsx [Client Component Browser]
+    ./src/components/home/HeroVisual.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/home/ProfilePortrait.tsx [Client Component SSR]
+    ./src/components/home/HeroVisual.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/home/HeroSection.tsx:34:7
+Error: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+> 34 | >>>>>>> origin/master
+     |       ^
+  35 |       <div className="hero-backdrop pointer-events-none absolute -inset-x-6 -top-9 bottom-...
+  36 |       <div className="mb-7 xl:hidden"><AvailabilityBadge /></div>
+  37 |       <div className="relative z-10 grid items-center gap-10 xl:grid-cols-[minmax(0,1.02fr...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/HeroSection.tsx:60:1
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  58 |     </section>
+  59 |   );
+> 60 | }
+     | ^
+  61 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/home/HeroSection.tsx:30:1
+Error: Merge conflict marker encountered.
+  28 |   })}</span>;
+  29 |   return (
+> 30 | <<<<<<< HEAD
+     | ^^^^^^^
+  31 |     <section className="hero-section light-hero relative isolate z-2">
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/ProfilePortrait.tsx:22:1
+Error: Merge conflict marker encountered.
+  20 | =======
+  21 |       className="relative mx-auto aspect-[4/5] w-full max-w-[36rem] lg:max-w-[38rem]"
+> 22 | >>>>>>> origin/master
+     | ^^^^^^^
+  23 |     >
+  24 |       <div className="portrait-glow pointer-events-none absolute inset-[8%_5%_8%] rounded-...
+  25 |       <div className="absolute inset-0">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/home/ProfilePortrait.tsx [Client Component Browser]
+    ./src/components/home/HeroVisual.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/home/ProfilePortrait.tsx [Client Component SSR]
+    ./src/components/home/HeroVisual.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/home/HeroSection.tsx:34:7
+Error: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+> 34 | >>>>>>> origin/master
+     |       ^
+  35 |       <div className="hero-backdrop pointer-events-none absolute -inset-x-6 -top-9 bottom-...
+  36 |       <div className="mb-7 xl:hidden"><AvailabilityBadge /></div>
+  37 |       <div className="relative z-10 grid items-center gap-10 xl:grid-cols-[minmax(0,1.02fr...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/HeroSection.tsx:60:1
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  58 |     </section>
+  59 |   );
+> 60 | }
+     | ^
+  61 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/home/HeroSection.tsx:30:1
+Error: Merge conflict marker encountered.
+  28 |   })}</span>;
+  29 |   return (
+> 30 | <<<<<<< HEAD
+     | ^^^^^^^
+  31 |     <section className="hero-section light-hero relative isolate z-2">
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/ProfilePortrait.tsx:22:1
+Error: Merge conflict marker encountered.
+  20 | =======
+  21 |       className="relative mx-auto aspect-[4/5] w-full max-w-[36rem] lg:max-w-[38rem]"
+> 22 | >>>>>>> origin/master
+     | ^^^^^^^
+  23 |     >
+  24 |       <div className="portrait-glow pointer-events-none absolute inset-[8%_5%_8%] rounded-...
+  25 |       <div className="absolute inset-0">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/home/ProfilePortrait.tsx [Client Component Browser]
+    ./src/components/home/HeroVisual.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/home/ProfilePortrait.tsx [Client Component SSR]
+    ./src/components/home/HeroVisual.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/home/HeroSection.tsx:34:7
+Error: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+> 34 | >>>>>>> origin/master
+     |       ^
+  35 |       <div className="hero-backdrop pointer-events-none absolute -inset-x-6 -top-9 bottom-...
+  36 |       <div className="mb-7 xl:hidden"><AvailabilityBadge /></div>
+  37 |       <div className="relative z-10 grid items-center gap-10 xl:grid-cols-[minmax(0,1.02fr...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/HeroSection.tsx:60:1
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  58 |     </section>
+  59 |   );
+> 60 | }
+     | ^
+  61 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="h-full ant..." style={{...}}>
+                          <body
+                            className="min-h-full"
+-                           style={{padding-right:"17px",overflow-x:"hidden",overflow-y:"hidden"}}
+                          >
+                  ...
+ 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/home/HeroSection.tsx:30:1
+Error: Merge conflict marker encountered.
+  28 |   })}</span>;
+  29 |   return (
+> 30 | <<<<<<< HEAD
+     | ^^^^^^^
+  31 |     <section className="hero-section light-hero relative isolate z-2">
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/ProfilePortrait.tsx:22:1
+Error: Merge conflict marker encountered.
+  20 | =======
+  21 |       className="relative mx-auto aspect-[4/5] w-full max-w-[36rem] lg:max-w-[38rem]"
+> 22 | >>>>>>> origin/master
+     | ^^^^^^^
+  23 |     >
+  24 |       <div className="portrait-glow pointer-events-none absolute inset-[8%_5%_8%] rounded-...
+  25 |       <div className="absolute inset-0">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/home/ProfilePortrait.tsx [Client Component Browser]
+    ./src/components/home/HeroVisual.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/home/ProfilePortrait.tsx [Client Component SSR]
+    ./src/components/home/HeroVisual.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/home/HeroSection.tsx:34:7
+Error: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+> 34 | >>>>>>> origin/master
+     |       ^
+  35 |       <div className="hero-backdrop pointer-events-none absolute -inset-x-6 -top-9 bottom-...
+  36 |       <div className="mb-7 xl:hidden"><AvailabilityBadge /></div>
+  37 |       <div className="relative z-10 grid items-center gap-10 xl:grid-cols-[minmax(0,1.02fr...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/HeroSection.tsx:60:1
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  58 |     </section>
+  59 |   );
+> 60 | }
+     | ^
+  61 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/home/HeroSection.tsx:30:1
+Error: Merge conflict marker encountered.
+  28 |   })}</span>;
+  29 |   return (
+> 30 | <<<<<<< HEAD
+     | ^^^^^^^
+  31 |     <section className="hero-section light-hero relative isolate z-2">
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/ProfilePortrait.tsx:22:1
+Error: Merge conflict marker encountered.
+  20 | =======
+  21 |       className="relative mx-auto aspect-[4/5] w-full max-w-[36rem] lg:max-w-[38rem]"
+> 22 | >>>>>>> origin/master
+     | ^^^^^^^
+  23 |     >
+  24 |       <div className="portrait-glow pointer-events-none absolute inset-[8%_5%_8%] rounded-...
+  25 |       <div className="absolute inset-0">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/home/ProfilePortrait.tsx [Client Component Browser]
+    ./src/components/home/HeroVisual.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/home/ProfilePortrait.tsx [Client Component SSR]
+    ./src/components/home/HeroVisual.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/home/HeroSection.tsx:34:7
+Error: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+> 34 | >>>>>>> origin/master
+     |       ^
+  35 |       <div className="hero-backdrop pointer-events-none absolute -inset-x-6 -top-9 bottom-...
+  36 |       <div className="mb-7 xl:hidden"><AvailabilityBadge /></div>
+  37 |       <div className="relative z-10 grid items-center gap-10 xl:grid-cols-[minmax(0,1.02fr...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/HeroSection.tsx:60:1
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  58 |     </section>
+  59 |   );
+> 60 | }
+     | ^
+  61 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/home/HeroSection.tsx:30:1
+Error: Merge conflict marker encountered.
+  28 |   })}</span>;
+  29 |   return (
+> 30 | <<<<<<< HEAD
+     | ^^^^^^^
+  31 |     <section className="hero-section light-hero relative isolate z-2">
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/ProfilePortrait.tsx:22:1
+Error: Merge conflict marker encountered.
+  20 | =======
+  21 |       className="relative mx-auto aspect-[4/5] w-full max-w-[36rem] lg:max-w-[38rem]"
+> 22 | >>>>>>> origin/master
+     | ^^^^^^^
+  23 |     >
+  24 |       <div className="portrait-glow pointer-events-none absolute inset-[8%_5%_8%] rounded-...
+  25 |       <div className="absolute inset-0">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/home/ProfilePortrait.tsx [Client Component Browser]
+    ./src/components/home/HeroVisual.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/home/ProfilePortrait.tsx [Client Component SSR]
+    ./src/components/home/HeroVisual.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/home/HeroSection.tsx:34:7
+Error: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+> 34 | >>>>>>> origin/master
+     |       ^
+  35 |       <div className="hero-backdrop pointer-events-none absolute -inset-x-6 -top-9 bottom-...
+  36 |       <div className="mb-7 xl:hidden"><AvailabilityBadge /></div>
+  37 |       <div className="relative z-10 grid items-center gap-10 xl:grid-cols-[minmax(0,1.02fr...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/HeroSection.tsx:60:1
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  58 |     </section>
+  59 |   );
+> 60 | }
+     | ^
+  61 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/home/HeroSection.tsx:30:1
+Error: Merge conflict marker encountered.
+  28 |   })}</span>;
+  29 |   return (
+> 30 | <<<<<<< HEAD
+     | ^^^^^^^
+  31 |     <section className="hero-section light-hero relative isolate z-2">
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/ProfilePortrait.tsx:22:1
+Error: Merge conflict marker encountered.
+  20 | =======
+  21 |       className="relative mx-auto aspect-[4/5] w-full max-w-[36rem] lg:max-w-[38rem]"
+> 22 | >>>>>>> origin/master
+     | ^^^^^^^
+  23 |     >
+  24 |       <div className="portrait-glow pointer-events-none absolute inset-[8%_5%_8%] rounded-...
+  25 |       <div className="absolute inset-0">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/home/ProfilePortrait.tsx [Client Component Browser]
+    ./src/components/home/HeroVisual.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/home/ProfilePortrait.tsx [Client Component SSR]
+    ./src/components/home/HeroVisual.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/home/HeroSection.tsx:34:7
+Error: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+> 34 | >>>>>>> origin/master
+     |       ^
+  35 |       <div className="hero-backdrop pointer-events-none absolute -inset-x-6 -top-9 bottom-...
+  36 |       <div className="mb-7 xl:hidden"><AvailabilityBadge /></div>
+  37 |       <div className="relative z-10 grid items-center gap-10 xl:grid-cols-[minmax(0,1.02fr...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/HeroSection.tsx:60:1
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  58 |     </section>
+  59 |   );
+> 60 | }
+     | ^
+  61 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/home/HeroSection.tsx:30:1
+Error: Merge conflict marker encountered.
+  28 |   })}</span>;
+  29 |   return (
+> 30 | <<<<<<< HEAD
+     | ^^^^^^^
+  31 |     <section className="hero-section light-hero relative isolate z-2">
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/ProfilePortrait.tsx:22:1
+Error: Merge conflict marker encountered.
+  20 | =======
+  21 |       className="relative mx-auto aspect-[4/5] w-full max-w-[36rem] lg:max-w-[38rem]"
+> 22 | >>>>>>> origin/master
+     | ^^^^^^^
+  23 |     >
+  24 |       <div className="portrait-glow pointer-events-none absolute inset-[8%_5%_8%] rounded-...
+  25 |       <div className="absolute inset-0">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/home/ProfilePortrait.tsx [Client Component Browser]
+    ./src/components/home/HeroVisual.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/home/ProfilePortrait.tsx [Client Component SSR]
+    ./src/components/home/HeroVisual.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/home/HeroSection.tsx:34:7
+Error: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+> 34 | >>>>>>> origin/master
+     |       ^
+  35 |       <div className="hero-backdrop pointer-events-none absolute -inset-x-6 -top-9 bottom-...
+  36 |       <div className="mb-7 xl:hidden"><AvailabilityBadge /></div>
+  37 |       <div className="relative z-10 grid items-center gap-10 xl:grid-cols-[minmax(0,1.02fr...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/HeroSection.tsx:60:1
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  58 |     </section>
+  59 |   );
+> 60 | }
+     | ^
+  61 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/PortfolioShell.tsx:61:2
+Error: Expression expected
+  59 |   return <div className={`portfolio-theme theme-${theme} min-h-screen text-white`}>
+  60 |     <AmbientBubbles />
+> 61 | <<<<<<< HEAD
+     |  ^^
+  62 |     <aside className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-6...
+  63 |     <div className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-6...
+  64 |     <header className="glass-panel sticky top-0 z-20 flex h-18 items-center justify-betwee...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/PortfolioShell.tsx
+    ./src/app/layout.tsx 
+[browser] ./src/components/home/HeroSection.tsx:30:1
+Error: Merge conflict marker encountered.
+  28 |   })}</span>;
+  29 |   return (
+> 30 | <<<<<<< HEAD
+     | ^^^^^^^
+  31 |     <section className="hero-section light-hero relative isolate z-2">
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/ProfilePortrait.tsx:22:1
+Error: Merge conflict marker encountered.
+  20 | =======
+  21 |       className="relative mx-auto aspect-[4/5] w-full max-w-[36rem] lg:max-w-[38rem]"
+> 22 | >>>>>>> origin/master
+     | ^^^^^^^
+  23 |     >
+  24 |       <div className="portrait-glow pointer-events-none absolute inset-[8%_5%_8%] rounded-...
+  25 |       <div className="absolute inset-0">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/home/ProfilePortrait.tsx [Client Component Browser]
+    ./src/components/home/HeroVisual.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Client Component Browser]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/home/ProfilePortrait.tsx [Client Component SSR]
+    ./src/components/home/HeroVisual.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Client Component SSR]
+    ./src/components/home/HeroSection.tsx [Server Component]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/home/HeroSection.tsx:34:7
+Error: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+  32 | =======
+  33 |     <section className="hero-section light-hero relative isolate z-[2] w-[110%] -ml-[5%]">
+> 34 | >>>>>>> origin/master
+     |       ^
+  35 |       <div className="hero-backdrop pointer-events-none absolute -inset-x-6 -top-9 bottom-...
+  36 |       <div className="mb-7 xl:hidden"><AvailabilityBadge /></div>
+  37 |       <div className="relative z-10 grid items-center gap-10 xl:grid-cols-[minmax(0,1.02fr...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/home/HeroSection.tsx:60:1
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  58 |     </section>
+  59 |   );
+> 60 | }
+     | ^
+  61 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/home/HeroSection.tsx
+    ./src/app/page.tsx 
