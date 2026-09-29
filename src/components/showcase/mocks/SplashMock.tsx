@@ -19,9 +19,9 @@ export function SplashMock() {
   useEffect(() => { if (screen !== "splash") return; const id = setTimeout(() => setScreen("onboarding"), 2400); return () => clearTimeout(id); }, [screen]);
   const restart = () => { setSlide(0); setEmail(""); setScreen("splash"); };
 
-  return <div className="flex min-h-full items-stretch justify-center bg-gradient-to-br from-violet-950 via-indigo-950 to-neutral-950 font-sans @2xl:items-center @2xl:py-8">
-    <div className="relative flex min-h-[40rem] w-full max-w-sm flex-col overflow-hidden bg-neutral-950 text-neutral-100 @2xl:rounded-[2rem] @2xl:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.8)]">
-      {screen === "splash" && <div className="flex flex-1 flex-col items-center justify-center bg-gradient-to-b from-violet-600 to-indigo-800">
+  return <div className="flex min-h-full items-stretch justify-center bg-linear-to-br from-violet-950 via-indigo-950 to-neutral-950 font-sans @2xl:items-center @2xl:py-8">
+    <div className="relative flex min-h-160 w-full max-w-sm flex-col overflow-hidden bg-neutral-950 text-neutral-100 @2xl:rounded-4xl @2xl:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.8)]">
+      {screen === "splash" && <div className="flex flex-1 flex-col items-center justify-center bg-linear-to-b from-violet-600 to-indigo-800">
         <div className="showcase-splash-logo flex size-24 items-center justify-center rounded-[1.8rem] bg-neutral-50 text-3xl font-black text-violet-700 shadow-2xl">R</div>
         <p className="showcase-splash-word mt-5 text-xl font-black tracking-[0.35em]">RAPEX</p>
         <div className="mt-10 h-1 w-32 overflow-hidden rounded-full bg-neutral-50/20"><div className="showcase-splash-bar h-full rounded-full bg-neutral-50" /></div>
@@ -30,7 +30,7 @@ export function SplashMock() {
       {screen === "onboarding" && <div className="flex flex-1 flex-col p-6">
         <button type="button" onClick={() => setScreen("signin")} className="self-end text-xs font-semibold text-neutral-400">Skip</button>
         <div key={slide} className="showcase-slide-in flex flex-1 flex-col items-center justify-center text-center">
-          {(() => { const Icon = slides[slide].icon; return <div className="flex size-40 items-center justify-center rounded-full bg-gradient-to-br from-violet-500/30 to-indigo-500/10"><div className="flex size-24 items-center justify-center rounded-3xl bg-violet-600 shadow-[0_20px_40px_-10px_rgba(124,58,237,0.7)]"><Icon size={40} /></div></div>; })()}
+          {(() => { const Icon = slides[slide].icon; return <div className="flex size-40 items-center justify-center rounded-full bg-linear-to-br from-violet-500/30 to-indigo-500/10"><div className="flex size-24 items-center justify-center rounded-3xl bg-violet-600 shadow-[0_20px_40px_-10px_rgba(124,58,237,0.7)]"><Icon size={40} /></div></div>; })()}
           <h3 className="mt-10 text-2xl font-black">{slides[slide].title}</h3>
           <p className="mt-3 max-w-[16rem] text-sm text-neutral-400">{slides[slide].text}</p>
         </div>
@@ -42,9 +42,9 @@ export function SplashMock() {
 
       {screen === "signin" && <form className="showcase-slide-in flex flex-1 flex-col justify-center gap-4 p-6" onSubmit={(event) => { event.preventDefault(); setScreen("home"); }}>
         <h3 className="text-3xl font-black">Welcome back</h3><p className="-mt-2 text-sm text-neutral-400">Sign in to track your orders.</p>
-        <label className="flex items-center gap-3 rounded-[1rem] bg-neutral-900 px-4 py-3"><Mail size={16} className="text-neutral-500" /><input type="email" required placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="flex-1 bg-transparent text-sm text-neutral-100 outline-none placeholder:text-neutral-600" /></label>
-        <label className="flex items-center gap-3 rounded-[1rem] bg-neutral-900 px-4 py-3"><Lock size={16} className="text-neutral-500" /><input type="password" required placeholder="Password" className="flex-1 bg-transparent text-sm text-neutral-100 outline-none placeholder:text-neutral-600" /></label>
-        <button type="submit" className="mt-2 rounded-[1rem] bg-violet-600 py-3.5 text-sm font-bold">Sign in</button>
+        <label className="flex items-center gap-3 rounded-2xl bg-neutral-900 px-4 py-3"><Mail size={16} className="text-neutral-500" /><input type="email" required placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="flex-1 bg-transparent text-sm text-neutral-100 outline-none placeholder:text-neutral-600" /></label>
+        <label className="flex items-center gap-3 rounded-2xl bg-neutral-900 px-4 py-3"><Lock size={16} className="text-neutral-500" /><input type="password" required placeholder="Password" className="flex-1 bg-transparent text-sm text-neutral-100 outline-none placeholder:text-neutral-600" /></label>
+        <button type="submit" className="mt-2 rounded-2xl bg-violet-600 py-3.5 text-sm font-bold">Sign in</button>
         <p className="text-center text-xs text-neutral-500">No account? <span className="font-semibold text-violet-400">Create one</span></p>
       </form>}
 

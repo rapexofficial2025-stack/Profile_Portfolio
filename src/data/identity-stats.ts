@@ -30,7 +30,7 @@ export const rapexDetails = {
   description: "RAPEX is an ongoing digital marketplace ecosystem designed around customers, merchants, riders, stores, products, delivery operations and administrative workflows.",
   role: ["Founder", "Product Development", "UI/UX", "Front-End UI", "Workflow Design", "Business Logic Planning", "Digital Product Strategy"],
   features: ["Customer", "Merchant", "Rider", "Marketplace", "Delivery", "Store", "POS", "Admin"],
-  caseStudyHref: "/work/rapex-marketplace-ecosystem",
+  caseStudyHref: "/work/category/web-development/rapex-admin-saas",
   /** TODO: paste the live/staging RAPEX customer demo URL here; while empty the demo button shows "coming soon". */
   customerDemoUrl: "",
   exploreMoreHref: "/work/category/web-development/rapex-admin-saas",

@@ -87,11 +87,11 @@ export const portfolioCategories: PortfolioCategory[] = [
     icon: "visual",
     image: "/images/work/work-architecture-3d.png",
     samples: [
-      { title: "Architect View", type: "3D Renders", description: "Concept render and spatial design for real-estate ideas." },
-      { title: "Mural Study", type: "Illustration", description: "Large-format concept and mood exploration for events." },
-      { title: "Product Concept", type: "3D Pack", description: "Packaging and campaign concept visual development." },
-      { title: "Sketchbook", type: "Idea Board", description: "Character, scene, and product mood board explorations." },
-      { title: "Scene Frame", type: "Environment", description: "Visual storytelling set for motion and promotional content." },
+      { title: "Heart of Architecture", type: "3D Renders · Floor Plans · Interior Design · SketchUp Drafting", description: "Spatial ideas shaped from the first measured line to atmospheric architectural visualization." },
+      { title: "Art on Walls", type: "Mural Art · Illustration", description: "Large-scale visual stories designed to transform blank walls into memorable places and experiences." },
+      { title: "Product & Brand Promotion", type: "Product Art · Campaign Design", description: "Product-focused visuals that unite brand identity, storytelling, and promotion into one campaign-ready system." },
+      { title: "Imagination Beyond Dimensions", type: "Sketchbook · 3D Exploration", description: "A working laboratory where sketches, characters, forms, and digital experiments evolve beyond the page." },
+      { title: "Products Become Headlines", type: "Hero Visuals · Advertising", description: "Cinematic product frames composed to stop the scroll, lead the story, and turn attention into interest." },
     ],
   },
  {
@@ -107,6 +107,7 @@ export const portfolioCategories: PortfolioCategory[] = [
       { slug: "invitation-paper-engine", title: "Invitation Card Paper Engine", type: "Web App", description: "Design an invitation on real-looking paper: pick a template, type the details, open the card." },
       { slug: "component-library", title: "Component Library", type: "UI Kit", description: "Reusable buttons, inputs, toggles, tabs and toasts with states, variants and copyable usage." },
       { slug: "react-native-welcome", title: "React Native Welcome & Splash", type: "Mobile UI/UX", description: "Animated splash, onboarding carousel and sign-in flow designed for a React Native app." },
+      { slug: "frost-twin-wms", title: "FROST TWIN WMS", type: "Interactive Warehouse Digital Twin", description: "A desktop-first warehouse operations prototype with a 2D rack board, procedural 3D twin, QR mockup and browser-only workflows." },
     ],
   },
   {

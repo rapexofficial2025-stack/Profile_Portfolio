@@ -136,7 +136,7 @@ function SpectrumMeter({ analyser, isPlaying }: { analyser: AnalyserNode | null;
     </div>
     <div className="media-deck-bars">{Array.from({ length: BARS }, (_, bar) => <span key={bar} className="media-deck-bar-slot"><span ref={(el) => { barRefs.current[bar] = el; }} className="media-deck-bar" /><span ref={(el) => { capRefs.current[bar] = el; }} className="media-deck-cap" /></span>)}</div>
     <div className="media-deck-level"><span ref={levelRef} /></div>
-    <div className="flex justify-between text-[0.4rem] font-medium tracking-[0.1em] text-white/35"><span>40</span><span>250</span><span>1k</span><span>4k</span><span>16k Hz</span></div>
+    <div className="flex justify-between text-[0.4rem] font-medium tracking-widest text-white/35"><span>40</span><span>250</span><span>1k</span><span>4k</span><span>16k Hz</span></div>
   </div>;
 }
 

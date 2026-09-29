@@ -25,7 +25,7 @@ export function RawGallery({ items }: { items: string[] }) {
         <span className="mt-1 text-[9px] uppercase tracking-[0.14em] opacity-50">Placeholder · RAW {String(index + 1).padStart(2, "0")}</span>
       </button>)}
     </div>
-    {open !== null && createPortal(<div className="fixed inset-0 z-[100] flex items-center justify-center bg-[rgba(4,3,12,0.82)] p-6 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={items[open]} onClick={close}>
+    {open !== null && createPortal(<div className="fixed inset-0 z-100 flex items-center justify-center bg-[rgba(4,3,12,0.82)] p-6 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={items[open]} onClick={close}>
       <div className="showcase-viewer" onClick={(event) => event.stopPropagation()}>
         <div className="flex items-center justify-between px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.16em]">
           <span>{items[open]}</span>

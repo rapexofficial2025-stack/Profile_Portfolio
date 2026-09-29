@@ -2,9 +2,9 @@ import { PageContent } from "@/components/content/PageContent";
 import { skillGroups } from "@/data/profile-details";
 
 const skillLevels = [
-  { label: "Primary", classes: "border-violet-300/30 bg-violet-500/[0.08]" },
-  { label: "Working Knowledge", classes: "border-sky-300/30 bg-sky-500/[0.06]" },
-  { label: "Exploring", classes: "border-pink-300/30 bg-pink-500/[0.06]" },
+  { label: "Primary", classes: "border-violet-300/30 bg-violet-500/8" },
+  { label: "Working Knowledge", classes: "border-sky-300/30 bg-sky-500/6" },
+  { label: "Exploring", classes: "border-pink-300/30 bg-pink-500/6" },
 ];
 
 export default function SkillsPage() {

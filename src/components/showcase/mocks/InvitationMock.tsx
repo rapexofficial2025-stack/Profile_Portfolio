@@ -30,8 +30,8 @@ export function InvitationMock() {
       <button type="button" onClick={() => setOpen((value) => !value)} className="w-full rounded-full bg-neutral-900 py-2.5 text-sm font-semibold text-neutral-50">{open ? "Close card" : "Open card"}</button>
     </div>
 
-    <div className="flex items-center justify-center py-6 [perspective:1400px]">
-      <div className="relative aspect-[5/7] w-[min(17rem,80%)]">
+    <div className="flex items-center justify-center py-6 perspective-[1400px]">
+      <div className="relative aspect-5/7 w-[min(17rem,80%)]">
         {/* inside page, revealed when the cover swings open */}
         <div className="absolute inset-0 flex flex-col items-center justify-center rounded-sm p-6 text-center shadow-[0_20px_40px_-12px_rgba(0,0,0,0.45)]" style={face}>
           <p className="text-[9px] font-semibold uppercase tracking-[0.3em]" style={{ color: t.accent }}>Reception to follow</p>
@@ -41,14 +41,14 @@ export function InvitationMock() {
           <p className="mt-5 text-[9px] uppercase tracking-[0.25em] opacity-70">Kindly RSVP by November 30</p>
         </div>
         {/* cover: hinged on the left, rotates open in 3D */}
-        <div className="absolute inset-0 origin-left rounded-sm transition-transform duration-[900ms] ease-[cubic-bezier(.2,.8,.2,1)] [transform-style:preserve-3d]" style={{ transform: open ? "rotateY(-160deg)" : "rotateY(0deg)" }}>
-          <div className="absolute inset-0 flex flex-col items-center justify-center rounded-sm p-6 text-center shadow-[0_24px_40px_-12px_rgba(0,0,0,0.5)] [backface-visibility:hidden]" style={face}>
+        <div className="absolute inset-0 origin-left rounded-sm transition-transform duration-900 ease-[cubic-bezier(.2,.8,.2,1)] transform-3d" style={{ transform: open ? "rotateY(-160deg)" : "rotateY(0deg)" }}>
+          <div className="absolute inset-0 flex flex-col items-center justify-center rounded-sm p-6 text-center shadow-[0_24px_40px_-12px_rgba(0,0,0,0.5)] backface-hidden" style={face}>
             <div className="absolute inset-3 rounded-sm border" style={{ borderColor: t.accent }} />
             <p className="text-[9px] font-semibold uppercase tracking-[0.35em]" style={{ color: t.accent }}>Together with their families</p>
             <p className="mt-5 font-serif text-3xl leading-tight">{details.names || "Your names"}</p>
             <p className="mt-5 text-[9px] uppercase tracking-[0.3em] opacity-70">request the pleasure of your company</p>
           </div>
-          <div className="absolute inset-0 rounded-sm [backface-visibility:hidden] [transform:rotateY(180deg)]" style={{ backgroundImage: `${grain}, ${t.paper}`, filter: "brightness(0.92)" }} />
+          <div className="absolute inset-0 rounded-sm backface-hidden transform-[rotateY(180deg)]" style={{ backgroundImage: `${grain}, ${t.paper}`, filter: "brightness(0.92)" }} />
         </div>
       </div>
     </div>

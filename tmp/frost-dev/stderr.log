@@ -1,0 +1,1668 @@
+⚠ You are using a non-standard "NODE_ENV" value in your environment. This creates inconsistencies in the project and is strongly advised against. Read more: https://nextjs.org/docs/messages/non-standard-node-env
+(node:31780) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.
+[browser] THREE.PointerLockControls: Unable to use Pointer Lock API 
+[browser] ⨯ unhandledRejection: SecurityError: Pointer lock cannot be acquired immediately after the user has exited the lock.
+
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="h-full ant..." style={{...}}>
+                          <body className="min-h-full">
+                            <PortfolioShell>
+                              <div className="portfolio-...">
+                                <AmbientBubbles>
+                                <aside
++                                 className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-68 ove..."
+-                                 className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-[17rem..."
+                                >
+                                  <SidebarContent theme="light" onToggleTheme={function toggleTheme}>
+                                    <div className="flex h-ful...">
+                                      <Brand>
+                                      <nav aria-label="Primary na..." className="mt-12 spac...">
+                                        <NavigationItem item={{label:"Home", ...}} onNavigate={undefined}>
+                                          <LinkComponent href="/" onClick={undefined} aria-current="page" ...>
+                                            <a
++                                             aria-current="page"
+-                                             aria-current={null}
++                                             className="neu-glass-control group relative flex min-h-11 items-center g..."
+-                                             className="neu-glass-control group relative flex min-h-11 items-center g..."
+                                              ref={function}
+                                              onClick={function onClick}
+                                              onMouseEnter={function onMouseEnter}
+                                              onTouchStart={function onTouchStart}
+                                              href="/"
+                                            >
+                                              <span
+                                                aria-hidden="true"
++                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-linear-to-b from-..."
+-                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-gradient-to-b fro..."
+                                              >
+                                              <House>
+                                              <span>
+                                              <span
+                                                aria-hidden="true"
++                                               className="nav-status-dot ml-auto is-selected"
+-                                               className={"nav-status-dot ml-auto "}
+                                              >
+                                        <NavigationItem item={{label:"Work", ...}} onNavigate={undefined}>
+                                          <LinkComponent href="/work" onClick={undefined} aria-current={undefined} ...>
+                                            <a aria-current={undefined} className="neu-glass-..." ref={function} ...>
+                                              <span
+                                                aria-hidden="true"
++                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-linear-to-b from-..."
+-                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-gradient-to-b fro..."
+                                              >
+                                              ...
+                                        <NavigationItem item={{label:"About", ...}} onNavigate={undefined}>
+                                          <LinkComponent href="/about" onClick={undefined} aria-current={undefined} ...>
+                                            <a aria-current={undefined} className="neu-glass-..." ref={function} ...>
+                                              <span
+                                                aria-hidden="true"
++                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-linear-to-b from-..."
+-                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-gradient-to-b fro..."
+                                              >
+                                              ...
+                                        <NavigationItem item={{label:"Skills", ...}} onNavigate={undefined}>
+                                          <LinkComponent href="/skills" onClick={undefined} aria-current={undefined} ...>
+                                            <a aria-current={undefined} className="neu-glass-..." ref={function} ...>
+                                              <span
+                                                aria-hidden="true"
++                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-linear-to-b from-..."
+-                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-gradient-to-b fro..."
+                                              >
+                                              ...
+                                        <NavigationItem item={{label:"Resume", ...}} onNavigate={undefined}>
+                                          <LinkComponent href="/resume" onClick={undefined} aria-current={undefined} ...>
+                                            <a aria-current={undefined} className="neu-glass-..." ref={function} ...>
+                                              <span
+                                                aria-hidden="true"
++                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-linear-to-b from-..."
+-                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-gradient-to-b fro..."
+                                              >
+                                              ...
+                                        <NavigationItem item={{label:"Ref...", ...}} onNavigate={undefined}>
+                                          <LinkComponent href="/references" onClick={undefined} aria-current={undefined} ...>
+                                            <a aria-current={undefined} className="neu-glass-..." ref={function} ...>
+                                              <span
+                                                aria-hidden="true"
++                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-linear-to-b from-..."
+-                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-gradient-to-b fro..."
+                                              >
+                                              ...
+                                        <NavigationItem item={{label:"Con...", ...}} onNavigate={undefined}>
+                                          <LinkComponent href="/contact" onClick={undefined} aria-current={undefined} ...>
+                                            <a aria-current={undefined} className="neu-glass-..." ref={function} ...>
+                                              <span
+                                                aria-hidden="true"
++                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-linear-to-b from-..."
+-                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-gradient-to-b fro..."
+                                              >
+                                              ...
+                                      <DigitalClock>
+                                      <div className="mt-auto sp...">
+                                        <div className="flex items..." aria-label="Social links">
+                                          <a
+                                            href="#social-linkedin"
+                                            aria-label="LinkedIn"
+                                            aria-disabled={true}
+                                            title="Add LinkedIn URL in src/data/profile.ts"
+                                            tabIndex={-1}
+                                            onClick={function onClick}
++                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+-                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+                                          >
+                                          <a
+                                            href="#social-github"
+                                            aria-label="GitHub"
+                                            aria-disabled={true}
+                                            title="Add GitHub URL in src/data/profile.ts"
+                                            tabIndex={-1}
+                                            onClick={function onClick}
++                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+-                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+                                          >
+                                          <a
+                                            href="#social-youtube"
+                                            aria-label="YouTube"
+                                            aria-disabled={true}
+                                            title="Add YouTube URL in src/data/profile.ts"
+                                            tabIndex={-1}
+                                            onClick={function onClick}
++                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+-                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+                                          >
+                                          <a
+                                            href="#social-instagram"
+                                            aria-label="Instagram"
+                                            aria-disabled={true}
+                                            title="Add Instagram URL in src/data/profile.ts"
+                                            tabIndex={-1}
+                                            onClick={function onClick}
++                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+-                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+                                          >
+                                        <div
++                                         className="border-t border-white/10 pt-4 text-[10px] leading-5 tracking-wide..."
+-                                         className="border-t border-white/10 pt-4 text-[10px] leading-5 tracking-[0.1..."
+                                        >
+                                <div
++                                 className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-68 l..."
+-                                 className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-[17r..."
+                                >
+                                  <div>
+                                  <div
++                                   className="desktop-topbar-overlay absolute inset-x-5 top-5 h-[1.2rem]"
+-                                   className="desktop-topbar-overlay absolute inset-x-5 top-[1.25rem] h-[1.2rem]"
+                                    aria-hidden="true"
+                                  >
+                                <header className="glass-pane...">
+                                  <Brand>
+                                  <div className="flex items...">
+                                    <button
+                                      type="button"
+                                      onClick={function toggleTheme}
+                                      aria-label="Switch to dark mode"
++                                     className="glass-icon-button flex size-11 items-center justify-center rounded-xl..."
+-                                     className="glass-icon-button flex size-11 items-center justify-center rounded-xl..."
+                                    >
+                                    <button
+                                      type="button"
+                                      aria-label="Open navigation menu"
+                                      aria-expanded={false}
+                                      onClick={function onClick}
++                                     className="glass-icon-button flex size-11 items-center justify-center rounded-xl..."
+-                                     className="glass-icon-button flex size-11 items-center justify-center rounded-xl..."
+                                    >
+                                <AnimatePresence>
+                                <main
++                                 className="min-h-screen lg:pt-1.25 lg:pl-68"
+-                                 className="min-h-screen lg:pt-[5px] lg:pl-[17rem]"
+                                >
+                                  ...
+                                    <Home>
+                                      <div className="home-page ...">
+                                        <div>
+                                        <div className="mx-auto ma...">
+                                          <HeroSection>
+                                            <section
++                                             className="hero-section light-hero relative isolate z-2"
+-                                             className="hero-section light-hero relative isolate z-[2]"
+                                            >
+                                              <div>
+                                              <div className="mb-7 xl:hi...">
+                                                <AvailabilityBadge>
+                                                  <div
++                                                   className="inline-flex items-center gap-2 rounded-full border bord..."
+-                                                   className="inline-flex items-center gap-2 rounded-full border bord..."
+                                                  >
+                                              <div className="relative z...">
+                                                <div className={"hero-cop..."} onClick={function onClick}>
+                                                  <motion.div initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} ...>
+                                                    <div style={{opacity:0, ...}} ref={function useMotionRef.useCallback}>
+                                                      <p>
+                                                      <h1>
+                                                      <div>
+                                                      <p
++                                                       className="mt-6 max-w-92 text-base leading-7 text-[#A7AFBF] sm..."
+-                                                       className="mt-6 max-w-[23rem] text-base leading-7 text-[#A7AFB..."
+                                                      >
++                                                       I design digital products, create cinematic campaigns, and buil...
+                                                      ...
+                                                <div
++                                                 className="relative min-h-124 sm:min-h-144 lg:min-h-160 xl:min-h-168"
+-                                                 className="relative min-h-[31rem] sm:min-h-[36rem] lg:min-h-[40rem] ..."
+                                                >
+                                                  <HeroVisual>
+                                                    <div className="absolute i...">
+                                                      <div className="absolute i...">
+                                                        <ProfilePortrait>
+                                                          <motion.div initial={{opacity:0, ...}} ...>
+                                                            <div
++                                                             className="relative mx-auto aspect-4/5 w-full max-w-124 ..."
+-                                                             className="relative mx-auto aspect-[4/5] w-full max-w-[3..."
+                                                              style={{opacity:0,transform:"translateY..."}}
+                                                              ref={function useMotionRef.useCallback}
+                                                            >
+                                                              <div>
+                                                              ...
+                                                                <div className="note-pull-...">
+                                                                  <motion.div style={{scaleY:{...}, ...}} ...>
+                                                                    <div
++                                                                     className="prayer-note absolute top-0 z-1 aspect..."
+-                                                                     className="prayer-note absolute top-0 z-[1] aspe..."
+                                                                      style={{right:0,opacity:0,transform:"scaleY(0)"}}
+                                                                      ref={function useMotionRef.useCallback}
+                                                                    >
+                                                                  ...
+                                                      ...
+                                                        <div className="absolute i..." style={{}} ...>
+                                                          <motion.button type="button" aria-label="Open creat..." ...>
+                                                            <button type="button" aria-label="Open creat..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                          <motion.button type="button" aria-label="Open produ..." ...>
+                                                            <button type="button" aria-label="Open produ..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                          <motion.button type="button" aria-label="Open desig..." ...>
+                                                            <button type="button" aria-label="Open desig..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                          <motion.button type="button" aria-label="Open devel..." ...>
+                                                            <button type="button" aria-label="Open devel..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                          <motion.button type="button" aria-label="Open creat..." ...>
+                                                            <button type="button" aria-label="Open creat..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                          <motion.button type="button" aria-label="Open produ..." ...>
+                                                            <button type="button" aria-label="Open produ..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                          <motion.button type="button" aria-label="Open desig..." ...>
+                                                            <button type="button" aria-label="Open desig..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                          <motion.button type="button" aria-label="Open devel..." ...>
+                                                            <button type="button" aria-label="Open devel..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                  <div className="absolute r...">
+                                                    <AvailabilityBadge>
+                                                      <div
++                                                       className="inline-flex items-center gap-2 rounded-full border ..."
+-                                                       className="inline-flex items-center gap-2 rounded-full border ..."
+                                                      >
+                                                    <PullNote className="relative w-44" anchorRight={18}>
+                                                      <div
++                                                       className="note-pull-anchor relative w-44"
+-                                                       className="note-pull-anchor relative w-[11rem]"
+                                                      >
+                                                        <motion.div style={{scaleY:{...}, ...}} className="prayer-not...">
+                                                          <div
++                                                           className="prayer-note absolute top-0 z-1 aspect-3/4 w-full"
+-                                                           className="prayer-note absolute top-0 z-[1] aspect-[3/4] w..."
+                                                            style={{right:0,opacity:0,transform:"scaleY(0)"}}
+                                                            ref={function useMotionRef.useCallback}
+                                                          >
+                                                        ...
+                                                  <div
++                                                   className="pointer-events-none absolute bottom-10 -right-16 z-50 h..."
+-                                                   className="pointer-events-none absolute bottom-10 -right-16 z-50 h..."
+                                                  >
+                                                    <div
++                                                     className="mb-3 ml-auto h-px w-44 bg-linear-to-l from-violet-300..."
+-                                                     className="mb-3 ml-auto h-px w-44 bg-gradient-to-l from-violet-3..."
+                                                    >
+                                                    <p>
+                                                    <p>
+                                                    <div
++                                                     className="mt-3 ml-auto h-px w-28 bg-linear-to-l from-sky-300/45..."
+-                                                     className="mt-3 ml-auto h-px w-28 bg-gradient-to-l from-sky-300/..."
+                                                    >
+                                          ...
+                                            <div className="home-neu-c...">
+                                              ...
+                                                <div className="flex items...">
+                                                  <div>
+                                                  <div>
+                                                  <SpectrumMeter analyser={null} isPlaying={false}>
+                                                    <div className="media-deck..." aria-hidden="true">
+                                                      <div>
+                                                      <div>
+                                                      <div>
+                                                      <div
++                                                       className="flex justify-between text-[0.4rem] font-medium trac..."
+-                                                       className="flex justify-between text-[0.4rem] font-medium trac..."
+                                                      >
+                                              <CategoryGrid>
+                                                <section id="explore" aria-labelledby="explore-he..." ...>
+                                                  <div>
+                                                  <div className="grid gap-x...">
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#2...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/product-design"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               Product Design
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               {"RAPEX & Digital Products"}
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#f...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/graphic-design"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               Graphic Design
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               {"Branding & Marketing"}
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#8...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/motion"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               Motion Graphics
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               {"Video & Animation"}
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#a...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/audio"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               {"Audio & Music"}
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               {"Editing & Production"}
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#f...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/visual-art"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               Visual Art
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               Illustration, Mural, 3D
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#3...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/web-development"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               Web Development
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               {"Front-End & Web Apps"}
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#e...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/mobile-apps"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               Mobile Apps
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               {"App UI & Prototypes"}
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#f...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/photography"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               Photography
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               {"Photo Editing & Retouch"}
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                          ...
+                  ...
+ 
+[browser] Image with src "/images/profile/irvin-suit.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-ui-design.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-digital-art.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-video-production.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-music-production.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-architecture-3d.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-web-development.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-mobile-apps.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-photography.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="h-full ant..." style={{...}}>
+                          <body className="min-h-full">
+                            <PortfolioShell>
+                              <div className="portfolio-...">
+                                <AmbientBubbles>
+                                <aside
++                                 className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-68 ove..."
+-                                 className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-[17rem..."
+                                >
+                                  <SidebarContent theme="light" onToggleTheme={function toggleTheme}>
+                                    <div className="flex h-ful...">
+                                      <Brand>
+                                      <nav aria-label="Primary na..." className="mt-12 spac...">
+                                        <NavigationItem item={{label:"Home", ...}} onNavigate={undefined}>
+                                          <LinkComponent href="/" onClick={undefined} aria-current="page" ...>
+                                            <a
++                                             aria-current="page"
+-                                             aria-current={null}
++                                             className="neu-glass-control group relative flex min-h-11 items-center g..."
+-                                             className="neu-glass-control group relative flex min-h-11 items-center g..."
+                                              ref={function}
+                                              onClick={function onClick}
+                                              onMouseEnter={function onMouseEnter}
+                                              onTouchStart={function onTouchStart}
+                                              href="/"
+                                            >
+                                              <span
+                                                aria-hidden="true"
++                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-linear-to-b from-..."
+-                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-gradient-to-b fro..."
+                                              >
+                                              <House>
+                                              <span>
+                                              <span
+                                                aria-hidden="true"
++                                               className="nav-status-dot ml-auto is-selected"
+-                                               className={"nav-status-dot ml-auto "}
+                                              >
+                                        <NavigationItem item={{label:"Work", ...}} onNavigate={undefined}>
+                                          <LinkComponent href="/work" onClick={undefined} aria-current={undefined} ...>
+                                            <a aria-current={undefined} className="neu-glass-..." ref={function} ...>
+                                              <span
+                                                aria-hidden="true"
++                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-linear-to-b from-..."
+-                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-gradient-to-b fro..."
+                                              >
+                                              ...
+                                        <NavigationItem item={{label:"About", ...}} onNavigate={undefined}>
+                                          <LinkComponent href="/about" onClick={undefined} aria-current={undefined} ...>
+                                            <a aria-current={undefined} className="neu-glass-..." ref={function} ...>
+                                              <span
+                                                aria-hidden="true"
++                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-linear-to-b from-..."
+-                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-gradient-to-b fro..."
+                                              >
+                                              ...
+                                        <NavigationItem item={{label:"Skills", ...}} onNavigate={undefined}>
+                                          <LinkComponent href="/skills" onClick={undefined} aria-current={undefined} ...>
+                                            <a aria-current={undefined} className="neu-glass-..." ref={function} ...>
+                                              <span
+                                                aria-hidden="true"
++                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-linear-to-b from-..."
+-                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-gradient-to-b fro..."
+                                              >
+                                              ...
+                                        <NavigationItem item={{label:"Resume", ...}} onNavigate={undefined}>
+                                          <LinkComponent href="/resume" onClick={undefined} aria-current={undefined} ...>
+                                            <a aria-current={undefined} className="neu-glass-..." ref={function} ...>
+                                              <span
+                                                aria-hidden="true"
++                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-linear-to-b from-..."
+-                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-gradient-to-b fro..."
+                                              >
+                                              ...
+                                        <NavigationItem item={{label:"Ref...", ...}} onNavigate={undefined}>
+                                          <LinkComponent href="/references" onClick={undefined} aria-current={undefined} ...>
+                                            <a aria-current={undefined} className="neu-glass-..." ref={function} ...>
+                                              <span
+                                                aria-hidden="true"
++                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-linear-to-b from-..."
+-                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-gradient-to-b fro..."
+                                              >
+                                              ...
+                                        <NavigationItem item={{label:"Con...", ...}} onNavigate={undefined}>
+                                          <LinkComponent href="/contact" onClick={undefined} aria-current={undefined} ...>
+                                            <a aria-current={undefined} className="neu-glass-..." ref={function} ...>
+                                              <span
+                                                aria-hidden="true"
++                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-linear-to-b from-..."
+-                                               className="absolute left-0 h-5 w-0.5 rounded-full bg-gradient-to-b fro..."
+                                              >
+                                              ...
+                                      <DigitalClock>
+                                      <div className="mt-auto sp...">
+                                        <div className="flex items..." aria-label="Social links">
+                                          <a
+                                            href="#social-linkedin"
+                                            aria-label="LinkedIn"
+                                            aria-disabled={true}
+                                            title="Add LinkedIn URL in src/data/profile.ts"
+                                            tabIndex={-1}
+                                            onClick={function onClick}
++                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+-                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+                                          >
+                                          <a
+                                            href="#social-github"
+                                            aria-label="GitHub"
+                                            aria-disabled={true}
+                                            title="Add GitHub URL in src/data/profile.ts"
+                                            tabIndex={-1}
+                                            onClick={function onClick}
++                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+-                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+                                          >
+                                          <a
+                                            href="#social-youtube"
+                                            aria-label="YouTube"
+                                            aria-disabled={true}
+                                            title="Add YouTube URL in src/data/profile.ts"
+                                            tabIndex={-1}
+                                            onClick={function onClick}
++                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+-                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+                                          >
+                                          <a
+                                            href="#social-instagram"
+                                            aria-label="Instagram"
+                                            aria-disabled={true}
+                                            title="Add Instagram URL in src/data/profile.ts"
+                                            tabIndex={-1}
+                                            onClick={function onClick}
++                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+-                                           className="flex size-8 items-center justify-center rounded-lg text-white/3..."
+                                          >
+                                        <div
++                                         className="border-t border-white/10 pt-4 text-[10px] leading-5 tracking-wide..."
+-                                         className="border-t border-white/10 pt-4 text-[10px] leading-5 tracking-[0.1..."
+                                        >
+                                <div
++                                 className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-68 l..."
+-                                 className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-[17r..."
+                                >
+                                  <div>
+                                  <div
++                                   className="desktop-topbar-overlay absolute inset-x-5 top-5 h-[1.2rem]"
+-                                   className="desktop-topbar-overlay absolute inset-x-5 top-[1.25rem] h-[1.2rem]"
+                                    aria-hidden="true"
+                                  >
+                                <header className="glass-pane...">
+                                  <Brand>
+                                  <div className="flex items...">
+                                    <button
+                                      type="button"
+                                      onClick={function toggleTheme}
+                                      aria-label="Switch to dark mode"
++                                     className="glass-icon-button flex size-11 items-center justify-center rounded-xl..."
+-                                     className="glass-icon-button flex size-11 items-center justify-center rounded-xl..."
+                                    >
+                                    <button
+                                      type="button"
+                                      aria-label="Open navigation menu"
+                                      aria-expanded={false}
+                                      onClick={function onClick}
++                                     className="glass-icon-button flex size-11 items-center justify-center rounded-xl..."
+-                                     className="glass-icon-button flex size-11 items-center justify-center rounded-xl..."
+                                    >
+                                <AnimatePresence>
+                                <main
++                                 className="min-h-screen lg:pt-1.25 lg:pl-68"
+-                                 className="min-h-screen lg:pt-[5px] lg:pl-[17rem]"
+                                >
+                                  ...
+                                    <Home>
+                                      <div className="home-page ...">
+                                        <div>
+                                        <div className="mx-auto ma...">
+                                          <HeroSection>
+                                            <section
++                                             className="hero-section light-hero relative isolate z-2"
+-                                             className="hero-section light-hero relative isolate z-[2]"
+                                            >
+                                              <div>
+                                              <div className="mb-7 xl:hi...">
+                                                <AvailabilityBadge>
+                                                  <div
++                                                   className="inline-flex items-center gap-2 rounded-full border bord..."
+-                                                   className="inline-flex items-center gap-2 rounded-full border bord..."
+                                                  >
+                                              <div className="relative z...">
+                                                <div className={"hero-cop..."} onClick={function onClick}>
+                                                  <motion.div initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} ...>
+                                                    <div style={{opacity:0, ...}} ref={function useMotionRef.useCallback}>
+                                                      <p>
+                                                      <h1>
+                                                      <div>
+                                                      <p
++                                                       className="mt-6 max-w-92 text-base leading-7 text-[#A7AFBF] sm..."
+-                                                       className="mt-6 max-w-[23rem] text-base leading-7 text-[#A7AFB..."
+                                                      >
++                                                       I design digital products, create cinematic campaigns, and buil...
+                                                      ...
+                                                <div
++                                                 className="relative min-h-124 sm:min-h-144 lg:min-h-160 xl:min-h-168"
+-                                                 className="relative min-h-[31rem] sm:min-h-[36rem] lg:min-h-[40rem] ..."
+                                                >
+                                                  <HeroVisual>
+                                                    <div className="absolute i...">
+                                                      <div className="absolute i...">
+                                                        <ProfilePortrait>
+                                                          <motion.div initial={{opacity:0, ...}} ...>
+                                                            <div
++                                                             className="relative mx-auto aspect-4/5 w-full max-w-124 ..."
+-                                                             className="relative mx-auto aspect-[4/5] w-full max-w-[3..."
+                                                              style={{opacity:0,transform:"translateY..."}}
+                                                              ref={function useMotionRef.useCallback}
+                                                            >
+                                                              <div>
+                                                              ...
+                                                                <div className="note-pull-...">
+                                                                  <motion.div style={{scaleY:{...}, ...}} ...>
+                                                                    <div
++                                                                     className="prayer-note absolute top-0 z-1 aspect..."
+-                                                                     className="prayer-note absolute top-0 z-[1] aspe..."
+                                                                      style={{right:0,opacity:0,transform:"scaleY(0)"}}
+                                                                      ref={function useMotionRef.useCallback}
+                                                                    >
+                                                                  ...
+                                                      ...
+                                                        <div className="absolute i..." style={{}} ...>
+                                                          <motion.button type="button" aria-label="Open creat..." ...>
+                                                            <button type="button" aria-label="Open creat..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                          <motion.button type="button" aria-label="Open produ..." ...>
+                                                            <button type="button" aria-label="Open produ..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                          <motion.button type="button" aria-label="Open desig..." ...>
+                                                            <button type="button" aria-label="Open desig..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                          <motion.button type="button" aria-label="Open devel..." ...>
+                                                            <button type="button" aria-label="Open devel..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                          <motion.button type="button" aria-label="Open creat..." ...>
+                                                            <button type="button" aria-label="Open creat..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                          <motion.button type="button" aria-label="Open produ..." ...>
+                                                            <button type="button" aria-label="Open produ..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                          <motion.button type="button" aria-label="Open desig..." ...>
+                                                            <button type="button" aria-label="Open desig..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                          <motion.button type="button" aria-label="Open devel..." ...>
+                                                            <button type="button" aria-label="Open devel..." ...>
+                                                              <img>
+                                                              <img>
+                                                              <span>
+                                                              <span
++                                                               className="pointer-events-none absolute inset-x-0 top-..."
+-                                                               className="pointer-events-none absolute inset-x-0 top-..."
+                                                              >
+                                                              ...
+                                                  <div className="absolute r...">
+                                                    <AvailabilityBadge>
+                                                      <div
++                                                       className="inline-flex items-center gap-2 rounded-full border ..."
+-                                                       className="inline-flex items-center gap-2 rounded-full border ..."
+                                                      >
+                                                    <PullNote className="relative w-44" anchorRight={18}>
+                                                      <div
++                                                       className="note-pull-anchor relative w-44"
+-                                                       className="note-pull-anchor relative w-[11rem]"
+                                                      >
+                                                        <motion.div style={{scaleY:{...}, ...}} className="prayer-not...">
+                                                          <div
++                                                           className="prayer-note absolute top-0 z-1 aspect-3/4 w-full"
+-                                                           className="prayer-note absolute top-0 z-[1] aspect-[3/4] w..."
+                                                            style={{right:0,opacity:0,transform:"scaleY(0)"}}
+                                                            ref={function useMotionRef.useCallback}
+                                                          >
+                                                        ...
+                                                  <div
++                                                   className="pointer-events-none absolute bottom-10 -right-16 z-50 h..."
+-                                                   className="pointer-events-none absolute bottom-10 -right-16 z-50 h..."
+                                                  >
+                                                    <div
++                                                     className="mb-3 ml-auto h-px w-44 bg-linear-to-l from-violet-300..."
+-                                                     className="mb-3 ml-auto h-px w-44 bg-gradient-to-l from-violet-3..."
+                                                    >
+                                                    <p>
+                                                    <p>
+                                                    <div
++                                                     className="mt-3 ml-auto h-px w-28 bg-linear-to-l from-sky-300/45..."
+-                                                     className="mt-3 ml-auto h-px w-28 bg-gradient-to-l from-sky-300/..."
+                                                    >
+                                          ...
+                                            <div className="home-neu-c...">
+                                              ...
+                                                <div className="flex items...">
+                                                  <div>
+                                                  <div>
+                                                  <SpectrumMeter analyser={null} isPlaying={false}>
+                                                    <div className="media-deck..." aria-hidden="true">
+                                                      <div>
+                                                      <div>
+                                                      <div>
+                                                      <div
++                                                       className="flex justify-between text-[0.4rem] font-medium trac..."
+-                                                       className="flex justify-between text-[0.4rem] font-medium trac..."
+                                                      >
+                                              <CategoryGrid>
+                                                <section id="explore" aria-labelledby="explore-he..." ...>
+                                                  <div>
+                                                  <div className="grid gap-x...">
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#2...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/product-design"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               Product Design
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               {"RAPEX & Digital Products"}
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#f...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/graphic-design"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               Graphic Design
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               {"Branding & Marketing"}
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#8...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/motion"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               Motion Graphics
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               {"Video & Animation"}
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#a...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/audio"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               {"Audio & Music"}
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               {"Editing & Production"}
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#f...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/visual-art"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               Visual Art
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               Illustration, Mural, 3D
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#3...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/web-development"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               Web Development
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               {"Front-End & Web Apps"}
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#e...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/mobile-apps"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               Mobile Apps
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               {"App UI & Prototypes"}
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                                    ...
+                                                      <div className="group/card..." style={{--beam:"#f...", ...}} ...>
+                                                        <LinkComponent href="/work/cate..." className="glass-card...">
+                                                          <a
++                                                           className="glass-card work-card group relative flex h-full..."
+-                                                           className="glass-card work-card group relative flex h-full..."
+                                                            ref={function}
+                                                            onClick={function onClick}
+                                                            onMouseEnter={function onMouseEnter}
+                                                            onTouchStart={function onTouchStart}
+                                                            href="/work/category/photography"
+                                                          >
+                                                            <span>
+                                                            <span
++                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+-                                                             className="pointer-events-none absolute inset-x-5 top-0 ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-pop pointer-events-none absolute in..."
+-                                                             className="work-card-pop pointer-events-none absolute in..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <span
++                                                             className="work-card-badge pointer-events-none absolute ..."
+-                                                             className="work-card-badge pointer-events-none absolute ..."
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-art -mx-4 -mt-4 aspect-2/1"
+-                                                             className="work-card-art -mx-4 -mt-4 aspect-[2/1]"
+                                                              aria-hidden="true"
+                                                            >
+                                                            <div
++                                                             className="work-card-body relative z-9 mt-2 flex flex-col"
+-                                                             className="work-card-body relative z-[9] mt-2 flex flex-col"
+                                                            >
+                                                              <span>
+                                                              <h3
++                                                               className="relative z-2 text-[0.9rem] font-semibold up..."
+-                                                               className="relative z-[2] text-[0.9rem] font-semibold ..."
+                                                              >
++                                                               Photography
+                                                              <p
++                                                               className="relative z-2 mt-2 text-[0.7rem] font-medium..."
+-                                                               className="relative z-[2] mt-2 text-[0.7rem] font-medi..."
+                                                              >
++                                                               {"Photo Editing & Retouch"}
+                                                              <span
++                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+-                                                               className="neu-glass-pill relative mt-3 inline-flex it..."
+                                                              >
+                                                        ...
+                                          ...
+                  ...
+ 
+[browser] Image with src "/images/profile/irvin-suit.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-ui-design.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-digital-art.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-video-production.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-music-production.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-architecture-3d.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-web-development.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-mobile-apps.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[browser] Image with src "/images/work/work-photography.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.

@@ -18,16 +18,16 @@ export type PortfolioProject = {
 
 export const portfolioProjects: PortfolioProject[] = [
   {
-    id: "rapex",
-    slug: "rapex-marketplace-ecosystem",
-    title: "RAPEX — DIGITAL MARKETPLACE ECOSYSTEM",
+    id: "digital-ecommerce",
+    slug: "react-native-digital-ecommerce",
+    title: "REACT NATIVE-DIGITAL ECOMMERCE",
     subtitle: "Product Design • UI/UX • Front-End UI • Workflow Design",
     category: "Product Design • UI/UX • Front-End UI • Workflow Design",
     year: "2024",
-    role: "Founder • Product Designer • Workflow Designer • Front-End UI Developer",
-    description: "RAPEX is a marketplace and logistics platform designed around customers, merchants, riders, stores and operational administrators.",
-    challenge: "Create a clear operational system for a marketplace ecosystem where customer experience, merchant operations, rider coordination and admin oversight all work together without friction.",
-    objective: "Design a scalable digital product foundation that can support commerce, logistics, communication and internal operational flow through a modern interface system.",
+    role: "UI/UX Designer • Product Designer • Front-End UI Developer",
+    description: "A fictional digital e-commerce concept created to demonstrate customer shopping, merchant operations, responsive product discovery and mobile-first checkout experiences.",
+    challenge: "Create a familiar marketplace experience inspired by modern global e-commerce patterns while keeping product discovery, cart actions and merchant tools clear and easy to use.",
+    objective: "Design a polished demonstration interface across desktop and React Native mobile screens, with replaceable product-image slots ready for future portfolio assets.",
     process: ["Research", "Planning", "Concept", "Wireframe", "Design", "Production", "Development", "Testing", "Refinement"],
     tools: ["Figma", "React", "Next.js", "TypeScript", "React Native", "Expo", "AI-Assisted Development"],
     images: ["Marketplace UI", "Merchant Portal", "Admin Dashboard", "Mobile App", "Workflow Diagram"],
@@ -37,7 +37,7 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     id: "velocity",
     slug: "velocity-digital-product-campaign",
-    title: "VELOCITY — DIGITAL PRODUCT CAMPAIGN",
+    title: "MOTION - DIGITAL PRODUCT CAMPAIGN",
     subtitle: "Video Editing • Motion Graphics • 2D Animation • Commercial Content",
     category: "Video Editing • Motion Graphics • 2D Animation • Commercial Content",
     year: "2024",
@@ -134,7 +134,7 @@ export const portfolioProjects: PortfolioProject[] = [
     tools: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "React Native", "Expo", "FlutterFlow", "Figma"],
     images: ["Desktop website", "Tablet view", "Mobile application", "Component system", "Interaction demo"],
     featured: true,
-    nextProject: "rapex-marketplace-ecosystem",
+    nextProject: "react-native-digital-ecommerce",
   },
 ];
 

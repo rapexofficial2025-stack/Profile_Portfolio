@@ -8,6 +8,7 @@ import { BusinessSiteMock } from "./mocks/BusinessSiteMock";
 import { ComponentLibraryMock } from "./mocks/ComponentLibraryMock";
 import { InvitationMock } from "./mocks/InvitationMock";
 import { SplashMock } from "./mocks/SplashMock";
+import { FrostTwinWms } from "./frost/FrostTwinWms";
 
 const mocks: Record<ShowcaseMock, () => React.ReactElement> = {
   admin: AdminSaasMock,
@@ -15,6 +16,7 @@ const mocks: Record<ShowcaseMock, () => React.ReactElement> = {
   invitation: InvitationMock,
   library: ComponentLibraryMock,
   splash: SplashMock,
+  frost: FrostTwinWms,
 };
 
 /** Live front-end mockup in a browser frame (Web) or a phone frame (Mobile). Mocks adapt via container queries. */
@@ -31,9 +33,9 @@ export function DevicePreview({ mock, url, defaultDevice }: { mock: ShowcaseMock
       </div>
     </div>
     {device === "web"
-      ? <div className="showcase-browser mx-auto max-w-5xl">
+      ? <div className={`showcase-browser mx-auto ${mock === "frost" ? "max-w-344" : "max-w-5xl"}`}>
         <div className="showcase-browser-bar"><span /><span /><span /><p>{url}</p></div>
-        <div className="showcase-screen h-[36rem] overflow-y-auto">{/* key remounts the mock so each device starts fresh */}<div key="web" className="@container min-h-full"><Mock /></div></div>
+        <div className={`showcase-screen overflow-y-auto ${mock === "frost" ? "h-208" : "h-144"}`}>{/* key remounts the mock so each device starts fresh */}<div key="web" className="@container min-h-full"><Mock /></div></div>
       </div>
       : <div className="showcase-phone mx-auto">
         <div className="showcase-phone-notch" />

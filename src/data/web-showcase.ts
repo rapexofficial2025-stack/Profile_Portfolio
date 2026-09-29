@@ -1,4 +1,4 @@
-export type ShowcaseMock = "admin" | "business" | "invitation" | "library" | "splash";
+export type ShowcaseMock = "admin" | "business" | "invitation" | "library" | "splash" | "frost";
 
 export type WebShowcase = {
   slug: string;
@@ -13,6 +13,9 @@ export type WebShowcase = {
   rawFiles: string[];
   beforeAfter: { label: string; before: string; after: string }[];
   videos?: { src: string; label: string }[];
+  challenge?: string;
+  solution?: string;
+  keyFeatures?: string[];
 };
 
 export const webShowcases: WebShowcase[] = [
@@ -88,6 +91,23 @@ export const webShowcases: WebShowcase[] = [
     videos: [
       { src: "/videos/Splash Screen.mp4", label: "Splash screen" },
       { src: "/videos/welcome-screen-ui.mp4", label: "Welcome screen UI" },
+    ],
+  },
+  {
+    slug: "frost-twin-wms",
+    mock: "frost",
+    defaultDevice: "web",
+    url: "frost-twin.local/operations",
+    summary: "FROST TWIN WMS is an interactive warehouse digital twin concept that connects fast daily operations, precise pallet locations and a lightweight spatial view in one desktop-first interface.",
+    challenge: "Warehouse teams need to understand room capacity, pallet condition and exact rack locations without translating between disconnected spreadsheets, printed maps and complex 3D tools.",
+    solution: "A front-end prototype that begins with an operational overview, opens a precise 2D rack board for daily work, and provides a separate procedural 3D twin for spatial inspection.",
+    keyFeatures: ["10-room operations overview", "840-cell Room 1 rack board", "Procedural cold and dry 3D twins", "Mock QR center", "Withdrawal and relocation simulations"],
+    stack: ["Next.js", "React", "TypeScript", "React Three Fiber", "Drei", "Mock data"],
+    interactions: ["Select any room to open its 2D rack board", "Search and select pallet locations", "Open the procedural 3D twin", "Generate or scan a mock QR", "Simulate withdrawal and relocation"],
+    rawFiles: ["Warehouse information architecture", "Rack location convention", "Operations wireframe", "Cold storage palette", "Digital twin scene map", "Pallet status matrix", "QR flow", "Interaction notes"],
+    beforeAfter: [
+      { label: "Room operations", before: "Spreadsheet and printed rack map", after: "Searchable 2D operations board" },
+      { label: "Spatial inspection", before: "Location code only", after: "Linked procedural 3D twin" },
     ],
   },
 ];
