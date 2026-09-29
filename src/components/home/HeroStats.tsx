@@ -3,9 +3,11 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { ArrowUpRight, FolderKanban, History, Infinity as InfinityIcon } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { identityStats, type IdentityStatId } from "@/data/identity-stats";
+import { asset } from "@/lib/asset";
 import { ExperienceModalContent, ProgrexModalContent, RapexModalContent } from "./IdentityModals";
 import { StatModal } from "./StatModal";
 
@@ -13,11 +15,15 @@ const subscribeNoop = () => () => {};
 const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
 
 function StatIcon({ id }: { id: IdentityStatId }) {
-  if (id === "experience") return <History size={20} strokeWidth={1.7} />;
-  if (id === "ideas") return <InfinityIcon size={22} strokeWidth={1.7} />;
-  if (id === "projects") return <FolderKanban size={19} strokeWidth={1.7} />;
-  // no RAPEX / PROGREX logo files in /public yet: monogram marks stand in for them
-  return <span className="stat-monogram">{id === "rapex" ? "R" : "P"}</span>;
+  const sources: Record<IdentityStatId, string> = {
+    experience: "/images/profile/GIF Icon/experience.gif",
+    rapex: "/images/branding/rapex-logo.png",
+    progrex: "/images/branding/progrex-logo.png",
+    projects: "/images/profile/GIF Icon/completed-project.gif",
+    ideas: "/images/profile/GIF Icon/idea.gif",
+  };
+
+  return <Image src={asset(sources[id])} alt="" width={64} height={64} unoptimized className={`identity-stat-art is-${id}`} />;
 }
 
 /** Stats bar as a mini navigation: 13+ / RAPEX / PROGREX open detail modals, 60+ goes to the Work page, ∞ glides down to Explore My Work. */

@@ -1576,10 +1576,14 @@ body:has(.theme-light) {
 /* inner highlight that follows the cursor */
 .identity-stat::before { content: ""; position: absolute; z-index: -1; inset: 0; border-radius: inherit; background: radial-gradient(circle at var(--mx, 50%) var(--my, 0%), var(--stat-highlight), transparent 58%); opacity: 0; transition: opacity 300ms ease; pointer-events: none; }
 .identity-stat-icon {
-  display: flex; width: 2.4rem; height: 2.4rem; align-items: center; justify-content: center; margin-bottom: 0.55rem; border-radius: 0.8rem;
+  display: flex; width: 2.4rem; height: 2.4rem; flex: 0 0 2.4rem; align-items: center; justify-content: center; margin-bottom: 0.55rem; overflow: hidden; border-radius: 0.8rem;
   color: var(--stat-icon); background: var(--stat-icon-bg); box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.12), 0 4px 10px -4px rgba(0, 0, 0, 0.3);
   transition: transform 300ms cubic-bezier(.34, 1.56, .64, 1), color 600ms ease, background-color 600ms ease;
 }
+.identity-stat-art { display: block; width: 1.75rem; height: 1.75rem; object-fit: contain; object-position: center; }
+.identity-stat-art.is-rapex { transform: scale(1.45); }
+.identity-stat-art.is-progrex { transform: scale(1.18); }
+.identity-stat-art.is-experience, .identity-stat-art.is-projects, .identity-stat-art.is-ideas { width: 1.9rem; height: 1.9rem; }
 .identity-stat-arrow { position: absolute; top: 0.95rem; right: 0.95rem; color: var(--stat-icon); opacity: 0; transform: translate(-4px, 4px); transition: opacity 220ms ease, transform 260ms ease, color 600ms ease; }
 .identity-stat-main { font-size: 2.05rem; font-weight: 650; line-height: 1; letter-spacing: -0.03em; color: var(--stat-main); transition: color 600ms ease; }
 .identity-stat-label { margin-top: 0.4rem; font-size: 0.72rem; font-weight: 600; line-height: 1.35; letter-spacing: 0.13em; text-transform: uppercase; color: var(--stat-label); transition: color 600ms ease; }
@@ -1640,10 +1644,15 @@ body:has(.theme-light) {
 .stat-list li::before { content: ""; position: absolute; left: 0; top: 0.72rem; width: 0.35rem; height: 0.35rem; border-radius: 50%; background: var(--m-accent); }
 .stat-badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.75rem; border-radius: 999px; font-size: 0.58rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--m-accent); background: var(--m-chip-bg); border: 1px solid var(--m-chip-border); }
 .stat-live-dot { width: 0.45rem; height: 0.45rem; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e; animation: selected-nav-blink 1.6s ease-in-out infinite; }
-.stat-brand-mark { display: flex; width: 2.5rem; height: 2.5rem; align-items: center; justify-content: center; border-radius: 0.8rem; font-size: 1.15rem; font-weight: 900; color: #fff; box-shadow: 0 8px 18px -6px rgba(99, 102, 241, 0.7), inset 1px 1px 0 rgba(255, 255, 255, 0.35); }
-.stat-brand-mark.is-rapex { background: linear-gradient(135deg, #8b5cf6, #4f46e5); }
-.stat-brand-mark.is-progrex { background: linear-gradient(135deg, #22d3ee, #3b82f6); }
-.stat-brand-name { font-size: 1.1rem; font-weight: 900; letter-spacing: 0.22em; color: var(--m-text); }
+.stat-brand-identity { display: inline-flex; min-width: 0; height: 3.25rem; align-items: center; gap: 0.65rem; padding: 0.28rem 0.75rem 0.28rem 0.35rem; overflow: hidden; border: 1px solid var(--m-line); border-radius: 1rem; background: var(--m-chip-bg); box-shadow: inset 1px 1px 0 rgba(255,255,255,0.12), 0 8px 22px -12px rgba(99,102,241,0.7); }
+.stat-brand-logo-frame { display: flex; width: 2.65rem; height: 2.65rem; flex: 0 0 2.65rem; align-items: center; justify-content: center; overflow: hidden; border-radius: 0.75rem; background: rgba(4,7,16,0.2); }
+.stat-brand-logo { width: 2.05rem; height: 2.05rem; object-fit: contain; object-position: center; }
+.stat-brand-identity.is-rapex .stat-brand-logo { transform: scale(1.42); }
+.stat-brand-identity.is-progrex .stat-brand-logo { transform: scale(1.14); }
+.stat-brand-wordmark-frame { display: flex; width: 9.5rem; height: 2.35rem; align-items: center; justify-content: flex-start; overflow: hidden; }
+.stat-brand-wordmark { width: 100%; height: 100%; object-fit: contain; object-position: left center; }
+.stat-brand-identity.is-progrex .stat-brand-wordmark-frame { width: 8.75rem; }
+.stat-brand-identity.is-progrex .stat-brand-wordmark { transform: scale(1.08); transform-origin: left center; }
 .stat-demo-note { display: flex; gap: 0.7rem; margin-top: 1.4rem; padding: 0.85rem 1rem; border-radius: 1rem; font-size: 0.78rem; line-height: 1.5; color: #fcd98a; background: rgba(250, 204, 21, 0.06); border: 1px dashed rgba(250, 204, 21, 0.3); }
 .theme-light .stat-demo-note { color: #7c5a10; background: rgba(255, 249, 225, 0.8); border-color: rgba(202, 150, 30, 0.35); }
 .stat-demo-note-title { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
@@ -1685,7 +1694,9 @@ body:has(.theme-light) {
 .identity-stats-grid, .theme-light .hero-stats > .identity-stats-grid { gap: 0 !important; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 0.5rem !important; }
 @container (min-width: 46rem) { .identity-stats-grid, .theme-light .hero-stats > .identity-stats-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
 .identity-stat { padding: 0.7rem 0.9rem 0.8rem; border-radius: 0.9rem; }
-.identity-stat-icon { width: 2rem; height: 2rem; margin-bottom: 0.45rem; border-radius: 0.65rem; }
+.identity-stat-icon { width: 2rem; height: 2rem; flex-basis: 2rem; margin-bottom: 0.45rem; border-radius: 0.65rem; }
+.identity-stat-art { width: 1.55rem; height: 1.55rem; }
+.identity-stat-art.is-experience, .identity-stat-art.is-projects, .identity-stat-art.is-ideas { width: 1.72rem; height: 1.72rem; }
 .identity-stat-main { font-size: 1.9rem; }
 /* dividers only: between items on one line */
 @container (min-width: 46rem) { .identity-stat + .identity-stat::after { left: 0; top: 12%; bottom: 12%; } }

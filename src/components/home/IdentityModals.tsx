@@ -1,9 +1,23 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ArrowUpRight, ShieldAlert } from "lucide-react";
 import { experienceTimeline, experienceTracks, progrexDetails, rapexDetails } from "@/data/identity-stats";
+import { asset } from "@/lib/asset";
 
 const Chips = ({ items }: { items: string[] }) => <div className="flex flex-wrap gap-2">{items.map((item) => <span key={item} className="stat-chip">{item}</span>)}</div>;
 const Eyebrow = ({ children }: { children: React.ReactNode }) => <p className="stat-modal-eyebrow">{children}</p>;
+
+function BrandIdentity({ brand }: { brand: "rapex" | "progrex" }) {
+  const isRapex = brand === "rapex";
+  const name = isRapex ? "RAPEX Technologies" : "PROGREX";
+  const icon = isRapex ? "/images/branding/rapex-logo.png" : "/images/branding/progrex-logo.png";
+  const wordmark = isRapex ? "/images/branding/rapex-name-logo.png" : "/images/branding/progrex-name-logo.png";
+
+  return <div className={`stat-brand-identity is-${brand}`} aria-label={name}>
+    <span className="stat-brand-logo-frame" aria-hidden="true"><Image src={asset(icon)} alt="" width={96} height={96} className="stat-brand-logo" /></span>
+    <span className="stat-brand-wordmark-frame" aria-hidden="true"><Image src={asset(wordmark)} alt="" width={360} height={120} className="stat-brand-wordmark" /></span>
+  </div>;
+}
 
 export function ExperienceModalContent() {
   return <>
@@ -19,7 +33,7 @@ export function ExperienceModalContent() {
 export function RapexModalContent() {
   const hasDemo = rapexDetails.customerDemoUrl.length > 0;
   return <>
-    <div className="flex flex-wrap items-center gap-3"><span className="stat-brand-mark is-rapex">R</span><p className="stat-brand-name">RAPEX Technologies</p><span className="stat-badge">Founder project</span></div>
+    <div className="flex flex-wrap items-center gap-3"><BrandIdentity brand="rapex" /><span className="stat-badge">Founder project</span></div>
     <h2 id="stat-modal-title" className="stat-modal-title mt-4">{rapexDetails.title}</h2>
     <p className="stat-modal-lead">{rapexDetails.description}</p>
     <div className="mt-5 grid gap-5 sm:grid-cols-[1fr_1.2fr]">
@@ -39,7 +53,7 @@ export function RapexModalContent() {
 
 export function ProgrexModalContent() {
   return <>
-    <div className="flex flex-wrap items-center gap-3"><span className="stat-brand-mark is-progrex">P</span><p className="stat-brand-name">PROGREX</p><span className="stat-badge is-live"><span className="stat-live-dot" />Live technology business</span></div>
+    <div className="flex flex-wrap items-center gap-3"><BrandIdentity brand="progrex" /><span className="stat-badge is-live"><span className="stat-live-dot" />Live technology business</span></div>
     <h2 id="stat-modal-title" className="stat-modal-title mt-4">{progrexDetails.title}</h2>
     <p className="stat-modal-tagline">{progrexDetails.subtitle}</p>
     <p className="stat-modal-lead">{progrexDetails.description}</p>
