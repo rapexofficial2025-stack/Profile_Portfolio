@@ -11,7 +11,7 @@ import { AmbientBubbles } from "./AmbientBubbles";
 const socialIconMap: Record<SocialIconName, LucideIcon> = { network: Network, code: Code2, video: Play, camera: Camera };
 
 function Brand() {
-  return <div className="space-y-2.5"><div className="flex items-center gap-3"><div className="flex size-9 items-center justify-center rounded-xl border border-white/15 bg-[linear-gradient(145deg,rgba(255,255,255,0.13),rgba(255,255,255,0.025))] text-sm font-semibold tracking-tight text-white shadow-[inset_1px_1px_0_rgba(255,255,255,0.14),inset_-2px_-2px_5px_rgba(0,0,0,0.35),0_10px_30px_rgba(0,0,0,0.25)]">{profile.monogram}</div><span className="text-sm font-semibold tracking-[0.16em] text-white">{profile.sidebarName}</span></div><p className="whitespace-nowrap pl-12 text-[9px] font-medium tracking-[0.18em] text-[#6B7280]">{profile.brandPhrase}</p></div>;
+  return <div className="space-y-2.5"><div className="flex items-center gap-3"><div className="flex size-9 items-center justify-center rounded-xl border border-white/15 bg-[linear-gradient(145deg,rgba(255,255,255,0.13),rgba(255,255,255,0.025))] text-sm font-semibold tracking-tight text-white shadow-[inset_1px_1px_0_rgba(255,255,255,0.14),inset_-2px_-2px_5px_rgba(0,0,0,0.35),0_10px_30px_rgba(0,0,0,0.25)]">{profile.monogram}</div><span className="text-sm font-semibold tracking-[0.16em] text-white">{profile.sidebarName}</span></div><p className="whitespace-nowrap pl-12 text-[8px] font-medium tracking-[0.08em] text-[#6B7280]">{profile.brandPhrase}</p></div>;
 }
 
 function DigitalClock({ theme, onToggleTheme }: { theme: "dark" | "light"; onToggleTheme: () => void }) {
