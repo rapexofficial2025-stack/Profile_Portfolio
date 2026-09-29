@@ -26,7 +26,7 @@ export const profile = {
   stats: [
     { label: "Years Experience", value: "5+", verified: true },
     { label: "Founder / Product Development", value: "RAPEX", verified: true },
-    { label: "Projects Completed", value: "20+", verified: true },
+    { label: "Projects Completed", value: "68+", verified: true },
     { label: "Stories to Create", value: "∞", verified: true },
   ] satisfies ProfileStat[],
   location: "KAWIT, CAVITE, PHILIPPINES",

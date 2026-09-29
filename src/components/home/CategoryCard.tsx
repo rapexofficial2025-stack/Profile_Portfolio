@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight, AudioLines, Brush, Camera, Clapperboard, Code2, PanelsTopLeft, Shapes, Smartphone } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import type { PortfolioCategory } from "@/data/categories";
+import { asset } from "@/lib/asset";
 
 const iconMap = { product: PanelsTopLeft, graphic: Brush, motion: Clapperboard, audio: AudioLines, visual: Shapes, web: Code2, mobile: Smartphone, photo: Camera };
 
@@ -32,7 +33,7 @@ export function CategoryCard({ category, index }: { category: PortfolioCategory;
       <span className={`pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r ${accent.line} via-white/10 to-transparent opacity-45 transition-opacity duration-300 group-hover:opacity-80`} aria-hidden="true" />
       {/* art spills over the top and sides of the card and runs down behind the title */}
       <div className="work-card-pop pointer-events-none absolute inset-x-[-4%] top-0 z-[1] aspect-[127/100] -translate-y-[17.6%]" aria-hidden="true">
-        <Image src={category.image} alt="" fill sizes="(min-width: 1024px) 26vw, (min-width: 640px) 52vw, 100vw" className="object-contain object-bottom transition-transform duration-500 ease-out group-hover/card:-translate-y-1 group-hover/card:scale-[1.02]" />
+        <Image src={asset(category.image)} alt="" fill sizes="(min-width: 1024px) 26vw, (min-width: 640px) 52vw, 100vw" className="object-contain object-bottom transition-transform duration-500 ease-out group-hover/card:-translate-y-1 group-hover/card:scale-[1.02]" />
       </div>
       <span className="work-card-badge pointer-events-none absolute bottom-3.5 right-3.5 z-[3]" aria-hidden="true"><Icon size={26} strokeWidth={1.8} /></span>
       <div className="work-card-art -mx-4 -mt-4 aspect-[2/1]" aria-hidden="true" />

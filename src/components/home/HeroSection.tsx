@@ -8,6 +8,7 @@ import { profile } from "@/data/profile";
 import { AvailabilityBadge } from "./AvailabilityBadge";
 import { HeroVisual } from "./HeroVisual";
 import { PullNote } from "./PullNote";
+import { asset } from "@/lib/asset";
 import { LiquidGlassButton } from "../LiquidGlassButton";
 
 export function HeroSection() {
@@ -27,7 +28,7 @@ export function HeroSection() {
   })}</span>;
   return (
     <section className="hero-section light-hero relative isolate z-[2]">
-      <div className="hero-backdrop pointer-events-none absolute -inset-x-6 -top-9 bottom-0 z-0 overflow-hidden sm:-inset-x-10 lg:-inset-x-14 lg:-top-12 xl:-inset-x-20" aria-hidden="true"><Image src="/images/hero/honeycomb-cover.png" alt="" fill priority sizes="100vw" className="object-cover object-center opacity-80" /><div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,10,15,0.84)_0%,rgba(7,10,15,0.56)_42%,rgba(7,10,15,0.18)_72%,rgba(7,10,15,0.42)_100%),linear-gradient(180deg,rgba(7,10,15,0.1)_0%,rgba(7,10,15,0.28)_52%,#070A0F_100%)]" /></div>
+      <div className="hero-backdrop pointer-events-none absolute -inset-x-6 -top-9 bottom-0 z-0 overflow-hidden sm:-inset-x-10 lg:-inset-x-14 lg:-top-12 xl:-inset-x-20" aria-hidden="true"><Image src={asset("/images/hero/honeycomb-cover.png")} alt="" fill priority sizes="100vw" className="object-cover object-center opacity-80" /><div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,10,15,0.84)_0%,rgba(7,10,15,0.56)_42%,rgba(7,10,15,0.18)_72%,rgba(7,10,15,0.42)_100%),linear-gradient(180deg,rgba(7,10,15,0.1)_0%,rgba(7,10,15,0.28)_52%,#070A0F_100%)]" /></div>
       <div className="mb-7 xl:hidden"><AvailabilityBadge /></div>
       <div className="relative z-10 grid items-center gap-10 xl:grid-cols-[minmax(0,1.02fr)_minmax(25rem,0.98fr)] xl:gap-8">
         <div className={`hero-copy relative z-10 max-w-2xl ${isCardPressed ? "is-pressed" : ""}`} onClick={(event) => { if (!(event.target as HTMLElement).closest("a, button")) setIsCardPressed((pressed) => !pressed); }}>

@@ -3,8 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Heart, Pause, Play, Repeat, RotateCcw, RotateCw } from "lucide-react";
 import { pageZoom } from "@/lib/zoom";
+import { asset } from "@/lib/asset";
 
-const TRACK = "/audio/rapex-theme_IK7pcIES.mp3.mp3";
+const TRACK = asset("/audio/rapex-theme_IK7pcIES.mp3.mp3");
+const LOCAL_HEART_KEY = "portfolio-heart-until";
+const HEART_COOLDOWN = 5 * 60 * 1000;
 const CLIENT_ID_KEY = "portfolio-heart-cid";
 const KNOB_SWEEP = 270;
 
@@ -162,6 +165,8 @@ function VolumeKnob({ value, onChange }: { value: number; onChange: (value: numb
 
 function HeartButton() {
   const [count, setCount] = useState<number | null>(null);
+  // no /api/hearts (static hosting): hearts still work per browser, the shared count is hidden
+  const [offline, setOffline] = useState(false);
   const [cooldownUntil, setCooldownUntil] = useState(0);
   const [now, setNow] = useState(0);
   const clientId = useRef("");
@@ -171,9 +176,13 @@ function HeartButton() {
       clientId.current = localStorage.getItem(CLIENT_ID_KEY) ?? "";
       if (!clientId.current) { clientId.current = crypto.randomUUID(); localStorage.setItem(CLIENT_ID_KEY, clientId.current); }
     } catch { clientId.current = crypto.randomUUID(); }
-    fetch(`/api/hearts?cid=${clientId.current}`).then((response) => response.json()).then((state) => {
+    fetch(asset(`/api/hearts?cid=${clientId.current}`)).then((response) => { if (!response.ok) throw new Error("no heart api"); return response.json(); }).then((state) => {
       setCount(state.count); setCooldownUntil(Date.now() + state.cooldownMs); setNow(Date.now());
-    }).catch(() => undefined);
+    }).catch(() => {
+      setOffline(true);
+      try { setCooldownUntil(Number(localStorage.getItem(LOCAL_HEART_KEY)) || 0); } catch { /* storage unavailable */ }
+      setNow(Date.now());
+    });
   }, []);
 
   const remaining = Math.max(0, cooldownUntil - now);
@@ -185,9 +194,11 @@ function HeartButton() {
 
   const heart = async () => {
     if (remaining > 0 || !clientId.current) return;
-    setCount((value) => (value ?? 0) + 1); setCooldownUntil(Date.now() + 5 * 60 * 1000); setNow(Date.now());
+    setCooldownUntil(Date.now() + HEART_COOLDOWN); setNow(Date.now());
+    if (offline) { try { localStorage.setItem(LOCAL_HEART_KEY, String(Date.now() + HEART_COOLDOWN)); } catch { /* storage unavailable */ } return; }
+    setCount((value) => (value ?? 0) + 1);
     try {
-      const state = await (await fetch("/api/hearts", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ cid: clientId.current }) })).json();
+      const state = await (await fetch(asset("/api/hearts"), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ cid: clientId.current }) })).json();
       setCount(state.count); setCooldownUntil(Date.now() + state.cooldownMs); setNow(Date.now());
     } catch { /* keep the optimistic count; it re-syncs on the next visit */ }
   };
@@ -198,6 +209,6 @@ function HeartButton() {
     <button type="button" onClick={heart} aria-label={label} title={label} aria-disabled={cooling} className={`media-deck-heart ${cooling ? "is-on" : ""}`} style={{ "--cooldown": `${(remaining / (5 * 60 * 1000)) * 360}deg` } as React.CSSProperties}>
       <Heart size={17} fill={cooling ? "currentColor" : "none"} strokeWidth={2} />
     </button>
-    <span className="text-[0.55rem] font-semibold tabular-nums tracking-[0.06em] text-current/70">{count ?? "–"}</span>
+    {!offline && <span className="text-[0.55rem] font-semibold tabular-nums tracking-[0.06em] text-current/70">{count ?? "–"}</span>}
   </div>;
 }

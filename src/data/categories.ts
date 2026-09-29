@@ -4,6 +4,8 @@ export type PortfolioSample = {
   title: string;
   type: string;
   description: string;
+  /** set when the sample has its own detail screen at /work/category/[category]/[slug] */
+  slug?: string;
 };
 
 export type PortfolioCategory = {
@@ -100,11 +102,11 @@ export const portfolioCategories: PortfolioCategory[] = [
     icon: "web",
     image: "/images/work/work-web-development.png",
     samples: [
-      { title: "Portfolio Platform", type: "Next.js Site", description: "Responsive personal site with motion, theming, and case-study pages." },
-      { title: "Business Website", type: "Landing Page", description: "Fast, mobile-first marketing site with clear calls to action." },
-      { title: "Admin Dashboard", type: "Web App", description: "Data tables, filters, and role-based views for daily operations." },
-      { title: "Django Back Office", type: "Back End", description: "Models, forms, and workflows for merchant and order management." },
-      { title: "Component Library", type: "UI Kit", description: "Reusable front-end components built from a Figma design system." },
+      { slug: "rapex-admin-saas", title: "RAPEX Admin SaaS", type: "Platform", description: "Operations dashboard for the RAPEX marketplace: orders, merchants, riders and live KPIs." },
+      { slug: "business-website", title: "Business Website", type: "Marketing Site", description: "Responsive company site with services, pricing, testimonials and a validated contact form." },
+      { slug: "invitation-paper-engine", title: "Invitation Card Paper Engine", type: "Web App", description: "Design an invitation on real-looking paper: pick a template, type the details, open the card." },
+      { slug: "component-library", title: "Component Library", type: "UI Kit", description: "Reusable buttons, inputs, toggles, tabs and toasts with states, variants and copyable usage." },
+      { slug: "react-native-welcome", title: "React Native Welcome & Splash", type: "Mobile UI/UX", description: "Animated splash, onboarding carousel and sign-in flow designed for a React Native app." },
     ],
   },
   {

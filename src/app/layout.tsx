@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { PortfolioShell } from "@/components/PortfolioShell";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Irvin Palacio — Portfolio",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className="h-full antialiased" style={{ "--lightmode-bg": `url("${asset("/images/profile/lightmode-bg.png")}")` } as React.CSSProperties}>
       <body className="min-h-full"><PortfolioShell>{children}</PortfolioShell></body>
     </html>
   );

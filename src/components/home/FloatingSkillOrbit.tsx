@@ -5,14 +5,15 @@ import { useCallback, useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { AudioLines, Brush, Clapperboard, PanelsTopLeft, type LucideIcon } from "lucide-react";
 import { profile } from "@/data/profile";
+import { asset } from "@/lib/asset";
 import { SkillDetailOverlay, type SkillDetailTarget } from "./SkillDetailOverlay";
 
 type Tone = "blue" | "purple" | "pink" | "orange";
 type OrbitItem = (typeof profile.collageItems)[number];
 
 const iconMap: Record<string, LucideIcon> = { DESIGN: PanelsTopLeft, DEVELOP: Clapperboard, CREATE: Brush, PRODUCE: AudioLines };
-const artByLabel: Record<OrbitItem["label"], string> = { DESIGN: "/images/hero/card-design.png", DEVELOP: "/images/hero/card-web.png", CREATE: "/images/hero/card-%20create.png", PRODUCE: "/images/hero/card-music.png" };
-const darkArtByLabel: Record<OrbitItem["label"], string> = { DESIGN: "/images/hero/card-design-dark.png", DEVELOP: "/images/hero/card-web-dark.png", CREATE: "/images/hero/card-%20create-dark.png", PRODUCE: "/images/hero/card-music-dark.png" };
+const artByLabel: Record<OrbitItem["label"], string> = { DESIGN: asset("/images/hero/card-design.png"), DEVELOP: asset("/images/hero/card-web.png"), CREATE: asset("/images/hero/card-%20create.png"), PRODUCE: asset("/images/hero/card-music.png") };
+const darkArtByLabel: Record<OrbitItem["label"], string> = { DESIGN: asset("/images/hero/card-design-dark.png"), DEVELOP: asset("/images/hero/card-web-dark.png"), CREATE: asset("/images/hero/card-%20create-dark.png"), PRODUCE: asset("/images/hero/card-music-dark.png") };
 // every card glows purple-blue: glow only, no colored border (no white, no per-topic colors)
 const accents: Record<Tone, string> = {
   blue: "border-transparent text-indigo-100 shadow-[0_0_22px_rgba(99,102,241,0.3),0_20px_40px_-12px_rgba(79,70,229,0.35)]",

@@ -2,7 +2,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-react";
 import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
-import { getProjectBySlug } from "@/data/projects";
+import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+
+export const dynamicParams = false;
+export function generateStaticParams() {
+  return portfolioProjects.map((project) => ({ slug: project.slug }));
+}
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

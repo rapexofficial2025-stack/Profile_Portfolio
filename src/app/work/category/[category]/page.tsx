@@ -4,6 +4,11 @@ import { notFound } from "next/navigation";
 import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
 import { portfolioCategories } from "@/data/categories";
 
+export const dynamicParams = false;
+export function generateStaticParams() {
+  return portfolioCategories.map((category) => ({ category: category.id }));
+}
+
 export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
   const { category: categoryId } = await params;
   const category = portfolioCategories.find((item) => item.id === categoryId);
@@ -36,14 +41,16 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                   <button type="button" aria-label={`Edit ${sample.title}`} className="inline-flex size-8 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] text-white/60 transition hover:border-white/25 hover:text-white"><PencilLine size={14} /></button>
                 </div>
               </div>
-              <ImagePlaceholder title={sample.title} subtitle={sample.type} />
+              {sample.slug
+                ? <Link href={`${category.href}/${sample.slug}`} aria-label={`See ${sample.title}`} className="block transition duration-300 hover:scale-[1.015]"><ImagePlaceholder title={sample.title} subtitle="Click to open the live mockup" /></Link>
+                : <ImagePlaceholder title={sample.title} subtitle={sample.type} />}
               <div className="mt-5">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-violet-200/80">{sample.type}</p>
                 <h2 className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-white">{sample.title}</h2>
                 <p className="mt-3 text-sm leading-7 text-[#A7AFBF]">{sample.description}</p>
-                <button type="button" className="mt-5 inline-flex items-center gap-2 rounded-full border border-violet-300/25 bg-violet-500/10 px-4 py-2 text-[10px] font-semibold tracking-[0.18em] text-violet-100 transition hover:border-violet-200/60 hover:bg-violet-500/15">
-                  EDIT PORTFOLIO <ArrowUpRight size={14} />
-                </button>
+                {sample.slug
+                  ? <Link href={`${category.href}/${sample.slug}`} className="mt-5 inline-flex items-center gap-2 rounded-full border border-violet-300/25 bg-violet-500/10 px-4 py-2 text-[10px] font-semibold tracking-[0.18em] text-violet-100 transition hover:border-violet-200/60 hover:bg-violet-500/15">SEE PORTFOLIO <ArrowUpRight size={14} /></Link>
+                  : <button type="button" className="mt-5 inline-flex items-center gap-2 rounded-full border border-violet-300/25 bg-violet-500/10 px-4 py-2 text-[10px] font-semibold tracking-[0.18em] text-violet-100 transition hover:border-violet-200/60 hover:bg-violet-500/15">EDIT PORTFOLIO <ArrowUpRight size={14} /></button>}
               </div>
             </article>
           ))}
