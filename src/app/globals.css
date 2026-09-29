@@ -1141,6 +1141,9 @@ body {
 /* open the site at 75% scale, like browser zoom at 75% */
 html { zoom: 0.75; }
 
+/* the header card (name + profile photo) renders visibly bigger than the rest of the page */
+.hero-section { zoom: 1.18; }
+
 /* the sidebar/nav is exempt: its own zoom cancels out the page's, so it renders at true 100% */
 .sidebar-scrollbar { zoom: 1.333333; }
 

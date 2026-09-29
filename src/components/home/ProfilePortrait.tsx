@@ -15,7 +15,7 @@ export function ProfilePortrait() {
       initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.97, y: 18 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
-      className="relative mx-auto aspect-[4/5] w-full max-w-[31rem] lg:max-w-[32rem]"
+      className="relative mx-auto aspect-[4/5] w-full max-w-[36rem] lg:max-w-[38rem]"
     >
       <div className="portrait-glow pointer-events-none absolute inset-[8%_5%_8%] rounded-full bg-[radial-gradient(circle_at_50%_38%,rgba(125,150,255,0.13),rgba(124,58,237,0.075)_42%,transparent_72%)] blur-3xl" aria-hidden="true" />
       <div className="absolute inset-0">
