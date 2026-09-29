@@ -15,18 +15,22 @@ function Brand() {
 }
 
 function DigitalClock({ theme, onToggleTheme }: { theme: "dark" | "light"; onToggleTheme: () => void }) {
-  const [now, setNow] = useState(() => new Date());
+  // null until mounted: the server (and the static export) can't know the visitor's time, so both render the same
+  // placeholder and the real time appears right after hydration; no server/client mismatch
+  const [now, setNow] = useState<Date | null>(null);
 
   useEffect(() => {
-    const interval = window.setInterval(() => setNow(new Date()), 1000);
-    return () => window.clearInterval(interval);
+    const tick = () => setNow(new Date());
+    const first = window.setTimeout(tick, 0);
+    const interval = window.setInterval(tick, 1000);
+    return () => { window.clearTimeout(first); window.clearInterval(interval); };
   }, []);
 
-  const time = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
-  const day = now.toLocaleDateString([], { weekday: "long" });
-  const date = now.toLocaleDateString([], { month: "short", day: "2-digit", year: "numeric" });
+  const time = now ? now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }) : "--:--:--";
+  const day = now ? now.toLocaleDateString([], { weekday: "long" }) : " ";
+  const date = now ? now.toLocaleDateString([], { month: "short", day: "2-digit", year: "numeric" }) : " ";
 
-  return <section className="digital-clock" aria-label={`Current time: ${time}, ${day}, ${date}`}><div className="digital-clock-info"><p className="digital-clock-kicker">LOCAL TIME</p><time className="digital-clock-time" dateTime={now.toISOString()}>{time}</time><div className="digital-clock-date"><span>{day}</span><span>{date}</span></div></div><div className="theme-switch-wrap"><button type="button" role="switch" aria-checked={theme === "light"} aria-label={theme === "dark" ? "Enable light neumorphic mode" : "Enable dark glass mode"} onClick={onToggleTheme} className={`theme-boolean-switch ${theme === "light" ? "is-light" : "is-dark"}`} title={theme === "dark" ? "Switch to day mode" : "Switch to night mode"}><span className="theme-switch-sky" aria-hidden="true"><span className="theme-cloud theme-cloud-one" /><span className="theme-cloud theme-cloud-two" /><span className="theme-star theme-star-one" /><span className="theme-star theme-star-two" /><span className="theme-star theme-star-three" /><span className="theme-sun" /></span><span className="theme-switch-orb" aria-hidden="true">{theme === "dark" ? <Moon size={16} /> : <Sun size={16} />}</span></button><span className="theme-switch-label">{theme === "light" ? "DAY MODE" : "NIGHT MODE"}</span></div></section>;
+  return <section className="digital-clock" aria-label={now ? `Current time: ${time}, ${day}, ${date}` : "Current time"}><div className="digital-clock-info"><p className="digital-clock-kicker">LOCAL TIME</p><time className="digital-clock-time" dateTime={now?.toISOString()}>{time}</time><div className="digital-clock-date"><span>{day}</span><span>{date}</span></div></div><div className="theme-switch-wrap"><button type="button" role="switch" aria-checked={theme === "light"} aria-label={theme === "dark" ? "Enable light neumorphic mode" : "Enable dark glass mode"} onClick={onToggleTheme} className={`theme-boolean-switch ${theme === "light" ? "is-light" : "is-dark"}`} title={theme === "dark" ? "Switch to day mode" : "Switch to night mode"}><span className="theme-switch-sky" aria-hidden="true"><span className="theme-cloud theme-cloud-one" /><span className="theme-cloud theme-cloud-two" /><span className="theme-star theme-star-one" /><span className="theme-star theme-star-two" /><span className="theme-star theme-star-three" /><span className="theme-sun" /></span><span className="theme-switch-orb" aria-hidden="true">{theme === "dark" ? <Moon size={16} /> : <Sun size={16} />}</span></button><span className="theme-switch-label">{theme === "light" ? "DAY MODE" : "NIGHT MODE"}</span></div></section>;
 }
 
 function SidebarContent({ onNavigate, theme, onToggleTheme }: { onNavigate?: () => void; theme: "dark" | "light"; onToggleTheme: () => void }) {
