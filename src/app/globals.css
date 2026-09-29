@@ -1138,8 +1138,7 @@ body {
 .note-pull-knot { position: absolute; z-index: 4; top: -3px; left: 50%; width: 9px; height: 9px; margin-left: -4.5px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #f3d58c, #8a5d20 70%); box-shadow: 0 1px 2px rgba(62, 39, 7, 0.4); pointer-events: none; }
 .note-pull-handle::before { content: ""; position: absolute; top: -7px; left: 50%; width: 10px; height: 10px; margin-left: -5px; border: 2px solid #9b6a22; border-bottom-color: transparent; border-radius: 50%; }
 
-/* open the site at 75% scale, like browser zoom at 75% */
-html { zoom: 0.75; }
+/* site renders at native 100% scale */
 
 /* page background lives on <body> so negative-z glows and depth-mixed bubbles can sit between page layers */
 body { background: #070A0F; }
