@@ -20,6 +20,7 @@ export function RackBoard({ pallets, selected, onSelect, onOpenTwin, initialSear
   const columns = wing === "left" ? Array.from({ length: 15 }, (_, i) => i + 1) : wing === "right" ? Array.from({ length: 15 }, (_, i) => i + 16) : Array.from({ length: 30 }, (_, i) => i + 1);
 
   return <div className="frost-board-screen">
+    <div className="frost-board-intro"><div><span>TWIN WMS · RACK DETAILS</span><h2>Room 1 location board</h2><p>Every cell is one pallet position. Select it to see the exact inventory record.</p></div><small>30 columns · 840 locations</small></div>
     <div className="frost-toolbar">
       <label className="frost-search"><Search size={14} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search product, batch, pallet tag or location" />{query && <button type="button" onClick={() => setQuery("")} aria-label="Clear search"><X size={13} /></button>}</label>
       <div className="frost-segment" aria-label="Rack wing filter">{(["full", "left", "right"] as WingFilter[]).map((option) => <button type="button" key={option} className={wing === option ? "is-active" : ""} onClick={() => setWing(option)}>{option === "full" ? "Full room" : `${option} wing`}</button>)}</div>
@@ -44,11 +45,12 @@ export function RackBoard({ pallets, selected, onSelect, onOpenTwin, initialSear
 
       <aside className="frost-detail" aria-live="polite">
         {selected ? <><div className="frost-detail__head"><div><span>SELECTED LOCATION</span><h4>{selected.id}</h4></div><span className={`frost-status ${palletTone(selected.status)}`}>{selected.fill}%</span></div>
+          <div className="frost-fill-meter" aria-label={`${selected.fill}% load`}><span style={{ width: `${selected.fill}%` }} /><small>{selected.fill}% load</small></div>
           <dl className="frost-detail-grid">
             <div><dt>Pallet Tag Number</dt><dd>{selected.tag}</dd></div><div><dt>Item Name</dt><dd>{selected.item}</dd></div><div className="is-wide"><dt>Description</dt><dd>{selected.description}</dd></div><div><dt>Customer</dt><dd>{selected.customer}</dd></div><div><dt>Batch Number</dt><dd>{selected.batch}</dd></div><div><dt>Production Date</dt><dd>{selected.productionDate}</dd></div><div><dt>Expiration Date</dt><dd>{selected.expirationDate}</dd></div><div><dt>Date Received</dt><dd>{selected.receivedDate}</dd></div><div><dt>Quantity</dt><dd>{selected.quantity} boxes</dd></div><div><dt>Weight</dt><dd>{selected.weight} kg</dd></div><div><dt>Status</dt><dd>{selected.status}</dd></div>
           </dl>
           <div className="frost-history"><h5>PULL-OUT REQUEST HISTORY</h5>{requestHistory.map((row) => <div key={row.id}><span>{row.id}<small>{row.date}</small></span><b>{row.quantity} boxes</b><em>{row.status}</em></div>)}</div>
-        </> : <div className="frost-detail__empty"><Box size={26} /><h4>Select a pallet</h4><p>Click one exact cell to inspect its location, inventory and pull-out history.</p></div>}
+        </> : <div className="frost-detail__empty"><Box size={26} /><h4>Select a pallet location</h4><p>Click one exact cell to inspect its rack, inventory and pull-out history.</p></div>}
       </aside>
     </div>
     <p className="frost-board-note">ROOM 1 · 30 DRIVE-IN COLUMNS · 7 LEVELS (A–G) · 4 DEPTHS · 8 METER CENTER DRIVEWAY</p>

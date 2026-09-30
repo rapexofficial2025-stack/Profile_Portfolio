@@ -100,7 +100,10 @@ const PalletLoads = memo(function PalletLoads({ warehouse }: { warehouse: Wareho
       const x = side * (4.95 + depth * 0.78);
       const y = 0.32 + level * 0.92;
       const z = -10 + column * 1.4;
-      const color = warehouse === "cold" ? new THREE.Color(seed % 4 === 0 ? "#5eb6d8" : "#d9e8ef") : new THREE.Color(seed % 3 === 0 ? "#c79b58" : "#a97b45");
+      const fill = seed % 11 === 0 ? 0 : (seed * 17) % 101;
+      const color = new THREE.Color(
+        fill === 0 ? "#111827" : fill < 20 ? "#f28b45" : fill < 60 ? "#e9c94c" : warehouse === "cold" ? "#76c89a" : "#9dce7d",
+      );
       list.push({ base: new THREE.Vector3(x, y, z), load: new THREE.Vector3(x, y + 0.34, z), color });
     }
     return list;
@@ -123,14 +126,16 @@ const PalletLoads = memo(function PalletLoads({ warehouse }: { warehouse: Wareho
 
 const Warehouse = memo(function Warehouse({ warehouse }: { warehouse: WarehouseType }) {
   return <>
-    <color attach="background" args={[warehouse === "cold" ? "#0b1624" : "#171b20"]} />
-    <ambientLight intensity={0.9} />
-    <directionalLight position={[2, 12, 6]} intensity={1.8} castShadow />
-    <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow><planeGeometry args={[18, 25]} /><meshStandardMaterial color={warehouse === "cold" ? "#aeb8c2" : "#8d8b84"} roughness={0.92} /></mesh>
-    <mesh position={[-8.7, 4, 0]}><boxGeometry args={[0.25, 8, 25]} /><meshStandardMaterial color="#dce5eb" /></mesh>
-    <mesh position={[8.7, 4, 0]}><boxGeometry args={[0.25, 8, 25]} /><meshStandardMaterial color="#dce5eb" /></mesh>
-    <mesh position={[0, 4, -12.35]}><boxGeometry args={[17.5, 8, 0.3]} /><meshStandardMaterial color="#dce5eb" /></mesh>
-    {warehouse === "cold" && <group position={[0, 5.7, -12]}><mesh><boxGeometry args={[3.5, 1.5, 0.45]} /><meshStandardMaterial color="#dde7ec" /></mesh>{[-1.05, 0, 1.05].map((x) => <mesh key={x} position={[x, 0, 0.27]}><cylinderGeometry args={[0.48, 0.48, 0.08, 24]} /><meshStandardMaterial color="#65727b" /></mesh>)}</group>}
+    <color attach="background" args={[warehouse === "cold" ? "#eaf3f8" : "#f5f0e8"]} />
+    <fog attach="fog" args={[warehouse === "cold" ? "#eaf3f8" : "#f5f0e8", 15, 38]} />
+    <ambientLight intensity={1.45} />
+    <hemisphereLight args={["#ffffff", "#8295a5", 1.2]} />
+    <directionalLight position={[2, 12, 6]} intensity={2.25} castShadow />
+    <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow><planeGeometry args={[18, 25]} /><meshStandardMaterial color={warehouse === "cold" ? "#cad8df" : "#d8d1c4"} roughness={0.92} /></mesh>
+    <mesh position={[-8.7, 4, 0]}><boxGeometry args={[0.25, 8, 25]} /><meshStandardMaterial color="#f9fbfc" /></mesh>
+    <mesh position={[8.7, 4, 0]}><boxGeometry args={[0.25, 8, 25]} /><meshStandardMaterial color="#f9fbfc" /></mesh>
+    <mesh position={[0, 4, -12.35]}><boxGeometry args={[17.5, 8, 0.3]} /><meshStandardMaterial color="#f9fbfc" /></mesh>
+    {warehouse === "cold" && <group position={[0, 5.7, -12]}><mesh><boxGeometry args={[3.5, 1.5, 0.45]} /><meshStandardMaterial color="#eff5f7" /></mesh>{[-1.05, 0, 1.05].map((x) => <mesh key={x} position={[x, 0, 0.27]}><cylinderGeometry args={[0.48, 0.48, 0.08, 24]} /><meshStandardMaterial color="#6c7c89" /></mesh>)}</group>}
     <RackStructure />
     <PalletLoads warehouse={warehouse} />
   </>;
@@ -144,6 +149,6 @@ export function TwinScene({ warehouse }: { warehouse: WarehouseType }) {
       <button type="button" className={mode === "top" ? "is-active" : ""} onClick={() => setMode("top")}><Map size={14} /> Top Overview</button>
     </div>
     <div className="frost-canvas"><Canvas shadows camera={{ position: [0, 26, 0.5], fov: 58, near: 0.1, far: 100 }} dpr={[1, 1.5]}><Warehouse warehouse={warehouse} /><CameraRig mode={mode} /></Canvas></div>
-    <div className="frost-twin__instructions"><b>{warehouse === "cold" ? "COLD STORAGE MOCK TWIN" : "DRY WAREHOUSE MOCK TWIN"}</b><span>{mode === "free" ? "Click scene for mouse look · WASD move · Wheel forward/back · Esc releases cursor" : "Full overhead warehouse view · choose Free Explore to walk the room"}</span></div>
+    <div className="frost-twin__instructions"><b>{warehouse === "cold" ? "TWIN WMS · COLD STORAGE" : "TWIN WMS · DRY WAREHOUSE"}</b><span>{mode === "free" ? "Click scene for mouse look · WASD move · Wheel forward/back · Esc releases cursor" : "Full overhead warehouse view · choose Free Explore to walk the room"}</span></div>
   </div>;
 }

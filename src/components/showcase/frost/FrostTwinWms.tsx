@@ -15,7 +15,7 @@ function Overview({ warehouse, onWarehouse, onRoom }: { warehouse: WarehouseType
   const loaded = pallets.filter((pallet) => pallet.status !== "empty").length;
   const blocked = pallets.filter((pallet) => pallet.status === "low").length;
   return <div className="frost-overview">
-    <div className="frost-overview__heading"><div><span>OPERATIONS DASHBOARD</span><h2>Warehouse overview</h2><p>Monitor all rooms, then open the 2D board for exact pallet work.</p></div><div className="frost-type-switch"><button type="button" className={warehouse === "cold" ? "is-active" : ""} onClick={() => onWarehouse("cold")}><Snowflake size={14} />Cold Storage</button><button type="button" className={warehouse === "dry" ? "is-active" : ""} onClick={() => onWarehouse("dry")}><Warehouse size={14} />Dry Warehouse</button></div></div>
+    <div className="frost-overview__heading"><div><span>TWIN WMS · WAREHOUSE HOME</span><h2>Warehouse overview</h2><p>Start with live room activity, then open the rack board for an exact pallet location.</p></div><div className="frost-type-switch"><button type="button" className={warehouse === "cold" ? "is-active" : ""} onClick={() => onWarehouse("cold")}><Snowflake size={14} />Cold Storage</button><button type="button" className={warehouse === "dry" ? "is-active" : ""} onClick={() => onWarehouse("dry")}><Warehouse size={14} />Dry Warehouse</button></div></div>
     <div className="frost-kpis">{[
       ["Temperature", warehouse === "cold" ? "−18°C" : "24°C", <Thermometer key="temperature" size={17} />],
       ["Occupancy", "78%", <Boxes key="occupancy" size={17} />],
@@ -63,7 +63,7 @@ export function FrostTwinWms() {
   const openRoom = (nextRoom: number) => { setRoom(nextRoom); setSelected(null); setView("rack"); };
   const openLocation = (pallet: Pallet) => { setRoom(pallet.room); setSelected(pallet); setQrOpen(false); setView("rack"); };
   return <div className="frost-app">
-    <aside className="frost-sidebar"><div className="frost-logo"><span><Snowflake size={18} /></span><div><strong>FROST</strong><small>TWIN WMS</small></div></div><nav>{[
+    <aside className="frost-sidebar"><div className="frost-logo"><span><Snowflake size={18} /></span><div><strong>TWIN</strong><small>WAREHOUSE WMS</small></div></div><nav>{[
       ["overview", "Overview", LayoutDashboard], ["rack", "2D Rack Board", Boxes], ["twin", "3D Twin", Move3d], ["operations", "Mock Operations", ClipboardCheck],
     ].map(([id, label, Icon]) => <button type="button" key={String(id)} className={view === id ? "is-active" : ""} onClick={() => setView(id as View)}><Icon size={16} />{String(label)}</button>)}<button type="button" onClick={() => setQrOpen(true)}><QrCode size={16} />QR Center</button></nav><div className="frost-sidebar__foot"><span className="is-online" />Prototype online<small>Mock data only</small></div></aside>
     <main className="frost-main"><header className="frost-topbar"><div><span>{warehouse === "cold" ? "COLD STORAGE" : "DRY WAREHOUSE"}</span><strong>{view === "overview" ? "All rooms" : `Room ${room}`}</strong></div><label className="frost-top-search"><Search size={14} /><input placeholder="Search warehouse" /></label><button type="button" onClick={() => setQrOpen(true)}><QrCode size={15} />Scan pallet</button><div className="frost-user">IP</div></header>

@@ -31,10 +31,10 @@ export function QrCenter({ pallets, onClose, onOpenLocation }: { pallets: Pallet
     <section className="frost-modal" role="dialog" aria-modal="true" aria-labelledby="qr-title">
       <header><div><span>FRONT-END SIMULATION</span><h3 id="qr-title"><QrCode size={19} /> QR Center</h3></div><button type="button" onClick={onClose} aria-label="Close QR Center"><X size={17} /></button></header>
       <div className="frost-qr-layout">
-        <div className="frost-qr-generator"><h4>PALLET QR GENERATOR</h4><MockQr value={result?.tag ?? (input || "FROST")} /><p>{result?.tag ?? "Enter a valid pallet tag"}</p></div>
+        <div className="frost-qr-generator"><h4>PALLET QR GENERATOR</h4><MockQr value={result?.tag ?? (input || "TWIN-WMS")} /><p>{result?.tag ?? "Enter a valid pallet tag"}</p></div>
         <div className="frost-scanner"><div className={scanning ? "is-scanning" : ""}><Camera size={35} /><span>{scanning ? "Reading mock label…" : "Simulated scanner panel"}</span><i /></div><button type="button" className="frost-secondary" onClick={simulateScan}>Simulate scan</button></div>
       </div>
-      <div className="frost-manual"><label htmlFor="frost-tag">Manual QR / tag input</label><div><Search size={15} /><input id="frost-tag" value={input} onChange={(event) => setInput(event.target.value)} placeholder="FT-101A1-2455 or RM1-CO1-LA-D1" /><button type="button" onClick={find}>Find</button></div></div>
+      <div className="frost-manual"><label htmlFor="frost-tag">Manual QR / tag input</label><div><Search size={15} /><input id="frost-tag" value={input} onChange={(event) => setInput(event.target.value)} placeholder="TW-101A1-2455 or RM1-CO1-LA-D1" /><button type="button" onClick={find}>Find</button></div></div>
       <div className={`frost-scan-result ${result ? "is-found" : ""}`}>{result ? <><CheckCircle2 size={21} /><div><span>SCAN RESULT</span><strong>{result.id}</strong><p>{result.item} · {result.quantity} boxes · {result.status}</p></div><button type="button" onClick={() => onOpenLocation(result)}>Open location</button></> : <p>No pallet matches that mock QR or tag.</p>}</div>
       <p className="frost-modal-note">Simulation only. No camera, backend or external QR service is used.</p>
     </section>

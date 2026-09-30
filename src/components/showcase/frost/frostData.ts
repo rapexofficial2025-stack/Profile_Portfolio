@@ -44,7 +44,7 @@ export function makePallets(room = 1, warehouse: WarehouseType = "cold"): Pallet
         level,
         depth,
         wing: column <= 15 ? "left" : "right",
-        tag: `FT-${room}${String(column).padStart(2, "0")}${level}${depth}-${String(2400 + seed).slice(-4)}`,
+        tag: `TW-${room}${String(column).padStart(2, "0")}${level}${depth}-${String(2400 + seed).slice(-4)}`,
         item: warehouse === "cold" ? items[itemIndex % 5] : items[5 + (itemIndex % 3)],
         description: warehouse === "cold" ? "Temperature-controlled palletized inventory" : "Ambient dry-goods palletized inventory",
         customer: customers[seed % customers.length],

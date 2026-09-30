@@ -1,8 +1,8 @@
 import { Boxes, ThermometerSnowflake } from "lucide-react";
 
 export function FrostProjectThumbnail() {
-  return <div className="frost-thumb" aria-label="FROST TWIN WMS warehouse dashboard preview">
-    <div className="frost-thumb__top"><span className="frost-thumb__brand"><ThermometerSnowflake size={15} /> FROST TWIN WMS</span><span>ROOM 01 · COLD</span></div>
+  return <div className="frost-thumb" aria-label="TWIN WMS warehouse dashboard preview">
+    <div className="frost-thumb__top"><span className="frost-thumb__brand"><ThermometerSnowflake size={15} /> TWIN WMS</span><span>ROOM 01 · COLD</span></div>
     <div className="frost-thumb__layout">
       <div className="frost-thumb__side"><Boxes size={22} /><i /><i /><i /></div>
       <div className="frost-thumb__main">

@@ -107,7 +107,7 @@ export const portfolioCategories: PortfolioCategory[] = [
       { slug: "invitation-paper-engine", title: "Invitation Card Paper Engine", type: "Web App", description: "Design an invitation on real-looking paper: pick a template, type the details, open the card." },
       { slug: "component-library", title: "Component Library", type: "UI Kit", description: "Reusable buttons, inputs, toggles, tabs and toasts with states, variants and copyable usage." },
       { slug: "react-native-welcome", title: "React Native Welcome & Splash", type: "Mobile UI/UX", description: "Animated splash, onboarding carousel and sign-in flow designed for a React Native app." },
-      { slug: "frost-twin-wms", title: "FROST TWIN WMS", type: "Interactive Warehouse Digital Twin", description: "A desktop-first warehouse operations prototype with a 2D rack board, procedural 3D twin, QR mockup and browser-only workflows." },
+      { slug: "frost-twin-wms", title: "TWIN WMS", type: "Interactive Warehouse Digital Twin", description: "A light, desktop-first warehouse operations prototype with a 2D rack board, procedural 3D twin, QR mockup and browser-only workflows." },
     ],
   },
   {
