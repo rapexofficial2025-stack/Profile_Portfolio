@@ -6,7 +6,32 @@ import { ArrowUpRight, ChevronDown, ChevronLeft, ChevronRight, Expand, ImageIcon
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { visualArtProjects, type VisualArtProject } from "@/data/visual-art-gallery";
+function withBasePath(src?: string) {
+  if (!src) return "";
 
+  if (
+    src.startsWith("http://") ||
+    src.startsWith("https://") ||
+    src.startsWith("data:") ||
+    src.startsWith("blob:")
+  ) {
+    return src;
+  }
+
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+  if (!basePath) return src;
+
+  if (src.startsWith(`${basePath}/`)) {
+    return src;
+  }
+
+  if (src.startsWith("/")) {
+    return `${basePath}${src}`;
+  }
+
+  return `${basePath}/${src}`;
+}
 function MediaPlaceholder({ type, title }: { type: "image" | "video" | "audio"; title: string }) {
   const Icon = type === "video" ? Play : type === "audio" ? Music : ImageIcon;
   const [playing, setPlaying] = useState(false);
@@ -44,8 +69,8 @@ function Mp4Player({ src, title, autoPlay = false, poster }: { src: string; titl
   }, [autoPlay, src]);
 
   return <div className="relative h-full w-full bg-black">
-    <video ref={videoRef} controls playsInline preload="auto" autoPlay={autoPlay} muted={autoPlay} loop={autoPlay} poster={poster} onCanPlay={(event) => { if (autoPlay) void event.currentTarget.play().catch(() => undefined); }} className="h-full w-full object-contain" aria-label={`Play ${title} MP4 video`}>
-      <source src={src} type="video/mp4" />
+    <video ref={videoRef} controls playsInline preload="auto" autoPlay={autoPlay} muted={autoPlay} loop={autoPlay} poster={poster ? withBasePath(poster) : undefined} onCanPlay={(event) => { if (autoPlay) void event.currentTarget.play().catch(() => undefined); }} className="h-full w-full object-contain" aria-label={`Play ${title} MP4 video`}>
+      <source src={withBasePath(src)} type="video/mp4" />
       Your browser does not support MP4 video playback.
     </video>
     <span className="pointer-events-none absolute left-4 top-4 rounded-full border border-white/15 bg-black/60 px-3 py-1.5 text-[9px] font-semibold tracking-[0.16em] text-white/85 backdrop-blur-md">MP4 PLAYER · MEDIA OUTPUT</span>
@@ -54,12 +79,12 @@ function Mp4Player({ src, title, autoPlay = false, poster }: { src: string; titl
 
 function AudioPlayer({ src, title, poster }: { src: string; title: string; poster?: string }) {
   return <div className="relative flex h-full w-full items-end overflow-hidden bg-[#08090d] p-5 sm:p-8">
-    {poster ? <Image src={poster} alt="" fill sizes="(max-width: 768px) 100vw, 1100px" className="object-cover opacity-55" /> : null}
+    {poster ? <Image src={withBasePath(poster)} alt="" fill sizes="(max-width: 768px) 100vw, 1100px" className="object-cover opacity-55" /> : null}
     <div className="absolute inset-0 bg-linear-to-t from-black via-black/35 to-black/10" />
     <div className="relative z-10 w-full rounded-2xl border border-white/15 bg-black/65 p-4 backdrop-blur-xl sm:p-5">
       <p className="mb-3 text-[9px] font-semibold uppercase tracking-[0.2em] text-violet-100">Final Audio Output</p>
       <audio controls preload="metadata" className="w-full" aria-label={`Play ${title} audio`}>
-        <source src={src} type="audio/mpeg" />
+        <source src={withBasePath(src)} type="audio/mpeg" />
         Your browser does not support MP3 audio playback.
       </audio>
     </div>
@@ -182,7 +207,7 @@ function NeomorphicMusicPlayer({ track }: { track: NonNullable<VisualArtProject[
 
   return <section className="relative isolate w-full overflow-hidden rounded-[1.65rem] border border-white/22 bg-[#080b13] p-2 shadow-[0_22px_65px_rgba(0,0,0,0.7),0_0_30px_rgba(139,92,246,0.13),inset_0_1px_0_rgba(255,255,255,0.16)]" aria-label={`${track.title} background music player`}>
     <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(5,8,15,0.98)_8%,rgba(10,13,24,0.88)_48%,rgba(5,8,15,0.96)_100%)]" />
-    {track.backgroundImage ? <Image src={track.backgroundImage} alt="" fill sizes="(max-width: 768px) 100vw, 1400px" className="pointer-events-none -z-10 object-cover opacity-10" /> : null}
+    {track.backgroundImage ? <Image src={withBasePath(track.backgroundImage)} alt="" fill sizes="(max-width: 768px) 100vw, 1400px" className="pointer-events-none -z-10 object-cover opacity-10" /> : null}
     <div className="rounded-[1.3rem] border border-white/12 bg-[#111521]/82 px-4 py-5 shadow-[inset_7px_7px_18px_rgba(0,0,0,0.48),inset_-4px_-4px_14px_rgba(255,255,255,0.035)] backdrop-blur-md sm:px-6">
       <div className="grid items-center gap-4 sm:grid-cols-[5.5rem_minmax(0,1fr)_4rem] sm:gap-6">
         <audio
@@ -195,12 +220,12 @@ function NeomorphicMusicPlayer({ track }: { track: NonNullable<VisualArtProject[
           onDurationChange={(event) => setDuration(event.currentTarget.duration)}
           onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime)}
         >
-          <source src={track.src} type="audio/mpeg" />
+          <source src={withBasePath(track.src)} type="audio/mpeg" />
           Your browser does not support MP3 audio playback.
         </audio>
 
         <div className="relative size-22 overflow-hidden rounded-2xl border border-white/18 bg-black/40 shadow-[9px_9px_20px_rgba(0,0,0,0.55),-3px_-3px_10px_rgba(255,255,255,0.05)]">
-          {track.cover ? <Image src={track.cover} alt="" fill sizes="88px" className="object-cover" /> : <Music className="absolute inset-0 m-auto text-violet-200" size={28} />}
+          {track.cover ? <Image src={withBasePath(track.cover)} alt="" fill sizes="88px" className="object-cover" /> : <Music className="absolute inset-0 m-auto text-violet-200" size={28} />}
         </div>
 
         <div className="min-w-0">
@@ -341,7 +366,7 @@ export function PortfolioProjectModal({ project, onClose, categoryTitle = "Explo
             <motion.div key={active.id} initial={{ opacity: 0, x: 14 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -14 }} transition={{ duration: 0.25 }}>
               {active.mediaType === "image" && activeSources.length > 1 && <div className="mb-4 flex items-center gap-3">
                 <div className="flex min-w-0 flex-1 gap-2 overflow-x-auto px-1 py-1">
-                  {activeSources.map((src, index) => <button key={src} type="button" onClick={() => setActiveMediaIndex(index)} aria-label={`View ${active.title} image ${index + 1}`} className={`relative h-16 w-24 shrink-0 overflow-hidden rounded-xl border bg-black transition ${activeMediaIndex === index ? "border-violet-300/70 shadow-[0_0_20px_rgba(139,92,246,0.2)]" : "border-white/10 opacity-60 hover:opacity-100"}`}><Image src={src} alt="" fill sizes="96px" className="object-cover" /></button>)}
+                  {activeSources.map((src, index) => <button key={src} type="button" onClick={() => setActiveMediaIndex(index)} aria-label={`View ${active.title} image ${index + 1}`} className={`relative h-16 w-24 shrink-0 overflow-hidden rounded-xl border bg-black transition ${activeMediaIndex === index ? "border-violet-300/70 shadow-[0_0_20px_rgba(139,92,246,0.2)]" : "border-white/10 opacity-60 hover:opacity-100"}`}><Image src={withBasePath(src)} alt="" fill sizes="96px" className="object-cover" /></button>)}
                 </div>
                 <button type="button" onClick={() => setIsSlideshowPlaying((playing) => !playing)} className="inline-flex shrink-0 items-center gap-2 rounded-full border border-violet-300/30 bg-violet-500/12 px-3.5 py-2.5 text-[9px] font-semibold uppercase tracking-[0.15em] text-violet-100 transition hover:border-violet-200/65 hover:bg-violet-500/20" aria-pressed={isSlideshowPlaying}>
                   {isSlideshowPlaying ? <Pause size={14} fill="currentColor" /> : <Play size={14} fill="currentColor" />} {isSlideshowPlaying ? "Pause" : "Auto play"}
@@ -350,7 +375,7 @@ export function PortfolioProjectModal({ project, onClose, categoryTitle = "Explo
 
               <div className="relative aspect-video w-full overflow-hidden rounded-[1.45rem] border border-white/10 bg-black shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
                 {activeSrc && active.mediaType === "image" ? (
-                  <Image src={activeSrc} alt={`${active.title} ${activeMediaIndex + 1}`} fill sizes="(max-width: 768px) 100vw, 1100px" className="object-contain" priority />
+                  <Image src={withBasePath(activeSrc)} alt={`${active.title} ${activeMediaIndex + 1}`} fill sizes="(max-width: 768px) 100vw, 1100px" className="object-contain" priority />
                 ) : activeSrc && active.mediaType === "video" ? (
                   <Mp4Player src={activeSrc} title={active.title} autoPlay={active.autoPlay} poster={active.poster} />
                 ) : activeSrc && active.mediaType === "audio" ? (
@@ -365,7 +390,7 @@ export function PortfolioProjectModal({ project, onClose, categoryTitle = "Explo
               {active.supportingImages?.length ? <section className="mt-6" aria-label="Architectural walkthrough rendered frames">
                 <p className="mb-3 text-[9px] font-semibold uppercase tracking-[0.22em] text-violet-100">Rendered Frames & Floor Plans</p>
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-                  {active.supportingImages.map((src, index) => <figure key={src} className="overflow-hidden rounded-xl border border-white/10 bg-black/35"><div className="relative aspect-4/3"><Image src={src} alt={`${active.title} supporting architectural frame ${index + 1}`} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw" className="object-cover" /></div></figure>)}
+                  {active.supportingImages.map((src, index) => <figure key={src} className="overflow-hidden rounded-xl border border-white/10 bg-black/35"><div className="relative aspect-4/3"><Image src={withBasePath(src)} alt={`${active.title} supporting architectural frame ${index + 1}`} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw" className="object-cover" /></div></figure>)}
                 </div>
               </section> : null}
 
@@ -376,11 +401,11 @@ export function PortfolioProjectModal({ project, onClose, categoryTitle = "Explo
                 </div>
                 <div className="grid gap-4 md:grid-cols-2">
                   <figure className="overflow-hidden rounded-2xl border border-white/10 bg-black/30">
-                    <div className="relative aspect-square"><Image src={active.comparison.before} alt={`${active.comparison.beforeLabel ?? "Raw"} before image`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" /></div>
+                    <div className="relative aspect-square"><Image src={withBasePath(active.comparison.before)} alt={`${active.comparison.beforeLabel ?? "Raw"} before image`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" /></div>
                     <figcaption className="border-t border-white/10 px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70">{active.comparison.beforeLabel ?? "Raw / Before"}</figcaption>
                   </figure>
                   <figure className="overflow-hidden rounded-2xl border border-violet-300/25 bg-black/30 shadow-[0_0_28px_rgba(139,92,246,0.12)]">
-                    <div className="relative aspect-square"><Image src={active.comparison.after} alt={`${active.comparison.afterLabel ?? "Rendered"} after image`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" /></div>
+                    <div className="relative aspect-square"><Image src={withBasePath(active.comparison.after)} alt={`${active.comparison.afterLabel ?? "Rendered"} after image`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" /></div>
                     <figcaption className="border-t border-violet-300/20 px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-violet-100">{active.comparison.afterLabel ?? "Rendered / After"}</figcaption>
                   </figure>
                 </div>
@@ -432,7 +457,7 @@ export function VisualArtGallery() {
             <button type="button" onClick={() => setSelectedProject(project)} className="block w-full text-left" aria-label={`Open ${project.title} gallery`}>
               <div className="relative aspect-16/10 overflow-hidden rounded-[1.25rem] border border-white/8 bg-[#090b11]">
                 {project.cover ? (
-                  <Image src={project.cover} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-700 group-hover:scale-[1.035]" />
+                  <Image src={withBasePath(project.cover)} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-700 group-hover:scale-[1.035]" />
                 ) : (
                   <div className="flex h-full min-h-56 items-center justify-center bg-[radial-gradient(circle_at_68%_28%,rgba(167,139,250,0.22),transparent_27%),linear-gradient(145deg,#171421,#090b11)]">
                     <Sparkles className="text-violet-200/65" size={34} strokeWidth={1.4} />
