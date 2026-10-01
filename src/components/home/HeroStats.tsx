@@ -17,8 +17,8 @@ const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2
 function StatIcon({ id }: { id: IdentityStatId }) {
   const sources: Record<IdentityStatId, string> = {
     experience: "/images/profile/GIF Icon/experience.gif",
-    rapex: "/images/branding/rapex-logo.png",
-    progrex: "/images/branding/progrex-logo.png",
+    rapex: "/images/branding/rapex-logo.webp",
+    progrex: "/images/branding/progrex-logo.webp",
     projects: "/images/profile/GIF Icon/completed-project.gif",
     ideas: "/images/profile/GIF Icon/idea.gif",
   };

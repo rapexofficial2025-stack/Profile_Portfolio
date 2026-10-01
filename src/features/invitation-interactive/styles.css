@@ -1,5 +1,5 @@
 .invitation-interactive { color: #2f2037; container-type: inline-size; overflow: hidden; border-radius: 1.5rem; background: #f4e5d4; padding: clamp(1rem, 3vw, 2.5rem); }
-.invitation-interactive__stage { display: grid; min-height: min(68vh, 44rem); place-items: center; perspective: 1400px; background: #bd814c url('/images/projects/interactive-ui-design/invitation-paper-engine/table.png') center / cover; border-radius: 1rem; padding: clamp(1rem, 4vw, 3rem); }
+.invitation-interactive__stage { display: grid; min-height: min(68vh, 44rem); place-items: center; perspective: 1400px; background-color: #bd814c; background-position: center; background-size: cover; border-radius: 1rem; padding: clamp(1rem, 4vw, 3rem); }
 .invitation-interactive__book { position: relative; width: min(100%, 54rem); aspect-ratio: 1507 / 997; transform-style: preserve-3d; }
 .invitation-interactive__inside, .invitation-interactive__left-page { position: absolute; inset: 0; overflow: hidden; border-radius: .35rem; }
 .invitation-interactive__inside { background: #f7e8cc; }

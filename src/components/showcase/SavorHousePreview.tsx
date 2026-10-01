@@ -17,6 +17,7 @@ import {
   X,
 } from "lucide-react";
 import { useMemo, useState } from "react";
+import { asset } from "@/lib/asset";
 
 type MenuCategory = "All" | "Starters" | "Mains" | "Noodles" | "Desserts" | "Drinks";
 
@@ -169,7 +170,7 @@ export function SavorHousePreview() {
       <section className="grid min-h-[28rem] lg:grid-cols-[0.9fr_1.1fr]">
         <div className="relative min-h-80 overflow-hidden border-b border-white/10 lg:min-h-full lg:border-b-0 lg:border-r">
           <Image
-            src="/images/projects/motion-graphic-design/Restaurant-menu/Cover.jfif"
+            src={asset("/images/projects/image-editing-gifs/before-after/Resto-menu/finish-menu/Cover.webp")}
             alt="Black and gold restaurant menu reference artwork"
             fill
             sizes="(max-width: 1024px) 100vw, 42vw"

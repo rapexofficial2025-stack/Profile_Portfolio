@@ -3,33 +3,34 @@
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, ImageIcon, Pause, Play, Volume2, VolumeX, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { asset } from "@/lib/asset";
 
-const mediaRoot = "/images/projects/RAPEX- DASH";
+const mediaRoot = asset("/images/projects/RAPEX- DASH");
 
 const slides = [
-  { src: `${mediaRoot}/cover.png`, title: "Gameplay Recording", caption: "Neon courier gameplay and tactical navigation presentation." },
-  { src: `${mediaRoot}/sc-1.png`, title: "Start Delivery Experience", caption: "Cinematic game entry screen with rider profile, mission preview and primary controls." },
-  { src: `${mediaRoot}/sc-2.png`, title: "Four Gameplay Moments", caption: "Pickup, boost, traffic avoidance and successful order completion." },
-  { src: `${mediaRoot}/sc-3.png`, title: "HUD & Tactical GPS", caption: "Mission guidance, rider telemetry, speed feedback and touch controls." },
-  { src: `${mediaRoot}/sc-4.png`, title: "Vehicle Garage", caption: "Bike upgrades, delivery skins, equipment and performance tuning." },
-  { src: `${mediaRoot}/sc-5.png`, title: "Engine Architecture Presentation", caption: "Visual overview of the five technical layers behind the browser game." },
-  { src: `${mediaRoot}/rapex-dash-architecture-stack.png`, title: "Technical Architecture Blueprint", caption: "Detailed React, Three.js, WebGL, audio and mission-state implementation plan." },
-  { src: `${mediaRoot}/dash-2.png`, title: "Delivery Shift Start Screen", caption: "Playable build entry state with rider stats, wallet, garage and control guidance." },
-  { src: `${mediaRoot}/dash-1.png`, title: "Live Gameplay — Neon District", caption: "Original WebGL gameplay capture with mission HUD." },
-  { src: `${mediaRoot}/dash-3.png`, title: "Live Gameplay — Mission Run", caption: "Courier route, traffic and active delivery objective." },
-  { src: `${mediaRoot}/dash-4.png`, title: "Live Gameplay — Tactical Route", caption: "Lane controls, speed, nitro, mission payout and tactical GPS during a delivery run." },
-  { src: `${mediaRoot}/dash-11.png`, title: "Completed Shift Recap", caption: "End-of-run score, earnings, completed orders, combo results and replay action." },
-  { src: `${mediaRoot}/dash-12.png`, title: "Vehicle Fleet Selection", caption: "Garage comparison for speed, acceleration, handling, unlock price and equipped vehicle." },
+  { src: `${mediaRoot}/cover.webp`, title: "Gameplay Recording", caption: "Neon courier gameplay and tactical navigation presentation." },
+  { src: `${mediaRoot}/sc-1.webp`, title: "Start Delivery Experience", caption: "Cinematic game entry screen with rider profile, mission preview and primary controls." },
+  { src: `${mediaRoot}/sc-2.webp`, title: "Four Gameplay Moments", caption: "Pickup, boost, traffic avoidance and successful order completion." },
+  { src: `${mediaRoot}/sc-3.webp`, title: "HUD & Tactical GPS", caption: "Mission guidance, rider telemetry, speed feedback and touch controls." },
+  { src: `${mediaRoot}/sc-4.webp`, title: "Vehicle Garage", caption: "Bike upgrades, delivery skins, equipment and performance tuning." },
+  { src: `${mediaRoot}/sc-5.webp`, title: "Engine Architecture Presentation", caption: "Visual overview of the five technical layers behind the browser game." },
+  { src: `${mediaRoot}/rapex-dash-architecture-stack.webp`, title: "Technical Architecture Blueprint", caption: "Detailed React, Three.js, WebGL, audio and mission-state implementation plan." },
+  { src: `${mediaRoot}/dash-2.webp`, title: "Delivery Shift Start Screen", caption: "Playable build entry state with rider stats, wallet, garage and control guidance." },
+  { src: `${mediaRoot}/dash-1.webp`, title: "Live Gameplay — Neon District", caption: "Original WebGL gameplay capture with mission HUD." },
+  { src: `${mediaRoot}/dash-3.webp`, title: "Live Gameplay — Mission Run", caption: "Courier route, traffic and active delivery objective." },
+  { src: `${mediaRoot}/dash-4.webp`, title: "Live Gameplay — Tactical Route", caption: "Lane controls, speed, nitro, mission payout and tactical GPS during a delivery run." },
+  { src: `${mediaRoot}/dash-11.webp`, title: "Completed Shift Recap", caption: "End-of-run score, earnings, completed orders, combo results and replay action." },
+  { src: `${mediaRoot}/dash-12.webp`, title: "Vehicle Fleet Selection", caption: "Garage comparison for speed, acceleration, handling, unlock price and equipped vehicle." },
 ];
 
 const specificationCards = [
-  { src: `${mediaRoot}/rapex-raw-01.png`, title: "Four Gameplay Screenshots", code: "RAW 01" },
-  { src: `${mediaRoot}/rapex-raw-02.png`, title: "Start-Screen Capture", code: "RAW 02" },
-  { src: `${mediaRoot}/rapex-raw-03.png`, title: "HUD & Tactical GPS Design", code: "RAW 03" },
-  { src: `${mediaRoot}/rapex-raw-04.png`, title: "Vehicle Fleet Garage", code: "RAW 04" },
-  { src: `${mediaRoot}/rapex-raw-05.png`, title: "Tech Specifications", code: "RAW 05" },
-  { src: `${mediaRoot}/rapex-raw-06.png`, title: "Gameplay Recording Slot", code: "RAW 06" },
-  { src: `${mediaRoot}/rapex-raw-07.png`, title: "Playable Browser Build Slot", code: "RAW 07" },
+  { src: `${mediaRoot}/rapex-raw-01.webp`, title: "Four Gameplay Screenshots", code: "RAW 01" },
+  { src: `${mediaRoot}/rapex-raw-02.webp`, title: "Start-Screen Capture", code: "RAW 02" },
+  { src: `${mediaRoot}/rapex-raw-03.webp`, title: "HUD & Tactical GPS Design", code: "RAW 03" },
+  { src: `${mediaRoot}/rapex-raw-04.webp`, title: "Vehicle Fleet Garage", code: "RAW 04" },
+  { src: `${mediaRoot}/rapex-raw-05.webp`, title: "Tech Specifications", code: "RAW 05" },
+  { src: `${mediaRoot}/rapex-raw-06.webp`, title: "Gameplay Recording Slot", code: "RAW 06" },
+  { src: `${mediaRoot}/rapex-raw-07.webp`, title: "Playable Browser Build Slot", code: "RAW 07" },
 ];
 
 function SoundControl({ videoRef, playing }: { videoRef: React.RefObject<HTMLVideoElement | null>; playing: boolean }) {
@@ -93,10 +94,10 @@ export function RapexDashMediaViewer() {
 
       <div className="relative aspect-video overflow-hidden rounded-2xl border border-cyan-200/12 bg-[#030712]">
         {mode === "image" ? (
-          <Image src={`${mediaRoot}/cover.png`} alt="RAPEX DASH gameplay recording presentation" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+          <Image src={`${mediaRoot}/cover.webp`} alt="RAPEX DASH gameplay recording presentation" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
         ) : (
           <>
-            <video ref={videoRef} src={`${mediaRoot}/game-ui-record.mp4`} poster={`${mediaRoot}/cover.png`} playsInline muted onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={() => setPlaying(false)} className="h-full w-full object-cover" />
+            <video ref={videoRef} src={`${mediaRoot}/game-ui-record.mp4`} poster={`${mediaRoot}/cover.webp`} playsInline muted onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={() => setPlaying(false)} className="h-full w-full object-cover" />
             <button type="button" onClick={togglePlayback} aria-label={playing ? "Pause gameplay video" : "Play gameplay video"} className="absolute inset-0 grid place-items-center bg-black/12 transition hover:bg-black/25">
               <span className="grid size-14 place-items-center rounded-full border border-cyan-100/30 bg-[#061529]/82 text-cyan-100 shadow-[0_0_35px_rgba(34,211,238,0.32)] backdrop-blur-md">{playing ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" className="translate-x-0.5" />}</span>
             </button>

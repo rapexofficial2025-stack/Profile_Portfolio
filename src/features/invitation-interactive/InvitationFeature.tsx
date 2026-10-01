@@ -19,19 +19,22 @@ export function InvitationFeature() {
 
   return (
     <section className="invitation-interactive" aria-label="Interactive Ravian invitation">
-      <div className="invitation-interactive__stage">
+      <div
+        className="invitation-interactive__stage"
+        style={{ backgroundImage: `url("${asset("/images/projects/interactive-ui-design/invitation-paper-engine/table.webp")}")` }}
+      >
         <div className={`invitation-interactive__book ${open ? "is-open" : ""}`}>
           <div className="invitation-interactive__inside">
-            <img src={asset("/images/projects/interactive-ui-design/invitation-paper-engine/inside-background.png")} alt="Invitation inside paper" />
-            <img src={asset("/images/projects/interactive-ui-design/invitation-paper-engine/right-page.png")} alt="Invitation right page" />
+            <img src={asset("/images/projects/interactive-ui-design/invitation-paper-engine/inside-background.webp")} alt="Invitation inside paper" />
+            <img src={asset("/images/projects/interactive-ui-design/invitation-paper-engine/right-page.webp")} alt="Invitation right page" />
             <p className="invitation-interactive__message">Greetings<br />Buenas Dias! Mi Querido Tito y Tita.<br /><br />A little message made with love.</p>
           </div>
           <button className="invitation-interactive__cover" type="button" onClick={() => setOpen((value) => !value)} aria-label={open ? "Close invitation" : "Open invitation"}>
-            <img src={asset("/images/projects/interactive-ui-design/invitation-paper-engine/cover.png")} alt="Invitation cover" />
+            <img src={asset("/images/projects/interactive-ui-design/invitation-paper-engine/cover.webp")} alt="Invitation cover" />
           </button>
           {open && (
             <div className="invitation-interactive__left-page">
-              <img src={asset("/images/projects/interactive-ui-design/invitation-paper-engine/left-page.png")} alt="Invitation left page" />
+              <img src={asset("/images/projects/interactive-ui-design/invitation-paper-engine/left-page.webp")} alt="Invitation left page" />
               <div className="invitation-interactive__video-wrap">
                 <video ref={videoRef} src={asset("/images/projects/interactive-ui-design/invitation-paper-engine/ravian.mp4")} muted={muted} playsInline preload="metadata" />
                 <button type="button" onClick={toggleVideo}>Press Me</button>

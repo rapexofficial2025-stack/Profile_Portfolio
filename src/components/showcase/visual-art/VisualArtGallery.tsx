@@ -5,7 +5,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, ChevronDown, ChevronLeft, ChevronRight, Expand, ImageIcon, Music, Pause, Play, Sparkles, Volume2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { Auto3DSlideshow } from "@/components/showcase/Auto3DSlideshow";
+import { GlassMediaPlayer } from "@/components/showcase/GlassMediaPlayer";
+import { InteriorDesignComparison } from "@/components/showcase/InteriorDesignComparison";
+import { PingPongAmbientVideo } from "@/components/showcase/PingPongAmbientVideo";
 import { visualArtProjects, type VisualArtProject } from "@/data/visual-art-gallery";
+
+const architectureProjects = visualArtProjects.filter((project) => project.id !== "product-brand-promotion");
+
 function withBasePath(src?: string) {
   if (!src) return "";
 
@@ -53,42 +60,6 @@ function MediaPlaceholder({ type, title }: { type: "image" | "video" | "audio"; 
       {type === "video" && <div className="relative mt-6 h-1.5 w-full max-w-sm overflow-hidden rounded-full bg-white/8"><motion.span className="absolute inset-y-0 left-0 rounded-full bg-linear-to-r from-violet-500 to-cyan-300" initial={false} animate={{ width: playing ? ["0%", "100%"] : "0%" }} transition={{ duration: 5, repeat: playing ? Infinity : 0, ease: "linear" }} /></div>}
     </div>
   );
-}
-
-function Mp4Player({ src, title, autoPlay = false, poster }: { src: string; title: string; autoPlay?: boolean; poster?: string }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.load();
-    if (autoPlay) {
-      video.muted = true;
-      void video.play().catch(() => undefined);
-    }
-  }, [autoPlay, src]);
-
-  return <div className="relative h-full w-full bg-black">
-    <video ref={videoRef} controls playsInline preload="auto" autoPlay={autoPlay} muted={autoPlay} loop={autoPlay} poster={poster ? withBasePath(poster) : undefined} onCanPlay={(event) => { if (autoPlay) void event.currentTarget.play().catch(() => undefined); }} className="h-full w-full object-contain" aria-label={`Play ${title} MP4 video`}>
-      <source src={withBasePath(src)} type="video/mp4" />
-      Your browser does not support MP4 video playback.
-    </video>
-    <span className="pointer-events-none absolute left-4 top-4 rounded-full border border-white/15 bg-black/60 px-3 py-1.5 text-[9px] font-semibold tracking-[0.16em] text-white/85 backdrop-blur-md">MP4 PLAYER · MEDIA OUTPUT</span>
-  </div>;
-}
-
-function AudioPlayer({ src, title, poster }: { src: string; title: string; poster?: string }) {
-  return <div className="relative flex h-full w-full items-end overflow-hidden bg-[#08090d] p-5 sm:p-8">
-    {poster ? <Image src={withBasePath(poster)} alt="" fill sizes="(max-width: 768px) 100vw, 1100px" className="object-cover opacity-55" /> : null}
-    <div className="absolute inset-0 bg-linear-to-t from-black via-black/35 to-black/10" />
-    <div className="relative z-10 w-full rounded-2xl border border-white/15 bg-black/65 p-4 backdrop-blur-xl sm:p-5">
-      <p className="mb-3 text-[9px] font-semibold uppercase tracking-[0.2em] text-violet-100">Final Audio Output</p>
-      <audio controls preload="metadata" className="w-full" aria-label={`Play ${title} audio`}>
-        <source src={withBasePath(src)} type="audio/mpeg" />
-        Your browser does not support MP3 audio playback.
-      </audio>
-    </div>
-  </div>;
 }
 
 function NeomorphicMusicPlayer({ track }: { track: NonNullable<VisualArtProject["backgroundAudio"]> }) {
@@ -206,10 +177,10 @@ function NeomorphicMusicPlayer({ track }: { track: NonNullable<VisualArtProject[
   const progress = duration ? Math.min(100, (currentTime / duration) * 100) : 0;
 
   return <section className="relative isolate w-full overflow-hidden rounded-[1.65rem] border border-white/22 bg-[#080b13] p-2 shadow-[0_22px_65px_rgba(0,0,0,0.7),0_0_30px_rgba(139,92,246,0.13),inset_0_1px_0_rgba(255,255,255,0.16)]" aria-label={`${track.title} background music player`}>
-    <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(5,8,15,0.98)_8%,rgba(10,13,24,0.88)_48%,rgba(5,8,15,0.96)_100%)]" />
-    {track.backgroundImage ? <Image src={withBasePath(track.backgroundImage)} alt="" fill sizes="(max-width: 768px) 100vw, 1400px" className="pointer-events-none -z-10 object-cover opacity-10" /> : null}
-    <div className="rounded-[1.3rem] border border-white/12 bg-[#111521]/82 px-4 py-5 shadow-[inset_7px_7px_18px_rgba(0,0,0,0.48),inset_-4px_-4px_14px_rgba(255,255,255,0.035)] backdrop-blur-md sm:px-6">
-      <div className="grid items-center gap-4 sm:grid-cols-[5.5rem_minmax(0,1fr)_4rem] sm:gap-6">
+    <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(105deg,#05080f_8%,#0a0d18_48%,#05080f_100%)]" />
+    {track.backgroundImage ? <Image src={withBasePath(track.backgroundImage)} alt="" fill sizes="(max-width: 768px) 100vw, 1400px" className="pointer-events-none absolute inset-0 z-10 object-fill opacity-30" /> : null}
+    <div className="relative z-20 rounded-[1.3rem] border border-white/12 bg-black/5 px-4 py-3 shadow-[inset_7px_7px_18px_rgba(0,0,0,0.48),inset_-4px_-4px_14px_rgba(255,255,255,0.035)] sm:px-5">
+      <div className="grid items-center gap-3 sm:grid-cols-[4.5rem_minmax(0,1fr)_3.5rem] sm:gap-4">
         <audio
           ref={audioRef}
           preload="metadata"
@@ -224,17 +195,17 @@ function NeomorphicMusicPlayer({ track }: { track: NonNullable<VisualArtProject[
           Your browser does not support MP3 audio playback.
         </audio>
 
-        <div className="relative size-22 overflow-hidden rounded-2xl border border-white/18 bg-black/40 shadow-[9px_9px_20px_rgba(0,0,0,0.55),-3px_-3px_10px_rgba(255,255,255,0.05)]">
-          {track.cover ? <Image src={withBasePath(track.cover)} alt="" fill sizes="88px" className="object-cover" /> : <Music className="absolute inset-0 m-auto text-violet-200" size={28} />}
+        <div className="relative size-18 overflow-hidden rounded-xl border border-white/18 bg-black/40 shadow-[9px_9px_20px_rgba(0,0,0,0.55),-3px_-3px_10px_rgba(255,255,255,0.05)]">
+          {track.cover ? <Image src={withBasePath(track.cover)} alt="" fill sizes="72px" className="object-cover" /> : <Music className="absolute inset-0 m-auto text-violet-200" size={24} />}
         </div>
 
         <div className="min-w-0">
           <p className="text-[9px] font-bold uppercase tracking-[0.24em] text-violet-300">{isPlaying ? "Now Playing" : "Ready to Play"} · Background Music</p>
           <h3 className="mt-1 truncate text-xl font-bold tracking-[-0.025em] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">{track.title}</h3>
           <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-white/72">{track.subtitle}</p>
-          <div className="mt-3 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3" aria-label="Live frequency spectrum and decibel meter">
+          <div className="mt-2 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3" aria-label="Live frequency spectrum and decibel meter">
             <span className="text-[8px] font-bold uppercase tracking-[0.16em] text-cyan-200/80">60 Hz</span>
-            <canvas ref={canvasRef} className="h-11 w-full" aria-hidden="true" />
+            <canvas ref={canvasRef} className="h-8 w-full" aria-hidden="true" />
             <div className="min-w-12 text-right"><p className="text-[8px] font-bold uppercase tracking-[0.14em] text-white/45">Level</p><p className="text-[10px] font-bold tabular-nums text-cyan-100">{levelDb} dB</p></div>
           </div>
           <div className="mt-2 flex items-center gap-3">
@@ -258,8 +229,8 @@ function NeomorphicMusicPlayer({ track }: { track: NonNullable<VisualArtProject[
           </div>
         </div>
 
-        <button type="button" onClick={() => void togglePlayback()} aria-label={isPlaying ? `Pause ${track.title}` : `Play ${track.title}`} style={{ transform: isPlaying ? `scale(${1 + beatLevel * 0.07})` : undefined, boxShadow: isPlaying ? `0 0 ${20 + beatLevel * 28}px rgba(139,92,246,${0.28 + beatLevel * 0.35}), 8px 8px 18px rgba(0,0,0,0.62), -3px -3px 10px rgba(255,255,255,0.06)` : undefined }} className="mx-auto inline-flex size-16 items-center justify-center rounded-full border border-white/16 bg-linear-to-br from-[#262c3a] to-[#0b0e16] text-white shadow-[8px_8px_18px_rgba(0,0,0,0.62),-3px_-3px_10px_rgba(255,255,255,0.06)] transition-[transform,box-shadow] duration-75 active:translate-y-px active:shadow-[inset_5px_5px_11px_rgba(0,0,0,0.7),inset_-3px_-3px_8px_rgba(255,255,255,0.05)] sm:mx-0">
-          {isPlaying ? <Pause size={21} fill="currentColor" /> : <Play size={21} fill="currentColor" className="translate-x-0.5" />}
+        <button type="button" onClick={() => void togglePlayback()} aria-label={isPlaying ? `Pause ${track.title}` : `Play ${track.title}`} style={{ transform: isPlaying ? `scale(${1 + beatLevel * 0.07})` : undefined, boxShadow: isPlaying ? `0 0 ${20 + beatLevel * 28}px rgba(139,92,246,${0.28 + beatLevel * 0.35}), 8px 8px 18px rgba(0,0,0,0.62), -3px -3px 10px rgba(255,255,255,0.06)` : undefined }} className="mx-auto inline-flex size-14 items-center justify-center rounded-full border border-white/16 bg-linear-to-br from-[#262c3a] to-[#0b0e16] text-white shadow-[8px_8px_18px_rgba(0,0,0,0.62),-3px_-3px_10px_rgba(255,255,255,0.06)] transition-[transform,box-shadow] duration-75 active:translate-y-px active:shadow-[inset_5px_5px_11px_rgba(0,0,0,0.7),inset_-3px_-3px_8px_rgba(255,255,255,0.05)] sm:mx-0">
+          {isPlaying ? <Pause size={19} fill="currentColor" /> : <Play size={19} fill="currentColor" className="translate-x-0.5" />}
         </button>
 
         <div className="flex items-center gap-2 sm:col-start-2">
@@ -278,6 +249,7 @@ export function PortfolioProjectModal({ project, onClose, categoryTitle = "Explo
   const active = project.items[activeIndex];
   const activeSources = active.sources?.length ? active.sources : active.src ? [active.src] : [];
   const activeSrc = activeSources[activeMediaIndex] ?? activeSources[0];
+  const hasComparisonSets = Boolean(active.comparisonSets?.length);
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
@@ -322,11 +294,17 @@ export function PortfolioProjectModal({ project, onClose, categoryTitle = "Explo
         data-project={project.id}
         className="portfolio-slide-screen showcase-screen fixed inset-0 z-[120] overflow-y-auto bg-[#0b0d12] text-white shadow-[0_-30px_100px_rgba(0,0,0,0.8)]"
         style={{ backgroundColor: "#0b0d12" }}
+        onContextMenu={(event) => event.preventDefault()}
         initial={{ y: "100%" }}
         animate={{ y: 0 }}
         exit={{ y: "100%" }}
         transition={{ duration: 0.46, ease: [0.22, 1, 0.36, 1] }}
       >
+        <div className="portfolio-viewer-art pointer-events-none fixed inset-0 z-0" aria-hidden="true">
+          <Image src={withBasePath("/images/portfolio-viewer-background.webp")} alt="" fill priority sizes="100vw" className="object-cover opacity-58 saturate-75" draggable={false} />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(10,8,20,0.24),rgba(2,3,9,0.82)_82%),linear-gradient(180deg,rgba(3,4,10,0.48),rgba(4,3,10,0.7))]" />
+          <div className="portfolio-viewer-texture absolute inset-0" />
+        </div>
         <div className="sticky top-0 z-20 border-b border-white/12 bg-black/72 px-5 py-4 shadow-[0_12px_40px_rgba(0,0,0,0.45)] backdrop-blur-2xl sm:px-8">
           <div className="mx-auto max-w-375">
           <div className="flex items-start justify-between gap-5">
@@ -339,33 +317,65 @@ export function PortfolioProjectModal({ project, onClose, categoryTitle = "Explo
             </button>
           </div>
 
-          <div role="tablist" aria-label={`${project.title} media`} className="mt-5 flex gap-2 overflow-x-auto pb-1">
-            {project.items.map((item, index) => (
-              <button
-                key={item.id}
-                type="button"
-                role="tab"
-                aria-selected={activeIndex === index}
-                onClick={() => { setActiveIndex(index); setActiveMediaIndex(0); }}
-                className={`shrink-0 rounded-full border px-4 py-2 text-[9px] font-semibold uppercase tracking-[0.16em] transition ${activeIndex === index ? "border-violet-300/70 bg-violet-400/22 text-white shadow-[0_0_24px_rgba(139,92,246,0.2)]" : "border-white/15 bg-white/5 text-white/75 hover:border-white/35 hover:bg-white/9 hover:text-white"}`}
-              >
-                {item.tab}
-              </button>
-            ))}
-          </div>
           </div>
         </div>
 
         <div className="relative z-10 mx-auto max-w-375 p-4 pb-16 sm:p-8 sm:pb-20 lg:px-14">
           {project.backgroundAudio ? <div className="mb-8"><NeomorphicMusicPlayer track={project.backgroundAudio} /></div> : null}
-          <div className="mb-8 grid gap-5 border-b border-white/8 pb-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
-            <div><p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-violet-100">PROJECT OVERVIEW</p><p className="mt-4 max-w-4xl text-base leading-8 text-white/90">{project.description}</p></div>
-            <aside className="work-detail-tools-card rounded-2xl border-white/15 bg-white/7 p-5 backdrop-blur-xl"><p className="text-[9px] font-semibold uppercase tracking-[0.22em] text-white/65">Portfolio format</p><p className="mt-3 text-sm leading-6 text-white/90">Premium full-screen case study with tabbed media, gallery navigation, project details and an output-ready player.</p></aside>
-          </div>
           <AnimatePresence mode="wait">
             <motion.div key={active.id} initial={{ opacity: 0, x: 14 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -14 }} transition={{ duration: 0.25 }}>
-              {active.mediaType === "image" && activeSources.length > 1 && <div className="mb-4 flex items-center gap-3">
-                <div className="flex min-w-0 flex-1 gap-2 overflow-x-auto px-1 py-1">
+              <div className="mb-6 grid gap-6 border-b border-white/10 px-2 pb-7 sm:px-4 lg:grid-cols-[1fr_18rem]">
+                <div>
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-violet-100">{active.tab}</p>
+                  <h3 className="mt-3 text-2xl font-semibold tracking-[-0.035em] text-white sm:text-3xl">{active.title}</h3>
+                  <p className="mt-4 max-w-3xl text-sm leading-7 text-white/88 sm:text-base">{active.description}</p>
+                  {active.action && <a href={active.action.href} className="mt-5 inline-flex items-center gap-2 rounded-full border border-violet-300/35 bg-violet-500/15 px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-violet-100 transition hover:border-violet-200/70 hover:bg-violet-500/25">{active.action.label} <ArrowUpRight size={14} /></a>}
+                </div>
+                <aside className="portfolio-slide-detail-card rounded-2xl border border-white/15 bg-white/7 p-5 backdrop-blur-xl">
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.22em] text-white/65">Medium</p>
+                  <p className="mt-2 text-sm text-white">{active.medium}</p>
+                  <p className="mt-5 text-[9px] font-semibold uppercase tracking-[0.22em] text-white/65">Details</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {active.tools.map((tool) => <span key={tool} className="rounded-full border border-white/16 bg-black/35 px-3 py-1.5 text-[9px] text-white/90">{tool}</span>)}
+                  </div>
+                </aside>
+              </div>
+
+              <nav className="mb-6 px-2 sm:px-4" aria-label={`${project.title} selection menu`}>
+                <p className="mb-2 text-[8px] font-semibold uppercase tracking-[0.24em] text-white/45">Select project view</p>
+                <div role="tablist" aria-label={`${project.title} media`} className="portfolio-gallery-rail flex gap-2 overflow-x-auto rounded-xl border border-white/12 bg-black/30 p-2 shadow-[inset_0_2px_8px_rgba(0,0,0,0.5),0_8px_24px_rgba(0,0,0,0.18)]">
+                  {project.items.map((item, index) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      role="tab"
+                      aria-selected={activeIndex === index}
+                      onClick={() => { setActiveIndex(index); setActiveMediaIndex(0); }}
+                      className={`relative inline-flex min-h-12 min-w-32 shrink-0 cursor-pointer items-center justify-center rounded-[15%] border px-4 py-3 text-center text-[9px] font-semibold uppercase tracking-[0.14em] transition-all duration-200 before:pointer-events-none before:absolute before:inset-[2px] before:rounded-[13%] before:border before:border-white/8 ${activeIndex === index ? "translate-y-px border-violet-300/70 bg-[linear-gradient(145deg,rgba(91,65,170,0.78),rgba(41,30,91,0.86))] text-white shadow-[inset_3px_3px_8px_rgba(8,5,20,0.62),inset_-2px_-2px_6px_rgba(179,151,255,0.2),0_0_20px_rgba(139,92,246,0.3)] after:absolute after:inset-x-4 after:bottom-1.5 after:h-px after:bg-violet-200/80" : "border-white/18 bg-[linear-gradient(145deg,rgba(62,64,75,0.92),rgba(17,18,25,0.96))] text-white/78 shadow-[5px_6px_12px_rgba(0,0,0,0.55),-2px_-2px_6px_rgba(255,255,255,0.09),inset_1px_1px_1px_rgba(255,255,255,0.16),inset_-1px_-1px_2px_rgba(0,0,0,0.7)] hover:-translate-y-0.5 hover:border-violet-200/45 hover:text-white hover:shadow-[7px_9px_16px_rgba(0,0,0,0.58),-2px_-2px_7px_rgba(255,255,255,0.1),0_0_16px_rgba(139,92,246,0.14)] active:translate-y-px active:shadow-[inset_3px_3px_7px_rgba(0,0,0,0.66),inset_-2px_-2px_5px_rgba(255,255,255,0.08)]"}`}
+                    >
+                      {item.tab}
+                    </button>
+                  ))}
+                </div>
+              </nav>
+
+              {active.highlightImages?.length ? <section className="mb-8" aria-label={`${active.title} highlighted before and after outputs`}>
+                <div className="mb-4">
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-violet-100">Highlight Output</p>
+                  <h4 className="mt-2 text-lg font-semibold text-white">Before, development, and final presentation</h4>
+                </div>
+                <div className="grid gap-4 lg:grid-cols-3">
+                  {active.highlightImages.map((image, index) => <figure key={image.src} className={`portfolio-comparison-groove overflow-hidden rounded-2xl border bg-black/30 ${index === active.highlightImages!.length - 1 ? "border-violet-300/35 shadow-[0_0_30px_rgba(139,92,246,0.14)]" : "border-white/14"}`} onContextMenu={(event) => event.preventDefault()}>
+                    <div className="relative aspect-video overflow-hidden"><Image src={withBasePath(image.src)} alt={`${active.title} ${image.label}`} fill sizes="(max-width: 1024px) 100vw, 33vw" className="pointer-events-none select-none object-cover" draggable={false} priority /></div>
+                    <figcaption className={`border-t px-4 py-3 text-[9px] font-semibold uppercase tracking-[0.16em] ${index === active.highlightImages!.length - 1 ? "border-violet-300/20 text-violet-100" : "border-white/10 text-white/65"}`}>{image.label}</figcaption>
+                  </figure>)}
+                </div>
+              </section> : null}
+
+              {active.comparisonSets?.length ? <InteriorDesignComparison sets={active.comparisonSets} title={active.title} resolveSrc={withBasePath} /> : null}
+
+              {!hasComparisonSets && active.mediaType === "image" && activeSources.length > 1 && <div className="mb-4 flex items-center gap-3">
+                <div className="portfolio-gallery-rail flex min-w-0 flex-1 snap-x snap-mandatory gap-2 overflow-x-auto rounded-xl border border-white/12 bg-black/18 p-2">
                   {activeSources.map((src, index) => <button key={src} type="button" onClick={() => setActiveMediaIndex(index)} aria-label={`View ${active.title} image ${index + 1}`} className={`relative h-16 w-24 shrink-0 overflow-hidden rounded-xl border bg-black transition ${activeMediaIndex === index ? "border-violet-300/70 shadow-[0_0_20px_rgba(139,92,246,0.2)]" : "border-white/10 opacity-60 hover:opacity-100"}`}><Image src={withBasePath(src)} alt="" fill sizes="96px" className="object-cover" /></button>)}
                 </div>
                 <button type="button" onClick={() => setIsSlideshowPlaying((playing) => !playing)} className="inline-flex shrink-0 items-center gap-2 rounded-full border border-violet-300/30 bg-violet-500/12 px-3.5 py-2.5 text-[9px] font-semibold uppercase tracking-[0.15em] text-violet-100 transition hover:border-violet-200/65 hover:bg-violet-500/20" aria-pressed={isSlideshowPlaying}>
@@ -373,28 +383,25 @@ export function PortfolioProjectModal({ project, onClose, categoryTitle = "Explo
                 </button>
               </div>}
 
-              <div className="relative aspect-video w-full overflow-hidden rounded-[1.45rem] border border-white/10 bg-black shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+              {!hasComparisonSets && <div className="relative aspect-video w-full overflow-hidden rounded-[1.45rem] border border-white/10 bg-black shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
                 {activeSrc && active.mediaType === "image" ? (
                   <Image src={withBasePath(activeSrc)} alt={`${active.title} ${activeMediaIndex + 1}`} fill sizes="(max-width: 768px) 100vw, 1100px" className="object-contain" priority />
+                ) : activeSrc && active.mediaType === "video" && active.pingPongAmbient ? (
+                  <PingPongAmbientVideo src={withBasePath(activeSrc)} title={active.title} poster={active.poster ? withBasePath(active.poster) : undefined} />
                 ) : activeSrc && active.mediaType === "video" ? (
-                  <Mp4Player src={activeSrc} title={active.title} autoPlay={active.autoPlay} poster={active.poster} />
+                  <GlassMediaPlayer src={withBasePath(activeSrc)} title={active.title} type="video" autoPlay={active.autoPlay} loop={active.autoPlay} poster={active.poster ? withBasePath(active.poster) : undefined} />
                 ) : activeSrc && active.mediaType === "audio" ? (
-                  <AudioPlayer src={activeSrc} title={active.title} poster={active.poster} />
+                  <GlassMediaPlayer src={withBasePath(activeSrc)} title={active.title} type="audio" poster={active.poster ? withBasePath(active.poster) : undefined} />
                 ) : (
                   <MediaPlaceholder type={active.mediaType} title={active.title} />
                 )}
 
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/60 to-transparent" />
-              </div>
+              </div>}
 
-              {active.supportingImages?.length ? <section className="mt-6" aria-label="Architectural walkthrough rendered frames">
-                <p className="mb-3 text-[9px] font-semibold uppercase tracking-[0.22em] text-violet-100">Rendered Frames & Floor Plans</p>
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-                  {active.supportingImages.map((src, index) => <figure key={src} className="overflow-hidden rounded-xl border border-white/10 bg-black/35"><div className="relative aspect-4/3"><Image src={withBasePath(src)} alt={`${active.title} supporting architectural frame ${index + 1}`} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw" className="object-cover" /></div></figure>)}
-                </div>
-              </section> : null}
+              {!hasComparisonSets && active.supportingImages?.length ? <Auto3DSlideshow images={active.supportingImages} title={active.title} resolveSrc={withBasePath} /> : null}
 
-              {active.comparison && <section className="mt-8 border-t border-white/10 pt-8" aria-label="Interior design before and after">
+              {!hasComparisonSets && active.comparison && <section className="mt-8 border-t border-white/10 pt-8" aria-label="Interior design before and after">
                 <div className="mb-4 flex items-end justify-between gap-4">
                   <div><p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-violet-100">BEFORE / AFTER</p><h4 className="mt-2 text-lg font-semibold text-white">{active.comparison.title ?? "Raw space to rendered interior"}</h4></div>
                   <p className="text-right text-[9px] uppercase tracking-[0.16em] text-white/45">{active.comparison.detail ?? "Same viewpoint"}</p>
@@ -411,22 +418,6 @@ export function PortfolioProjectModal({ project, onClose, categoryTitle = "Explo
                 </div>
               </section>}
 
-              <div className="grid gap-7 px-2 py-7 sm:px-4 lg:grid-cols-[1fr_18rem]">
-                <div>
-                  <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-violet-100">{active.tab}</p>
-                  <h3 className="mt-3 text-2xl font-semibold tracking-[-0.035em] text-white sm:text-3xl">{active.title}</h3>
-                  <p className="mt-4 max-w-3xl text-sm leading-7 text-white/88 sm:text-base">{active.description}</p>
-                  {active.action && <a href={active.action.href} className="mt-5 inline-flex items-center gap-2 rounded-full border border-violet-300/35 bg-violet-500/15 px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-violet-100 transition hover:border-violet-200/70 hover:bg-violet-500/25">{active.action.label} <ArrowUpRight size={14} /></a>}
-                </div>
-                <aside className="portfolio-slide-detail-card rounded-2xl border border-white/15 bg-white/7 p-5 backdrop-blur-xl">
-                  <p className="text-[9px] font-semibold uppercase tracking-[0.22em] text-white/65">Medium</p>
-                  <p className="mt-2 text-sm text-white">{active.medium}</p>
-                  <p className="mt-5 text-[9px] font-semibold uppercase tracking-[0.22em] text-white/65">Details</p>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {active.tools.map((tool) => <span key={tool} className="rounded-full border border-white/16 bg-black/35 px-3 py-1.5 text-[9px] text-white/90">{tool}</span>)}
-                  </div>
-                </aside>
-              </div>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -443,7 +434,7 @@ export function VisualArtGallery() {
   useEffect(() => {
     const projectId = new URLSearchParams(window.location.search).get("project");
     if (!projectId) return;
-    const linkedProject = visualArtProjects.find((project) => project.id === projectId);
+    const linkedProject = architectureProjects.find((project) => project.id === projectId);
     if (!linkedProject) return;
     const frame = window.requestAnimationFrame(() => setSelectedProject(linkedProject));
     return () => window.cancelAnimationFrame(frame);
@@ -452,7 +443,7 @@ export function VisualArtGallery() {
   return (
     <>
       <main className="grid gap-6 pt-10 md:grid-cols-2 xl:grid-cols-3">
-        {visualArtProjects.map((project, index) => (
+        {architectureProjects.map((project, index) => (
           <article key={project.id} className="group overflow-hidden rounded-[1.8rem] border border-white/10 bg-[#0F1620]/78 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.18)] transition duration-300 hover:border-violet-300/30">
             <button type="button" onClick={() => setSelectedProject(project)} className="block w-full text-left" aria-label={`Open ${project.title} gallery`}>
               <div className="relative aspect-16/10 overflow-hidden rounded-[1.25rem] border border-white/8 bg-[#090b11]">

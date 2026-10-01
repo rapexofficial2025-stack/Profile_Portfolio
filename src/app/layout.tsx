@@ -15,7 +15,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="h-full antialiased" style={{ "--lightmode-bg": `url("${asset("/images/profile/lightmode-bg.png")}")`, "--portfolio-header-bg": `url("${asset("/images/hero/honeycomb-cover.png")}")` } as React.CSSProperties}>
+    <html lang="en" className="h-full antialiased" style={{ "--lightmode-bg": `url("${asset("/images/profile/lightmode-bg.webp")}")`, "--portfolio-header-bg": `url("${asset("/images/hero/honeycomb-cover.webp")}")` } as React.CSSProperties}>
       <body className="min-h-full"><PortfolioShell>{children}</PortfolioShell></body>
     </html>
   );

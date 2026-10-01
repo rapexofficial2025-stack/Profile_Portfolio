@@ -10,7 +10,7 @@ import { InvitationMock } from "./mocks/InvitationMock";
 import { SplashMock } from "./mocks/SplashMock";
 import { FrostTwinWms } from "./frost/FrostTwinWms";
 import { AirHoloGesturePreview } from "./airholo/AirHoloGesturePreview";
-import { RapexDashPreview } from "./rapex-dash/RapexDashPreview";
+import { RapexDashGame } from "./rapex-dash/RapexDashGame";
 
 const mocks: Record<ShowcaseMock, () => React.ReactElement> = {
   portal: EcommercePortalMock,
@@ -20,7 +20,7 @@ const mocks: Record<ShowcaseMock, () => React.ReactElement> = {
   splash: SplashMock,
   frost: FrostTwinWms,
   airholo: AirHoloGesturePreview,
-  game: RapexDashPreview,
+  game: RapexDashGame,
 };
 
 /** Live front-end mockup in a browser frame (Web) or a phone frame (Mobile). Mocks adapt via container queries. */

@@ -79,7 +79,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </div>}
           </section>}
 
-          {!project.collections?.length && <section id={showcase ? "ui-output" : undefined} className="work-detail-glass-card scroll-mt-8 rounded-[1.8rem] p-6">
+          {(!project.collections?.length || isEcommerceProject) && <section id={showcase ? "ui-output" : undefined} className="work-detail-glass-card scroll-mt-8 rounded-[1.8rem] p-6">
             <p className="text-[10px] font-semibold tracking-[0.22em] text-violet-200">FINAL OUTPUT</p>
             {showcase ? <div className="mt-5"><DevicePreview mock={showcase.mock} url={showcase.url} defaultDevice={showcase.defaultDevice} /></div> : isSavorHouse ? <div className="mt-5"><SavorHousePreview /></div> : isEcommerceProject ? <div className="mt-5"><EcommerceUiPreview /></div> : project.finalVideo ? <PremiumVideoPlayer {...project.finalVideo} poster={project.cover} /> : <div className="mt-5 grid gap-4 lg:grid-cols-2">
               <ImagePlaceholder title="Final Presentation" subtitle="Large gallery" />

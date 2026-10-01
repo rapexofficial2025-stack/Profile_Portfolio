@@ -10,7 +10,7 @@ export function InvitationAutoLoop({ expanded = false }: { expanded?: boolean })
   return (
     <div className="absolute inset-0 grid place-items-center overflow-hidden bg-[#21152c] p-3">
       <Image
-        src={asset(`${invitationBase}/table.png`)}
+        src={asset(`${invitationBase}/table.webp`)}
         alt=""
         fill
         sizes={expanded ? "min(56rem, 100vw)" : "25vw"}
@@ -20,12 +20,12 @@ export function InvitationAutoLoop({ expanded = false }: { expanded?: boolean })
 
       <div className={`relative aspect-1507/997 w-[86%] perspective-[1400px] ${expanded ? "max-w-3xl" : "max-w-xs"}`}>
         <div className="absolute inset-0 overflow-hidden rounded-[0.3rem] bg-[#f7e8cc] shadow-[0_20px_45px_rgba(20,8,28,0.48)]">
-          <Image src={asset(`${invitationBase}/inside-background.png`)} alt="Invitation interior" fill sizes="60vw" className="object-cover" />
+          <Image src={asset(`${invitationBase}/inside-background.webp`)} alt="Invitation interior" fill sizes="60vw" className="object-cover" />
           <div className="absolute inset-y-0 right-0 w-1/2">
-            <Image src={asset(`${invitationBase}/right-page.png`)} alt="Invitation right page" fill sizes="30vw" className="object-cover" />
+            <Image src={asset(`${invitationBase}/right-page.webp`)} alt="Invitation right page" fill sizes="30vw" className="object-cover" />
           </div>
           <div className="absolute inset-y-0 left-0 w-1/2">
-            <Image src={asset(`${invitationBase}/left-page.png`)} alt="Invitation left page" fill sizes="30vw" className="object-cover" />
+            <Image src={asset(`${invitationBase}/left-page.webp`)} alt="Invitation left page" fill sizes="30vw" className="object-cover" />
           </div>
         </div>
 
@@ -35,7 +35,7 @@ export function InvitationAutoLoop({ expanded = false }: { expanded?: boolean })
           transition={{ duration: 8, times: [0, 0.16, 0.42, 0.72, 1], ease: "easeInOut", repeat: Infinity, repeatDelay: 0.4 }}
         >
           <div className="absolute inset-0 overflow-hidden rounded-[0.3rem] shadow-[0_16px_30px_rgba(26,10,31,0.48)] backface-hidden">
-            <Image src={asset(`${invitationBase}/cover.png`)} alt="Invitation cover opening and closing automatically" fill sizes="30vw" className="object-cover" />
+            <Image src={asset(`${invitationBase}/cover.webp`)} alt="Invitation cover opening and closing automatically" fill sizes="30vw" className="object-cover" />
           </div>
           <div className="absolute inset-0 rounded-[0.3rem] bg-[#eadcbf] shadow-inner backface-hidden transform-[rotateY(180deg)]" />
         </motion.div>

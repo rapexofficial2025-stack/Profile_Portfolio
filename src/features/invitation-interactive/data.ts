@@ -6,13 +6,13 @@ export const featureMetadata: InvitationMetadata = {
   title: "Ravian Interactive Invitation",
   type: "Interactive Web Experience",
   description: "A tactile digital invitation with a draggable cover, peelable note, video message, and responsive mobile-first interactions.",
-  cover: "/images/projects/interactive-ui-design/invitation-paper-engine/cover.png",
+  cover: "/images/projects/interactive-ui-design/invitation-paper-engine/cover.webp",
   tabs: [
     {
       id: "overview",
       label: "Overview",
       mediaType: "image",
-      src: "/images/projects/interactive-ui-design/invitation-paper-engine/inside-background.png",
+      src: "/images/projects/interactive-ui-design/invitation-paper-engine/inside-background.webp",
       title: "Paper-engine invitation",
       description: "A layered card experience designed to feel physical while remaining accessible in a browser.",
       tools: ["Next.js", "React", "TypeScript"],

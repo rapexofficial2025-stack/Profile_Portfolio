@@ -10,8 +10,8 @@ const Eyebrow = ({ children }: { children: React.ReactNode }) => <p className="s
 function BrandIdentity({ brand }: { brand: "rapex" | "progrex" }) {
   const isRapex = brand === "rapex";
   const name = isRapex ? "RAPEX Technologies" : "PROGREX";
-  const icon = isRapex ? "/images/branding/rapex-logo.png" : "/images/branding/progrex-logo.png";
-  const wordmark = isRapex ? "/images/branding/rapex-name-logo.png" : "/images/branding/progrex-name-logo.png";
+  const icon = isRapex ? "/images/branding/rapex-logo.webp" : "/images/branding/progrex-logo.webp";
+  const wordmark = isRapex ? "/images/branding/rapex-name-logo.webp" : "/images/branding/progrex-name-logo.webp";
 
   return <div className={`stat-brand-identity is-${brand}`} aria-label={name}>
     <span className="stat-brand-logo-frame" aria-hidden="true"><Image src={asset(icon)} alt="" width={96} height={96} className="stat-brand-logo" /></span>

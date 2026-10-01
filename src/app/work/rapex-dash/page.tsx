@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, ChevronLeft, ChevronRight, ExternalLink, Gamepad2 } from "lucide-react";
-import { ProjectEmbed } from "@/components/ProjectEmbed";
 import { RapexDashGallery, RapexDashMediaViewer, RapexDashSpecificationsRail } from "@/components/showcase/rapex-dash/RapexDashMedia";
+import { RapexDashGame } from "@/components/showcase/rapex-dash/RapexDashGame";
 
-const liveGameUrl = "https://rapexofficial2025-stack.github.io/RAPEX-DASH/";
-const sourceUrl = "https://github.com/rapexofficial2025-stack/RAPEX-DASH";
+const sourceUrl = "https://github.com/rapexofficial2025-stack/rapex-dash";
+const liveUrl = "https://rapexofficial2025-stack.github.io/rapex-dash/";
 
 export const metadata: Metadata = {
   title: "RAPEX DASH — Playable Case Study",
@@ -44,17 +44,23 @@ export default function RapexDashCaseStudyPage() {
           <div className="mt-6 flex flex-wrap gap-2">
             {["React", "TypeScript", "Three.js", "WebGL"].map((tool) => <span key={tool} className="work-detail-black-button rounded-full px-3 py-1.5 text-xs">{tool}</span>)}
           </div>
+          <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="mr-3 mt-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/45 bg-cyan-300/15 px-4 py-2.5 text-[10px] font-semibold tracking-[0.14em] text-cyan-100 transition hover:bg-cyan-300/25 hover:text-white">PLAY LIVE GAME <ExternalLink size={14} /></a>
           <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2.5 text-[10px] font-semibold tracking-[0.14em] text-white/75 transition hover:border-cyan-300/45 hover:text-white">VIEW SOURCE ON GITHUB <ExternalLink size={14} /></a>
         </header>
 
         <section className="pt-10">
-          <ProjectEmbed
-            src={liveGameUrl}
-            title="RAPEX DASH playable demo"
-            aspectRatio="16 / 9"
-            minHeight={480}
-            hint="Click once to give the game control of your keyboard. Arrow keys and Space will then control the game instead of scrolling this portfolio page."
-          />
+          <div className="overflow-hidden rounded-[1.8rem] border border-cyan-300/20 bg-[#050817] shadow-[0_28px_90px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.08)]">
+            <div className="flex items-center justify-between gap-3 border-b border-white/10 bg-[#091126] px-4 py-3">
+              <div>
+                <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-cyan-300">Playable Project</p>
+                <p className="mt-1 text-sm font-semibold text-white">RAPEX DASH playable demo</p>
+              </div>
+              <p className="hidden text-[10px] text-white/45 sm:block">Click the game once so the arrow keys and Space control it instead of scrolling.</p>
+            </div>
+            <div className="aspect-[4/5] w-full sm:aspect-video">
+              <RapexDashGame />
+            </div>
+          </div>
         </section>
 
         <RapexDashGallery />

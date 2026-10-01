@@ -1,5 +1,5 @@
 import type { PortfolioSample } from "@/data/categories";
-import type { VisualArtProject } from "@/data/visual-art-gallery";
+import { visualArtProjects, type VisualArtProject } from "@/data/visual-art-gallery";
 
 type GalleryCategoryId = "interactive-ui-design" | "motion-graphic-design" | "story-creation-video-editing" | "audio-fx-music-branding" | "full-stack-web-development" | "react-native-mobile-app" | "image-editing-gifs";
 
@@ -20,6 +20,103 @@ function idFrom(value: string) {
 }
 
 export function buildCategoryProject(categoryId: GalleryCategoryId, sample: PortfolioSample, index: number): VisualArtProject {
+  if (categoryId === "motion-graphic-design" && sample.title === "VEANTEA Coffee & Milktea") {
+    const root = "/images/projects/motion-graphic-design/veantea-coffee";
+    return {
+      id: "veantea-coffee-milktea",
+      title: "VEANTEA Coffee & Milktea",
+      type: "Brand Campaign · Café Promotion · Edited Social Images",
+      description: "The complete VEANTEA visual campaign, connecting original café references with edited Matcha product compositions and social-ready promotional artwork.",
+      cover: `${root}/cover.webp`,
+      items: [
+        {
+          id: "veantea-edited-images",
+          tab: "Edited Images",
+          title: "VEANTEA Edited Campaign Images",
+          description: "The finished café campaign images bring together product retouching, Matcha color direction, branded composition, typography, and social-promotion layouts.",
+          medium: "Edited café campaign image collection",
+          tools: ["Photo Editing", "Product Compositing", "Branding", "Social Media Design"],
+          mediaType: "image",
+          src: `${root}/matcha-final.webp`,
+          sources: [
+            `${root}/matcha-final.webp`,
+            `${root}/match-1.webp`,
+            `${root}/match-2.webp`,
+            `${root}/match-3.webp`,
+            `${root}/match-4.webp`,
+            `${root}/match-5.webp`,
+            `${root}/match-6.webp`,
+            `${root}/6228d96a-0f90-4234-9bca-c03d293e4511.webp`,
+            `${root}/10176aab-7ff7-4bac-a66e-58875d4cc951.webp`,
+            `${root}/cover.webp`,
+          ],
+        },
+      ],
+    };
+  }
+
+  if (categoryId === "react-native-mobile-app" && sample.title === "Welcome Screen UI") {
+    return {
+      id: "react-native-welcome-screen",
+      title: "Welcome Screen UI",
+      type: "React Native Welcome · Animated Mobile Screen",
+      description: "A ready-to-play mobile welcome-screen animation presented as a React Native interface and motion-design output.",
+      cover: "/images/projects/react-native-welcome/Splash Screen background.webp",
+      items: [
+        {
+          id: "figma-welcome-animation",
+          tab: "Figma Welcome",
+          title: "Figma Welcome Screen Animation",
+          description: "The recovered Figma welcome-screen animation demonstrates the opening mobile interface, branded motion, visual pacing, and transition behavior.",
+          medium: "Figma mobile welcome-screen animation",
+          tools: ["Figma", "Mobile UI/UX", "Motion Design", "Welcome Flow"],
+          mediaType: "video",
+          src: "/videos/welcome-screen-ui.mp4",
+          poster: "/images/projects/react-native-welcome/Splash Screen background.webp",
+          autoPlay: true,
+        },
+        {
+          id: "rapex-marketing-splash",
+          tab: "Marketing Splash",
+          title: "RAPEX Marketing Splash Screen",
+          description: "A branded mobile splash sequence that introduces the RAPEX marketplace through character motion, logo timing, and a polished launch transition.",
+          medium: "React Native marketing splash animation",
+          tools: ["React Native", "Splash Screen", "Brand Motion", "Mobile Launch"],
+          mediaType: "video",
+          src: "/images/projects/react-native-welcome/Rapex Marketing Splash Screen 1.mp4",
+          poster: "/images/projects/react-native-welcome/Market DESign 2.webp",
+          autoPlay: true,
+        },
+        {
+          id: "react-native-splash-screen",
+          tab: "Splash Screen",
+          title: "React Native Splash Screen Motion",
+          description: "An alternate mobile opening sequence used to test the logo reveal, launch rhythm, and handoff into the welcome interface.",
+          medium: "Mobile splash-screen animation",
+          tools: ["React Native", "Motion Design", "App Launch", "Brand Animation"],
+          mediaType: "video",
+          src: "/videos/Splash Screen.mp4",
+          poster: "/images/projects/react-native-welcome/Splash Screen background.webp",
+          autoPlay: true,
+        },
+      ],
+    };
+  }
+
+  if (categoryId === "motion-graphic-design" && sample.title === "Graphic Design Output") {
+    const project = visualArtProjects.find((item) => item.id === "heart-of-architecture");
+    if (project) {
+      return { ...project, id: "graphic-design-output", title: sample.title, type: sample.type, description: sample.description, cover: sample.cover ?? project.cover };
+    }
+  }
+
+  if (categoryId === "motion-graphic-design" && sample.title === "Product & Brand Promotion") {
+    const project = visualArtProjects.find((item) => item.id === "product-brand-promotion");
+    if (project) {
+      return { ...project, type: sample.type, description: sample.description, cover: sample.cover ?? project.cover };
+    }
+  }
+
   if (categoryId === "interactive-ui-design" && sample.title === "AI CHAT BOT") {
     const root = "/images/projects/interactive-bot";
     return {
@@ -27,7 +124,7 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
       title: "Chatbot Support & GIF Loading Screen",
       type: "Conversational UI · Animated Loading Experience",
       description: "A two-part interface project combining a focused support-chatbot experience with a custom animated loading screen and branded assistant character.",
-      cover: `${root}/bot-1.png`,
+      cover: `${root}/bot-1.webp`,
       items: [
         {
           id: "chatbot-support",
@@ -37,18 +134,43 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Conversational support interface",
           tools: ["UI/UX", "Conversation Design", "Character Design", "Support Flow"],
           mediaType: "image",
-          src: `${root}/bot-1.png`,
-          sources: [`${root}/bot-1.png`, `${root}/bot-2.png`, `${root}/interactive-bot-3.png`],
+          src: `${root}/bot-1.webp`,
+          sources: [`${root}/bot-1.webp`, `${root}/bot-2.webp`, `${root}/interactive-bot-3.webp`],
+        },
+        {
+          id: "chatbot-animation-primary",
+          tab: "Chatbot Animation 1",
+          title: "REX Assistant Character Animation",
+          description: "The first chatbot animation brings the REX assistant to life as an active interface character for greetings, responses, and guided support moments.",
+          medium: "Conversational character animation",
+          tools: ["Motion Design", "Character Animation", "Chatbot UI", "Response State"],
+          mediaType: "video",
+          src: `${root}/animation-SR.mp4`,
+          poster: `${root}/bot-1.webp`,
+          autoPlay: true,
+        },
+        {
+          id: "chatbot-animation-secondary",
+          tab: "Chatbot Animation 2",
+          title: "REX Assistant Response Animation",
+          description: "A second animated response state expands the chatbot presentation with alternate timing and character behavior for a more expressive support flow.",
+          medium: "Conversational response animation",
+          tools: ["Motion Design", "Character Animation", "Chatbot UI", "Interactive State"],
+          mediaType: "video",
+          src: `${root}/animation-SR-2.mp4`,
+          poster: `${root}/bot-2.webp`,
+          autoPlay: true,
         },
         {
           id: "gif-loading-screen",
-          tab: "GIF Loading Screen",
+          tab: "Loading Screen",
           title: "Animated Assistant Loading Screen",
           description: "A branded loading animation keeps the assistant visually active while the interface prepares content, processes a request, or transitions between support states.",
           medium: "Animated loading-screen output",
           tools: ["Motion Design", "GIF Concept", "Character Animation", "Loading State"],
           mediaType: "video",
           src: `${root}/loading-icon.mp4`,
+          poster: `${root}/loading-screen.webp`,
           autoPlay: true,
         },
       ],
@@ -73,14 +195,14 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
     };
   }
 
-  if (categoryId === "motion-graphic-design" && sample.title === "Motion Sisig Promotion") {
+  if (categoryId === "motion-graphic-design" && sample.title === "Motion Graphic Sisig Concept") {
     const root = "/images/projects/motion-graphic-design/motion-Sisig";
     return {
       id: "motion-sisig-promotion",
-      title: "Motion Sisig Promotion",
+      title: "Motion Graphic Sisig Concept",
       type: "Food Promotion · Motion Frame Development",
       description: "A comic-inspired food campaign built as layered motion-ready frames, progressing from the sizzling plate and product elements to the complete JD's Carenderia Sisig offer.",
-      cover: `${root}/clip 4.png`,
+      cover: `${root}/clip 4.webp`,
       items: [
         {
           id: "sisig-motion-frames",
@@ -90,8 +212,8 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Layered food-promotion motion frames",
           tools: ["Motion Graphics", "Food Advertising", "Compositing", "Typography"],
           mediaType: "image",
-          src: `${root}/clip-1.png`,
-          sources: [`${root}/clip-1.png`, `${root}/clip-2.png`, `${root}/clip 3.png`, `${root}/clip 4.png`],
+          src: `${root}/clip-1.webp`,
+          sources: [`${root}/clip-1.webp`, `${root}/clip-2.webp`, `${root}/clip 3.webp`, `${root}/clip 4.webp`],
         },
       ],
     };
@@ -104,7 +226,7 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
       title: "Story Ads Promotion",
       type: "Narrative Social Ad · Story Frames · Final Video",
       description: "A short-form advertisement shaped as a relatable everyday story, moving through time pressure, travel, food preparation, and the final branded message.",
-      cover: `${root}/check time.png`,
+      cover: `${root}/check time.webp`,
       items: [
         {
           id: "story-ad-frames",
@@ -114,43 +236,43 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Vertical social-ad storyboard",
           tools: ["Story Direction", "Shot Planning", "Advertising", "Visual Sequencing"],
           mediaType: "image",
-          src: `${root}/check time.png`,
+          src: `${root}/check time.webp`,
           sources: [
-            `${root}/0633dd64-4ede-4c71-8be8-a8d4b48a3d06.png`,
-            `${root}/0b2f1b4b-0aac-49c9-b574-a3881b8e11b0.png`,
-            `${root}/651971fe-a938-49a7-91ce-8cc5d27b61f6.png`,
-            `${root}/8834e2f9-49a0-497d-8b7a-2f48bb27fb4a.png`,
-            `${root}/Caling 2.png`,
-            `${root}/check time.png`,
-            `${root}/Chopping.png`,
-            `${root}/clock.png`,
-            `${root}/zoom out husband.png`,
+            `${root}/0633dd64-4ede-4c71-8be8-a8d4b48a3d06.webp`,
+            `${root}/0b2f1b4b-0aac-49c9-b574-a3881b8e11b0.webp`,
+            `${root}/651971fe-a938-49a7-91ce-8cc5d27b61f6.webp`,
+            `${root}/8834e2f9-49a0-497d-8b7a-2f48bb27fb4a.webp`,
+            `${root}/Caling 2.webp`,
+            `${root}/check time.webp`,
+            `${root}/Chopping.webp`,
+            `${root}/clock.webp`,
+            `${root}/zoom out husband.webp`,
           ],
         },
         {
           id: "story-ad-video",
           tab: "Final Video",
-          title: "Fast Story Branding Output",
-          description: "The final MP4 combines the planned scenes into a fast, continuous branded narrative prepared for social advertising.",
+          title: "Story Ads Final Output",
+          description: "The supplied final MP4 combines the planned scenes, dialogue, pacing, and transitions into a complete branded narrative prepared for social advertising.",
           medium: "Short-form promotional video",
           tools: ["Video Editing", "Story Pacing", "Transitions", "Branding"],
           mediaType: "video",
-          src: `${root}/fast-story-branding.mp4`,
+          src: `${root}/story-ads-output.mp4`,
           autoPlay: true,
-          poster: `${root}/check time.png`,
+          poster: `${root}/check time.webp`,
         },
       ],
     };
   }
 
-  if (categoryId === "story-creation-video-editing" && sample.title === "Market Ads") {
+  if (categoryId === "motion-graphic-design" && sample.title === "Other Graphic Design Concept Reference") {
     const root = "/images/projects/story-creation-video-editing/Market-Ads";
     return {
-      id: "market-ads",
-      title: "Market Ads",
-      type: "Content Marketing · Social Advertising · Composite Design",
-      description: "A digital-content advertising study developed from isolated creator, editing, workspace, and social-media assets into a complete campaign visual.",
-      cover: `${root}/finish.png`,
+      id: "other-graphic-design-concept-reference",
+      title: sample.title,
+      type: sample.type,
+      description: sample.description,
+      cover: `${root}/finish.webp`,
       items: [
         {
           id: "market-ad-development",
@@ -160,15 +282,15 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Advertising design development",
           tools: ["Compositing", "Art Direction", "Social Media", "Campaign Layout"],
           mediaType: "image",
-          src: `${root}/raw-files.png`,
+          src: `${root}/raw-files.webp`,
           sources: [
-            `${root}/raw-files.png`,
-            `${root}/06476827-e935-4a14-9530-3754dcbdb0e9.png`,
-            `${root}/3ac5853c-1e90-4f2a-b5d6-1ff6911059ff.png`,
-            `${root}/4ebfe51d-1dc8-4249-a527-1935e95f3f5a.png`,
-            `${root}/75fabf56-be75-4b6d-816e-e1cee618d11e.png`,
-            `${root}/c220284c-cc0f-41ce-8761-b24b2a36a6d3.png`,
-            `${root}/dafa60c8-106d-49f8-97ea-091830b03906.png`,
+            `${root}/raw-files.webp`,
+            `${root}/06476827-e935-4a14-9530-3754dcbdb0e9.webp`,
+            `${root}/3ac5853c-1e90-4f2a-b5d6-1ff6911059ff.webp`,
+            `${root}/4ebfe51d-1dc8-4249-a527-1935e95f3f5a.webp`,
+            `${root}/75fabf56-be75-4b6d-816e-e1cee618d11e.webp`,
+            `${root}/c220284c-cc0f-41ce-8761-b24b2a36a6d3.webp`,
+            `${root}/dafa60c8-106d-49f8-97ea-091830b03906.webp`,
           ],
         },
         {
@@ -179,7 +301,7 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Final content-marketing advertisement",
           tools: ["Advertising", "Photo Manipulation", "Typography", "Campaign Design"],
           mediaType: "image",
-          src: `${root}/finish.png`,
+          src: `${root}/finish.webp`,
         },
       ],
     };
@@ -192,13 +314,13 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
       title: "Takeshi's Jingle Song",
       type: "Restaurant Jingle · Sakura Theme Song · Music Branding",
       description: "A Japanese-Filipino restaurant theme song developed from the raw vocal through arrangement, cleanup, mix processing, mastering, and the final branded MP3.",
-      cover: `${root}/Cover-iamge.png`,
+      cover: `${root}/Cover-iamge.webp`,
       backgroundAudio: {
         src: `${root}/Takeshi's  Resto.mp3`,
         title: "Takeshi's Resto",
         subtitle: "Sakura Theme Song · Final MP3",
-        cover: `${root}/Cover-iamge.png`,
-        backgroundImage: "/images/projects/audio-fx-music-branding/irvin dj.png",
+        cover: `${root}/Cover-iamge.webp`,
+        backgroundImage: "/images/projects/audio-fx-music-branding/dj-break.webp",
       },
       items: [
         {
@@ -209,7 +331,7 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Music-branding cover artwork",
           tools: ["Art Direction", "Restaurant Branding", "Cover Design"],
           mediaType: "image",
-          src: `${root}/Cover-iamge.png`,
+          src: `${root}/Cover-iamge.webp`,
         },
         {
           id: "takeshi-mix-process",
@@ -219,8 +341,8 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Audio-production workflow",
           tools: ["FL Studio", "Vocal Editing", "Arrangement", "Mixing", "Mastering"],
           mediaType: "image",
-          src: `${root}/mix-1.png`,
-          sources: [`${root}/mix-1.png`, `${root}/mix-2.png`, `${root}/mix-3.png`, `${root}/mix-4.png`, `${root}/mix-5.png`],
+          src: `${root}/mix-1.webp`,
+          sources: [`${root}/mix-1.webp`, `${root}/mix-2.webp`, `${root}/mix-3.webp`, `${root}/mix-4.webp`, `${root}/mix-5.webp`],
         },
       ],
     };
@@ -231,7 +353,7 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
     const root = isFestival
       ? "/images/projects/audio-fx-music-branding/Pampanga Music Fest 2025"
       : "/images/projects/audio-fx-music-branding/kaibigan-ng-masa-brand-song";
-    const cover = isFestival ? `${root}/pampanga-local-fest.png` : `${root}/cover photo.png`;
+    const cover = isFestival ? `${root}/pampanga-local-fest.webp` : `${root}/cover photo.webp`;
     return {
       id: isFestival ? "pampanga-music-fest" : "kaibigan-ng-masa-branding",
       title: sample.title,
@@ -243,7 +365,7 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
         title: isFestival ? "Pampanga Local Music Fest 2025" : "Kaibigan ng Masa",
         subtitle: isFestival ? "Festival Master · Final MP3" : "RAPEX Brand Song · Final MP3",
         cover,
-        backgroundImage: "/images/projects/audio-fx-music-branding/irvin dj.png",
+        backgroundImage: "/images/projects/audio-fx-music-branding/dj-break.webp",
       },
       items: [
         {
@@ -264,8 +386,8 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Audio-production workflow",
           tools: ["Music Editing", "Arrangement", "Mixing", "Mastering"],
           mediaType: "image",
-          src: `${root}/mix-1.png`,
-          sources: [`${root}/mix-1.png`, `${root}/mix-2.png`, `${root}/mix-3.png`, `${root}/mix-4.png`, `${root}/mix-5.png`],
+          src: `${root}/mix-1.webp`,
+          sources: [`${root}/mix-1.webp`, `${root}/mix-2.webp`, `${root}/mix-3.webp`, `${root}/mix-4.webp`, `${root}/mix-5.webp`],
         } satisfies VisualArtProject["items"][number]] : []),
       ],
     };
@@ -292,12 +414,26 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
         {
           id: "walkthrough-video-editing",
           tab: "Video Editing",
-          title: "Pacing the Property Experience",
-          description: "Rendered camera passes are organized into a clear progression, with timing and scene flow refined so the viewer can understand the property without rushing through important architectural details.",
-          medium: "Walkthrough video editing",
-          tools: ["Lumion", "Video Editing", "Transitions", "Pacing"],
-          mediaType: "image",
-          src: sample.cover,
+          title: "Pacing the Interior Design Transformation",
+          description: "Interior design stages are assembled into a focused edit that demonstrates sequencing, visual continuity, timing, and the transformation from raw space to final presentation.",
+          medium: "Interior design process edit",
+          tools: ["Video Editing", "Transitions", "Pacing", "Interior Visualization"],
+          mediaType: "video",
+          src: "/images/projects/design-architecture/architecture-sketch/Architectural-Interior-Condo/interior desgin/video-editing.mp4",
+          autoPlay: true,
+          poster: "/images/projects/design-architecture/architecture-sketch/Architectural-Interior-Condo/interior desgin/final-output-1/final-output.webp",
+        },
+        {
+          id: "interior-design-timelapse",
+          tab: "Design Timelapse",
+          title: "Interior Design Development Timelapse",
+          description: "A concise timelapse presents the progression from planning and modeling through refinement to the finished residential visualization.",
+          medium: "Interior design timelapse",
+          tools: ["Timelapse Editing", "Design Process", "Transitions", "Visualization"],
+          mediaType: "video",
+          src: "/images/projects/design-architecture/architecture-sketch/Architectural-Interior-Condo/interior desgin/timelapse-interior design.mp4",
+          autoPlay: true,
+          poster: "/images/projects/design-architecture/architecture-sketch/Architectural-Interior-Condo/interior desgin/final-output-2/final-output.webp",
         },
         {
           id: "walkthrough-output",
@@ -309,7 +445,7 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           mediaType: "video",
           src: "/images/projects/design-architecture/architecture-sketch/Architectural-Walkthrough-residential/lumion-walktrought-output.mp4",
           autoPlay: true,
-          poster: "/images/projects/design-architecture/architecture-sketch/Architectural-Walkthrough-residential/vray-rendered/247858724_3122562078019263_7063230755393566376_n.jpg",
+          poster: "/images/projects/design-architecture/architecture-sketch/Architectural-Walkthrough-residential/vray-rendered/247858724_3122562078019263_7063230755393566376_n.webp",
         },
       ],
     };
@@ -317,12 +453,13 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
 
   if (categoryId === "image-editing-gifs" && sample.title === "Property Shoot") {
     const root = "/images/projects/design-architecture/architecture-sketch/Architectural-Interior-Condo/interior desgin/raw-file";
+    const condoRoot = "/images/projects/design-architecture/architecture-sketch/Architectural-Interior-Condo";
     return {
       id: "property-shoot",
       title: "Property Shoot",
       type: "Real Estate Photography · Property Documentation",
       description: "A complete source-photo set documenting the residential exterior, interior, finishes, and property details before the final architectural design presentation.",
-      cover: `${root}/772614632_29118043094451487_2513672691116936793_n.jpg`,
+      cover: `${root}/772614632_29118043094451487_2513672691116936793_n.webp`,
       items: [
         {
           id: "property-shoot-source-photos",
@@ -332,39 +469,39 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Real estate and architectural photography",
           tools: ["Property Photography", "Photo Selection", "Architectural Documentation", "Image Preparation"],
           mediaType: "image",
-          src: `${root}/772614632_29118043094451487_2513672691116936793_n.jpg`,
+          src: `${root}/772614632_29118043094451487_2513672691116936793_n.webp`,
           sources: [
-            `${root}/772614632_29118043094451487_2513672691116936793_n.jpg`,
-            `${root}/772708988_29118054774450319_2738339925194295568_n.jpg`,
-            `${root}/772897518_29118051614450635_5828110186907720245_n.jpg`,
-            `${root}/773252277_29118035157785614_2321778493274980389_n.jpg`,
-            `${root}/773583094_29118045191117944_6812976357604247487_n.jpg`,
-            `${root}/773745842_29118050204450776_1348134836764829680_n.jpg`,
-            `${root}/773822803_29118056014450195_6404692502127610904_n.jpg`,
-            `${root}/773971156_29118041474451649_4700590818257242921_n.jpg`,
-            `${root}/774035648_29118053187783811_4682414760202930561_n.jpg`,
-            `${root}/774320908_29118038904451906_8796477852174163889_n.jpg`,
-            `${root}/774475685_29118036891118774_3620592978019887977_n.jpg`,
-            `${root}/774595856_29118046701117793_8180376576579123396_n.jpg`,
-            `${root}/785147190_29294039173518544_3248008338995872208_n.jpg`,
-            `${root}/785147210_29294040943518367_6132614298407134371_n.jpg`,
-            `${root}/785214461_29294042166851578_8103758393210747050_n.jpg`,
-            `${root}/785605725_29294039793518482_510026309914411934_n.jpg`,
-            `${root}/786242705_29294040376851757_7597259034490867128_n.jpg`,
-            `${root}/786471705_29294040363518425_6409891529341447140_n.jpg`,
-            `${root}/786562944_29294041000185028_5961182132428606125_n.jpg`,
-            `${root}/787483993_29294042790184849_3512394392516597451_n.jpg`,
-            `${root}/787796896_29294043336851461_3036649771445791080_n.jpg`,
-            `${root}/787904373_29294041570184971_5925209955096295661_n.jpg`,
-            `${root}/788439150_29294042780184850_1064623880779020515_n.jpg`,
-            `${root}/788563601_29294042113518250_3828248821049908131_n.jpg`,
-            `${root}/788641114_29294041506851644_3967735995842617770_n.jpg`,
-            `${root}/788766288_29294039216851873_4540098056076281705_n.jpg`,
-            `${root}/raw-3.jfif`,
+            `${root}/772614632_29118043094451487_2513672691116936793_n.webp`,
+            `${root}/772708988_29118054774450319_2738339925194295568_n.webp`,
+            `${root}/772897518_29118051614450635_5828110186907720245_n.webp`,
+            `${root}/773252277_29118035157785614_2321778493274980389_n.webp`,
+            `${root}/773583094_29118045191117944_6812976357604247487_n.webp`,
+            `${root}/773745842_29118050204450776_1348134836764829680_n.webp`,
+            `${root}/773822803_29118056014450195_6404692502127610904_n.webp`,
+            `${root}/773971156_29118041474451649_4700590818257242921_n.webp`,
+            `${root}/774035648_29118053187783811_4682414760202930561_n.webp`,
+            `${root}/774320908_29118038904451906_8796477852174163889_n.webp`,
+            `${root}/774475685_29118036891118774_3620592978019887977_n.webp`,
+            `${root}/774595856_29118046701117793_8180376576579123396_n.webp`,
+            `${condoRoot}/raw-a2.webp`,
+            `${condoRoot}/785147210_29294040943518367_6132614298407134371_n.webp`,
+            `${condoRoot}/raw-a3.webp`,
+            `${condoRoot}/raw-a4.webp`,
+            `${condoRoot}/786242705_29294040376851757_7597259034490867128_n.webp`,
+            `${condoRoot}/786471705_29294040363518425_6409891529341447140_n.webp`,
+            `${condoRoot}/raw-a1.webp`,
+            `${condoRoot}/787483993_29294042790184849_3512394392516597451_n.webp`,
+            `${condoRoot}/787796896_29294043336851461_3036649771445791080_n.webp`,
+            `${condoRoot}/787904373_29294041570184971_5925209955096295661_n.webp`,
+            `${condoRoot}/788439150_29294042780184850_1064623880779020515_n.webp`,
+            `${condoRoot}/788563601_29294042113518250_3828248821049908131_n.webp`,
+            `${condoRoot}/788641114_29294041506851644_3967735995842617770_n.webp`,
+            `${condoRoot}/788766288_29294039216851873_4540098056076281705_n.webp`,
+            `${root}/raw-3.webp`,
           ],
           action: {
             label: "FINAL OUTPUT — CLICK HERE",
-            href: "/work/category/design-architecture?project=heart-of-architecture",
+            href: "/work/category/design-architecture?project=condo-final-render",
           },
         },
       ],
@@ -378,7 +515,7 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
       title: "Restaurant Menu Layout",
       type: "Photo Editing · Before & After · Restaurant Menu",
       description: "A restaurant menu layout developed from raw client references into a finished, print-ready MJP Restobar menu set.",
-      cover: `${root}/finish-menu/Cover.jfif`,
+      cover: `${root}/finish-menu/Cover.webp`,
       items: [
         {
           id: "restaurant-menu-before-after",
@@ -388,26 +525,26 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Photo editing and menu layout",
           tools: ["Photo Editing", "Layout Design", "Typography", "Print Preparation"],
           mediaType: "image",
-          src: `${root}/finish-menu/Cover.jfif`,
+          src: `${root}/finish-menu/Cover.webp`,
           sources: [
-            `${root}/raw/1.jpg`,
-            `${root}/raw/1000042491.png`,
-            `${root}/raw/1000042494.png`,
-            `${root}/raw/1000042802.jpg`,
-            `${root}/raw/1000042803.jpg`,
-            `${root}/raw/1000042922.jpg`,
-            `${root}/raw/1000042925.jpg`,
-            `${root}/finish-menu/Cover.jfif`,
-            `${root}/finish-menu/page-1.png`,
-            `${root}/finish-menu/page-2.png`,
-            `${root}/finish-menu/page-3.png`,
-            `${root}/finish-menu/page-5.png`,
-            `${root}/finish-menu/page-6.png`,
-            `${root}/finish-menu/page-7.png`,
+            `${root}/raw/1.webp`,
+            `${root}/raw/1000042491.webp`,
+            `${root}/raw/1000042494.webp`,
+            `${root}/raw/1000042802.webp`,
+            `${root}/raw/1000042803.webp`,
+            `${root}/raw/1000042922.webp`,
+            `${root}/raw/1000042925.webp`,
+            `${root}/finish-menu/Cover.webp`,
+            `${root}/finish-menu/page-1.webp`,
+            `${root}/finish-menu/page-2.webp`,
+            `${root}/finish-menu/page-3.webp`,
+            `${root}/finish-menu/page-5.webp`,
+            `${root}/finish-menu/page-6.webp`,
+            `${root}/finish-menu/page-7.webp`,
           ],
           comparison: {
-            before: `${root}/raw/1.jpg`,
-            after: `${root}/finish-menu/Cover.jfif`,
+            before: `${root}/raw/1.webp`,
+            after: `${root}/finish-menu/Cover.webp`,
             title: "Restaurant Menu Layout",
             detail: "Raw reference to final cover",
             beforeLabel: "Raw / Before",
@@ -425,7 +562,7 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
       title: "React Native Product Design",
       type: "Merchant Mobile App · Category & Product UX",
       description: "A complete merchant-side mobile product-design study connecting the original store interface, visual category system, category-selection flow and product-management experience.",
-      cover: `${root}/output-category.png`,
+      cover: `${root}/output-category.webp`,
       items: [
         {
           id: "product-design-reference",
@@ -435,8 +572,8 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Mobile UX reference study",
           tools: ["UX Audit", "Reference Study", "Merchant Workflow"],
           mediaType: "image",
-          src: `${root}/raw-1.png`,
-          sources: [`${root}/raw-1.png`, `${root}/806022186_1707437644721647_9136850791000651797_n.jpg`],
+          src: `${root}/raw-1.webp`,
+          sources: [`${root}/raw-1.webp`, `${root}/806022186_1707437644721647_9136850791000651797_n.webp`],
         },
         {
           id: "category-visual-system",
@@ -446,8 +583,8 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Mobile category art direction",
           tools: ["Product Design", "Category System", "Visual Direction", "Image Composition"],
           mediaType: "image",
-          src: `${root}/category-1.png`,
-          sources: [`${root}/category-1.png`, `${root}/category-2.png`, `${root}/category-3.png`, `${root}/category-4.png`, `${root}/category-5.png`],
+          src: `${root}/category-1.webp`,
+          sources: [`${root}/category-1.webp`, `${root}/category-2.webp`, `${root}/category-3.webp`, `${root}/category-4.webp`, `${root}/category-5.webp`],
         },
         {
           id: "category-selection-flow",
@@ -457,8 +594,8 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "React Native mobile interface",
           tools: ["React Native", "Mobile UI/UX", "Store Setup", "Interaction Design"],
           mediaType: "image",
-          src: `${root}/output-category.png`,
-          sources: [`${root}/output-category.png`, `${root}/output-2.png`, `${root}/output-23.png`, `${root}/output-3.png`],
+          src: `${root}/output-category.webp`,
+          sources: [`${root}/output-category.webp`, `${root}/output-2.webp`, `${root}/output-23.webp`, `${root}/output-3.webp`],
         },
         {
           id: "merchant-product-management",
@@ -468,7 +605,7 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Merchant product-management UI",
           tools: ["React Native", "Product Operations", "Inventory UX", "Mobile Dashboard"],
           mediaType: "image",
-          src: `${root}/my-product.png`,
+          src: `${root}/my-product.webp`,
         },
       ],
     };
@@ -481,7 +618,7 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
       title: "Cold Storage Photography & Image Editing",
       type: "Facility Photography · Image Editing · Campaign Design",
       description: "A complete cold-storage media set combining on-location facility photography with edited promotional compositions and brand presentation assets.",
-      cover: `${root}/clip-1.png`,
+      cover: `${root}/clip-1.webp`,
       items: [
         {
           id: "cold-storage-photography",
@@ -491,18 +628,18 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Industrial and facility photography",
           tools: ["Photography", "Photo Selection", "Color Correction", "Documentation"],
           mediaType: "image",
-          src: `${root}/28959020_1709468519119528_2926094393368641536_n.jpg`,
+          src: `${root}/28959020_1709468519119528_2926094393368641536_n.webp`,
           sources: [
-            `${root}/28959020_1709468519119528_2926094393368641536_n.jpg`,
-            `${root}/35516112_1824373537629025_3505987309872873472_n.jpg`,
-            `${root}/36303032_1838885276177851_317653513469427712_n.jpg`,
-            `${root}/38791647_2284084928274994_5695195272368357376_n.jpg`,
-            `${root}/38801253_2284084994941654_157597580044271616_n.jpg`,
-            `${root}/514320960_24207601198879606_4430213454698328317_n.jpg`,
-            `${root}/514323290_24207601322212927_9067318840272547357_n.jpg`,
-            `${root}/514750757_24207601152212944_8806895323459830194_n.jpg`,
-            `${root}/514865810_24207601285546264_4337417385573202792_n.jpg`,
-            `${root}/514995854_24207019652271094_1518063214606296642_n.jpg`,
+            `${root}/28959020_1709468519119528_2926094393368641536_n.webp`,
+            `${root}/35516112_1824373537629025_3505987309872873472_n.webp`,
+            `${root}/36303032_1838885276177851_317653513469427712_n.webp`,
+            `${root}/38791647_2284084928274994_5695195272368357376_n.webp`,
+            `${root}/38801253_2284084994941654_157597580044271616_n.webp`,
+            `${root}/514320960_24207601198879606_4430213454698328317_n.webp`,
+            `${root}/514323290_24207601322212927_9067318840272547357_n.webp`,
+            `${root}/514750757_24207601152212944_8806895323459830194_n.webp`,
+            `${root}/514865810_24207601285546264_4337417385573202792_n.webp`,
+            `${root}/514995854_24207019652271094_1518063214606296642_n.webp`,
           ],
         },
         {
@@ -513,11 +650,11 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Photo compositing and promotional design",
           tools: ["Photo Editing", "Compositing", "Typography", "Campaign Layout"],
           mediaType: "image",
-          src: `${root}/clip-1.png`,
+          src: `${root}/clip-1.webp`,
           sources: [
-            `${root}/37437b79-d202-46df-a773-a82e09edcbb2.png`,
-            `${root}/clip-1.png`,
-            `${root}/clip-2.png`,
+            `${root}/37437b79-d202-46df-a773-a82e09edcbb2.webp`,
+            `${root}/clip-1.webp`,
+            `${root}/clip-2.webp`,
           ],
         },
         {
@@ -528,7 +665,7 @@ export function buildCategoryProject(categoryId: GalleryCategoryId, sample: Port
           medium: "Brand identity asset",
           tools: ["Branding", "Identity", "Campaign Application"],
           mediaType: "image",
-          src: `${root}/logo.jpg`,
+          src: `${root}/logo.webp`,
         },
       ],
     };
