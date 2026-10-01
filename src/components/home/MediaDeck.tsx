@@ -5,7 +5,7 @@ import { Heart, Pause, Play, Repeat, RotateCcw, RotateCw } from "lucide-react";
 import { pageZoom } from "@/lib/zoom";
 import { asset } from "@/lib/asset";
 
-const TRACK = asset("/audio/rapex-theme_IK7pcIES.mp3.mp3");
+const TRACK = asset("/audio/rapex-theme_IK7pcIES.mp3");
 const LOCAL_HEART_KEY = "portfolio-heart-until";
 const HEART_COOLDOWN = 5 * 60 * 1000;
 const CLIENT_ID_KEY = "portfolio-heart-cid";
