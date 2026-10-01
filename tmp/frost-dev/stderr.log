@@ -2862,3 +2862,1361 @@ Import trace:
   Server Component:
     ./src/components/home/HeroSection.tsx
     ./src/app/page.tsx 
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/work/cate..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="h-full ant..." style={{...}}>
+                          <body className="min-h-full">
+                            <PortfolioShell>
+                              <div className="portfolio-...">
+                                <AmbientBubbles>
+                                <aside
++                                 className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-68 ove..."
+-                                 className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-69.5 o..."
+                                >
+                                  <SidebarContent theme="light" onToggleTheme={function toggleTheme}>
+                                    <div className="flex h-ful...">
+                                      <Brand>
+                                        <div className="space-y-2.5">
+                                          <div>
+                                          <p
++                                           className="whitespace-nowrap pl-12 text-[9px] font-medium tracking-[0.18em..."
+-                                           className="whitespace-nowrap pl-12 text-[8px] font-medium tracking-[0.08em..."
+                                          >
++                                           DESIGN • DEVELOP • CREATE
+                                      ...
+                                <div
++                                 className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-68 l..."
+-                                 className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-69.5..."
+                                >
+                                <header className="glass-pane...">
+                                  <Brand>
+                                    <div className="space-y-2.5">
+                                      <div>
+                                      <p
++                                       className="whitespace-nowrap pl-12 text-[9px] font-medium tracking-[0.18em] te..."
+-                                       className="whitespace-nowrap pl-12 text-[8px] font-medium tracking-[0.08em] te..."
+                                      >
++                                       DESIGN • DEVELOP • CREATE
+                                  ...
+                                <AnimatePresence>
+                                <main
++                                 className="min-h-screen lg:pt-1.25 lg:pl-68"
+-                                 className="min-h-screen lg:pt-1.25 lg:pl-69.5"
+                                >
+                  ...
+ 
+[browser] Image with src "/images/projects/visual-art/architecture-sketch/condo/render-1.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[browser] Image with src "/images/projects/visual-art/sketchbook/rex-model.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="h-full ant..." style={{...}}>
+                          <body className="min-h-full">
+                            <PortfolioShell>
+                              <div className="portfolio-...">
+                                <AmbientBubbles>
+                                <aside
++                                 className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-69.5 o..."
+-                                 className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-68 ove..."
+                                >
+                                  <SidebarContent theme="light" onToggleTheme={function toggleTheme}>
+                                    <div className="flex h-ful...">
+                                      <Brand>
+                                        <div className="space-y-2.5">
+                                          <div>
+                                          <p
++                                           className="whitespace-nowrap pl-12 text-[8px] font-medium tracking-[0.08em..."
+-                                           className="whitespace-nowrap pl-12 text-[9px] font-medium tracking-[0.18em..."
+                                          >
++                                           DESIGN • DEVELOP • CREATE
+                                      ...
+                                <div
++                                 className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-69.5..."
+-                                 className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-68 l..."
+                                >
+                                <header className="glass-pane...">
+                                  <Brand>
+                                    <div className="space-y-2.5">
+                                      <div>
+                                      <p
++                                       className="whitespace-nowrap pl-12 text-[8px] font-medium tracking-[0.08em] te..."
+-                                       className="whitespace-nowrap pl-12 text-[9px] font-medium tracking-[0.18em] te..."
+                                      >
++                                       DESIGN • DEVELOP • CREATE
+                                  ...
+                                <AnimatePresence>
+                                <main
++                                 className="min-h-screen lg:pt-1.25 lg:pl-69.5"
+-                                 className="min-h-screen lg:pt-1.25 lg:pl-68"
+                                >
+                                  ...
+                                    <Home>
+                                      <div className="home-page ...">
+                                        <div>
+                                        <div className="mx-auto ma...">
+                                          <HeroSection>
+                                            <section
++                                             className="hero-section light-hero relative isolate z-2 ml-[-5%] w-[110%]"
+-                                             className="hero-section light-hero relative isolate z-2"
+                                            >
+                                              <div>
+                                              <div>
+                                              ...
+                                                <ProfilePortrait>
+                                                  <motion.div initial={{opacity:0, ...}} ...>
+                                                    <div
++                                                     className="relative mx-auto aspect-4/5 w-full max-w-xl lg:max-w-152"
+-                                                     className="relative mx-auto aspect-4/5 w-full max-w-124 lg:max-w-lg"
+                                                      style={{opacity:0,transform:"translateY..."}}
+                                                      ref={function useMotionRef.useCallback}
+                                                    >
+                                          ...
+                                            <StatIcon id="experience">
++                                             <img
++                                               alt=""
++                                               fetchPriority={undefined}
++                                               loading="lazy"
++                                               width={64}
++                                               height={64}
++                                               decoding="async"
++                                               data-nimg="1"
++                                               className="identity-stat-art is-experience"
++                                               style={{color:"transparent"}}
++                                               sizes={undefined}
++                                               srcSet={undefined}
++                                               src="/images/profile/GIF Icon/experience.gif"
++                                               ref={function}
++                                               onLoad={function onLoad}
++                                               onError={function onError}
++                                             >
+-                                             <svg
+-                                               xmlns="http://www.w3.org/2000/svg"
+-                                               width="20"
+-                                               height="20"
+-                                               viewBox="0 0 24 24"
+-                                               fill="none"
+-                                               stroke="currentColor"
+-                                               stroke-width="1.7"
+-                                               stroke-linecap="round"
+-                                               stroke-linejoin="round"
+-                                               className="lucide lucide-rotate-ccw-clock lucide-history"
+-                                               aria-hidden="true"
+-                                             >
+                                          ...
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at img (<anonymous>)
+    at StatIcon (src/components/home/HeroStats.tsx:26:10)
+    at <unknown> (src/components/home/HeroStats.tsx:67:65)
+    at Array.map (<anonymous>)
+    at HeroStats (src/components/home/HeroStats.tsx:66:22)
+    at Home (src\app\page.tsx:9:870)
+  24 |   };
+  25 |
+> 26 |   return <Image src={asset(sources[id])} alt="" width={64} height={64} unoptimized className={`identity-stat-art is-${id}`} />;
+     |          ^
+  27 | }
+  28 |
+  29 | /** Stats bar as a mini navigation: 13+ / RAPEX / PROGREX open detail modals, 60+ goes to the Work page, ∞ glides down to Explore My Work. */
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="h-full ant..." style={{...}}>
+                          <body className="min-h-full">
+                            <PortfolioShell>
+                              <div className="portfolio-...">
+                                <AmbientBubbles>
+                                <aside
++                                 className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-69.5 o..."
+-                                 className="sidebar-scrollbar glass-panel fixed inset-y-0 left-0 z-30 hidden w-68 ove..."
+                                >
+                                  <SidebarContent theme="light" onToggleTheme={function toggleTheme}>
+                                    <div className="flex h-ful...">
+                                      <Brand>
+                                        <div className="space-y-2.5">
+                                          <div>
+                                          <p
++                                           className="whitespace-nowrap pl-12 text-[8px] font-medium tracking-[0.08em..."
+-                                           className="whitespace-nowrap pl-12 text-[9px] font-medium tracking-[0.18em..."
+                                          >
++                                           DESIGN • DEVELOP • CREATE
+                                      ...
+                                <div
++                                 className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-69.5..."
+-                                 className="desktop-topbar fixed inset-x-0 top-0 z-20 hidden h-[2.45rem] lg:left-68 l..."
+                                >
+                                <header className="glass-pane...">
+                                  <Brand>
+                                    <div className="space-y-2.5">
+                                      <div>
+                                      <p
++                                       className="whitespace-nowrap pl-12 text-[8px] font-medium tracking-[0.08em] te..."
+-                                       className="whitespace-nowrap pl-12 text-[9px] font-medium tracking-[0.18em] te..."
+                                      >
++                                       DESIGN • DEVELOP • CREATE
+                                  ...
+                                <AnimatePresence>
+                                <main
++                                 className="min-h-screen lg:pt-1.25 lg:pl-69.5"
+-                                 className="min-h-screen lg:pt-1.25 lg:pl-68"
+                                >
+                                  ...
+                                    <Home>
+                                      <div className="home-page ...">
+                                        <div>
+                                        <div className="mx-auto ma...">
+                                          <HeroSection>
+                                            <section
++                                             className="hero-section light-hero relative isolate z-2 ml-[-5%] w-[110%]"
+-                                             className="hero-section light-hero relative isolate z-2"
+                                            >
+                                              <div>
+                                              <div>
+                                              ...
+                                                <ProfilePortrait>
+                                                  <motion.div initial={{opacity:0, ...}} ...>
+                                                    <div
++                                                     className="relative mx-auto aspect-4/5 w-full max-w-xl lg:max-w-152"
+-                                                     className="relative mx-auto aspect-4/5 w-full max-w-124 lg:max-w-lg"
+                                                      style={{opacity:0,transform:"translateY..."}}
+                                                      ref={function useMotionRef.useCallback}
+                                                    >
+                                          ...
+                                            <StatIcon id="experience">
++                                             <img
++                                               alt=""
++                                               fetchPriority={undefined}
++                                               loading="lazy"
++                                               width={64}
++                                               height={64}
++                                               decoding="async"
++                                               data-nimg="1"
++                                               className="identity-stat-art is-experience"
++                                               style={{color:"transparent"}}
++                                               sizes={undefined}
++                                               srcSet={undefined}
++                                               src="/images/profile/GIF Icon/experience.gif"
++                                               ref={function}
++                                               onLoad={function onLoad}
++                                               onError={function onError}
++                                             >
+-                                             <svg
+-                                               xmlns="http://www.w3.org/2000/svg"
+-                                               width="20"
+-                                               height="20"
+-                                               viewBox="0 0 24 24"
+-                                               fill="none"
+-                                               stroke="currentColor"
+-                                               stroke-width="1.7"
+-                                               stroke-linecap="round"
+-                                               stroke-linejoin="round"
+-                                               className="lucide lucide-rotate-ccw-clock lucide-history"
+-                                               aria-hidden="true"
+-                                             >
+                                          ...
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at img (<anonymous>)
+    at StatIcon (src/components/home/HeroStats.tsx:26:10)
+    at <unknown> (src/components/home/HeroStats.tsx:67:65)
+    at Array.map (<anonymous>)
+    at HeroStats (src/components/home/HeroStats.tsx:66:22)
+    at Home (src\app\page.tsx:9:870)
+  24 |   };
+  25 |
+> 26 |   return <Image src={asset(sources[id])} alt="" width={64} height={64} unoptimized className={`identity-stat-art is-${id}`} />;
+     |          ^
+  27 | }
+  28 |
+  29 | /** Stats bar as a mini navigation: 13+ / RAPEX / PROGREX open detail modals, 60+ goes to the Work page, ∞ glides down to Explore My Work. */
+[browser] Image with src "/images/work/work-ui-design.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+⨯ ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  [90m3 |[0m [36mimport[0m { [33mArrowLeft[0m, [33mArrowRight[0m, [33mBriefcase[0m, [33mCalendarDays[0m, [33mLayers3[0m, [33mSparkles[0m } [36mfrom[0m [32m"lucide-r...[0m
+  [90m4 |[0m [36mimport[0m { [33mImagePlaceholder[0m } [36mfrom[0m [32m"@/components/content/ImagePlaceholder"[0m;
+[31m[1m>[0m [90m5 |[0m [36mimport[0m { [33mEcommerceUiPreview[0m } [36mfrom[0m [32m"@/components/showcase/EcommerceUiPreview"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m6 |[0m [36mimport[0m { getProjectBySlug, portfolioProjects } [36mfrom[0m [32m"@/data/projects"[0m;
+  [90m7 |[0m
+  [90m8 |[0m [36mconst[0m ecommerceViews = [[32m"marketplace"[0m, [32m"merchant"[0m, [32m"admin"[0m, [32m"mobile"[0m, [32m"workflow"[0m] [36mas[0m [36mconst[0m;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  [90m3 |[0m [36mimport[0m { [33mArrowLeft[0m, [33mArrowRight[0m, [33mBriefcase[0m, [33mCalendarDays[0m, [33mLayers3[0m, [33mSparkles[0m } [36mfrom[0m [32m"lucide-r...[0m
+  [90m4 |[0m [36mimport[0m { [33mImagePlaceholder[0m } [36mfrom[0m [32m"@/components/content/ImagePlaceholder"[0m;
+[31m[1m>[0m [90m5 |[0m [36mimport[0m { [33mEcommerceUiPreview[0m } [36mfrom[0m [32m"@/components/showcase/EcommerceUiPreview"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m6 |[0m [36mimport[0m { getProjectBySlug, portfolioProjects } [36mfrom[0m [32m"@/data/projects"[0m;
+  [90m7 |[0m
+  [90m8 |[0m [36mconst[0m ecommerceViews = [[32m"marketplace"[0m, [32m"merchant"[0m, [32m"admin"[0m, [32m"mobile"[0m, [32m"workflow"[0m] [36mas[0m [36mconst[0m;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/work/[slug]/page.tsx:5:1
+Error: Module not found: Can't resolve '@/components/showcase/EcommerceUiPreview'
+  3 | import { ArrowLeft, ArrowRight, Briefcase, CalendarDays, Layers3, Sparkles } from "lucide-r...
+  4 | import { ImagePlaceholder } from "@/components/content/ImagePlaceholder";
+> 5 | import { EcommerceUiPreview } from "@/components/showcase/EcommerceUiPreview";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getProjectBySlug, portfolioProjects } from "@/data/projects";
+  7 |
+  8 | const ecommerceViews = ["marketplace", "merchant", "admin", "mobile", "workflow"] as const;
+
+Import map: aliased to relative './src/components/showcase/EcommerceUiPreview' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+⨯ Failed to generate static paths for /work/category/[category]:
+SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+⨯ Failed to generate static paths for /work/category/[category]/[sample]:
+SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.
+[browser] Image with src "/images/projects/react-native-mobile-app/food-app/796569023_1694454402686638_3407958068666393486_n.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[browser] Image with src "/images/references/52c8a024-1d98-43e2-ba84-e86049e69a25.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading

@@ -6,13 +6,13 @@ The floating viewer supports any number of tabs. Tabs are intentionally allowed 
 
 ## Folder map
 
-- `product-design/<project-name>/`
-- `graphic/<project-name>/`
-- `motion/<project-name>/`
-- `audio/<project-name>/`
-- `visual-art/<project-name>/`
-- `web-interactive/<project-name>/`
-- `mobile-apps/<project-name>/`
-- `photography/<project-name>/`
+- `interactive-ui-design/<project-name>/`
+- `motion-graphic-design/<project-name>/`
+- `story-creation-video-editing/<project-name>/`
+- `audio-fx-music-branding/<project-name>/`
+- `design-architecture/<project-name>/`
+- `full-stack-web-development/<project-name>/`
+- `react-native-mobile-app/<project-name>/`
+- `image-editing-gifs/<project-name>/`
 
-Existing finished Web detail screens remain authoritative. Their assets should stay in their current folders; this map only reserves predictable locations for new media.
+Existing finished detail screens remain authoritative. Add new media under these canonical category folders so routes and asset paths stay aligned.

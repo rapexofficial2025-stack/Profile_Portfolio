@@ -83,7 +83,7 @@ const MIN_HZ = 40, MAX_HZ = 16000;
 const formatHz = (hz: number) => hz >= 1000 ? `${(hz / 1000).toFixed(1)} kHz` : `${Math.round(hz)} Hz`;
 
 /** Live spectrum: log-spaced frequency bars with falling peak caps, peak frequency (Hz) and level (dBFS). */
-function SpectrumMeter({ analyser, isPlaying }: { analyser: AnalyserNode | null; isPlaying: boolean }) {
+export function SpectrumMeter({ analyser, isPlaying }: { analyser: AnalyserNode | null; isPlaying: boolean }) {
   const barRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const capRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const levelRef = useRef<HTMLSpanElement>(null);
@@ -140,7 +140,7 @@ function SpectrumMeter({ analyser, isPlaying }: { analyser: AnalyserNode | null;
   </div>;
 }
 
-function VolumeKnob({ value, onChange }: { value: number; onChange: (value: number) => void }) {
+export function VolumeKnob({ value, onChange }: { value: number; onChange: (value: number) => void }) {
   const drag = useRef<{ y: number; value: number; zoom: number } | null>(null);
   const set = (next: number) => onChange(Math.round(Math.min(1, Math.max(0, next)) * 100) / 100);
   const angle = -KNOB_SWEEP / 2 + value * KNOB_SWEEP;

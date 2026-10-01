@@ -42,12 +42,12 @@ export function RapexModalContent() {
     </div>
     <div className="stat-demo-note"><ShieldAlert size={16} className="mt-0.5 shrink-0" /><div><p className="stat-demo-note-title">Live / staging product demonstration</p><p>Demo environment for portfolio evaluation. Please do not enter sensitive personal or payment information.</p></div></div>
     <div className="stat-modal-actions">
-      <Link href={rapexDetails.caseStudyHref} className="stat-cta is-primary">View case study <ArrowRight size={15} /></Link>
+      <a href={rapexDetails.progrexProjectsUrl} target="_blank" rel="noopener noreferrer" className="stat-cta is-primary">More web projects <ArrowUpRight size={15} /></a>
       {hasDemo
         ? <a href={rapexDetails.customerDemoUrl} target="_blank" rel="noopener noreferrer" className="stat-cta">Experience customer demo <ArrowUpRight size={15} /></a>
         : <span className="stat-cta is-disabled" aria-disabled="true">Customer demo · coming soon</span>}
     </div>
-    <Link href={rapexDetails.exploreMoreHref} className="stat-text-link">Explore more of RAPEX <ArrowRight size={13} /></Link>
+    <a href={rapexDetails.progrexProjectsUrl} target="_blank" rel="noopener noreferrer" className="stat-text-link">Go to PROGREX <ArrowUpRight size={13} /></a>
   </>;
 }
 

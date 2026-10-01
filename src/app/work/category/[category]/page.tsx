@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import { CategoryCollectionGallery } from "@/components/showcase/CategoryCollectionGallery";
 import { VisualArtGallery } from "@/components/showcase/visual-art/VisualArtGallery";
@@ -32,7 +32,20 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
           <p className="mt-5 max-w-2xl text-base leading-8 text-[#A7AFBF]">{category.description}. Explore {category.samples.length} editable sample portfolio directions prepared for your future images, descriptions and final case studies.</p>
         </header>
 
-        {category.id === "visual-art" ? <VisualArtGallery /> : <CategoryCollectionGallery category={category} />}
+        {category.id === "design-architecture" ? <VisualArtGallery /> : <CategoryCollectionGallery category={category} />}
+
+        {category.id === "full-stack-web-development" && (
+          <section className="mt-10 rounded-[1.8rem] border border-white/10 bg-[#0F1620]/78 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.18)] sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-8">
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-violet-200">MORE WEB PROJECTS</p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white">Explore more work at PROGREX</h2>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-[#A7AFBF]">Visit the PROGREX website directly for additional web, software, product-experience and creative-technology projects.</p>
+            </div>
+            <a href="https://www.progrex.cloud/" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex shrink-0 items-center gap-2 rounded-full border border-violet-300/30 bg-violet-500/12 px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-violet-100 transition hover:border-violet-200/65 hover:bg-violet-500/20 sm:mt-0">
+              GO TO PROGREX <ArrowUpRight size={15} />
+            </a>
+          </section>
+        )}
       </div>
     </div>
   );

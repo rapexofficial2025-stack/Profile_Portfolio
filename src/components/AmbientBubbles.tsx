@@ -7,9 +7,6 @@ type Bubble = { id: number; x: number; y: number; size: number; vx: number; vy: 
 
 const BUBBLE_COUNT = 13;
 const bubbleIds = Array.from({ length: BUBBLE_COUNT }, (_, id) => id);
-// cards sit at z-2: depth-1 bubbles drift behind them, depths 3 and 4 float in front
-const DEPTHS = [1, 3, 4];
-const depthOf = (id: number) => DEPTHS[(id * 2) % DEPTHS.length];
 
 export function AmbientBubbles() {
   const bubblesRef = useRef<Bubble[]>([]);
@@ -73,5 +70,5 @@ export function AmbientBubbles() {
     return () => window.cancelAnimationFrame(animationFrame);
   }, []);
 
-  return <>{DEPTHS.map((depth) => <div key={depth} className="pointer-events-none fixed inset-0 overflow-hidden" style={{ zIndex: depth }} aria-hidden="true">{bubbleIds.filter((id) => depthOf(id) === depth).map((id) => <span key={id} ref={(element) => { elementRefs.current[id] = element; }} className="ambient-bubble absolute left-0 top-0 rounded-full" />)}</div>)}</>;
+  return <div className="ambient-bubble-field pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">{bubbleIds.map((id) => <span key={id} ref={(element) => { elementRefs.current[id] = element; }} className="ambient-bubble absolute left-0 top-0 rounded-full" />)}</div>;
 }

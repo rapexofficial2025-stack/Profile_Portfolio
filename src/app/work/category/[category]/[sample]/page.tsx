@@ -6,6 +6,7 @@ import { getWebShowcase } from "@/data/web-showcase";
 import { BeforeAfter } from "@/components/showcase/BeforeAfter";
 import { DevicePreview } from "@/components/showcase/DevicePreview";
 import { RawGallery } from "@/components/showcase/RawGallery";
+import { ProjectMediaGallery } from "@/components/showcase/ProjectMediaGallery";
 import { asset } from "@/lib/asset";
 
 export const dynamicParams = false;
@@ -36,13 +37,13 @@ export default async function SampleDetailPage({ params }: { params: Promise<{ c
           <p className={sectionTitle}>{category.title.toUpperCase()} / 0{index + 1} · {sample.type.toUpperCase()}</p>
           <h1 className="mt-5 text-4xl font-semibold tracking-tighter text-white sm:text-5xl">{sample.title}</h1>
           <p className="mt-5 max-w-2xl text-base leading-8 text-[#A7AFBF]">{showcase.summary}</p>
-          <div className="mt-6 flex flex-wrap gap-2">{showcase.stack.map((tool) => <span key={tool} className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 text-xs text-white/75">{tool}</span>)}</div>
+          <div className="work-detail-tools-card mt-6 flex flex-wrap gap-2 rounded-2xl p-4">{showcase.stack.map((tool) => <span key={tool} className="work-detail-black-button rounded-full px-3 py-1.5 text-xs">{tool}</span>)}</div>
           {showcase.mock === "frost" && <div className="mt-7 flex flex-wrap gap-3">
             <a href="#interactive-demo" className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-xs font-bold tracking-[0.12em] text-white shadow-lg transition hover:bg-blue-500">OPEN INTERACTIVE DEMO <ExternalLink size={15} /></a>
             <a href="https://rapexofficial2025-stack.github.io/Prototype-twin-WMS/#/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-blue-500/35 bg-white/70 px-5 py-3 text-xs font-bold tracking-[0.12em] text-blue-700 shadow-lg transition hover:border-blue-500/70 hover:bg-white">VIEW ACTUAL DEMO <ExternalLink size={15} /></a>
           </div>}
         </div>
-        <aside className="rounded-2xl border border-white/10 bg-white/2 p-5">
+        <aside className="work-detail-glass-card rounded-2xl p-5">
           <p className={sectionTitle}>TRY IT</p>
           <ul className="mt-4 space-y-2.5">{showcase.interactions.map((line) => <li key={line} className="flex gap-2.5 text-sm leading-6 text-white/80"><Check size={15} className="mt-1 shrink-0 text-violet-300" />{line}</li>)}</ul>
           <p className="mt-4 text-[11px] leading-5 text-white/45">Front-end mockup only: no backend, all data is sample data.</p>
@@ -50,9 +51,9 @@ export default async function SampleDetailPage({ params }: { params: Promise<{ c
       </header>
 
       {showcase.challenge && showcase.solution && <section className="grid gap-5 border-b border-white/10 py-10 lg:grid-cols-3">
-        <article className="rounded-2xl border border-white/10 bg-white/2.5 p-6"><p className={sectionTitle}>CHALLENGE</p><p className="mt-4 text-sm leading-7 text-[#A7AFBF]">{showcase.challenge}</p></article>
-        <article className="rounded-2xl border border-white/10 bg-white/2.5 p-6"><p className={sectionTitle}>SOLUTION</p><p className="mt-4 text-sm leading-7 text-[#A7AFBF]">{showcase.solution}</p></article>
-        <article className="rounded-2xl border border-white/10 bg-white/2.5 p-6"><p className={sectionTitle}>KEY FEATURES</p><ul className="mt-4 space-y-2">{showcase.keyFeatures?.map((feature) => <li key={feature} className="flex gap-2 text-sm text-[#A7AFBF]"><Check size={14} className="mt-1 shrink-0 text-blue-400" />{feature}</li>)}</ul></article>
+        <article className="work-detail-groove-card rounded-2xl p-6"><p className={sectionTitle}>CHALLENGE</p><p className="mt-4 text-sm leading-7 text-[#A7AFBF]">{showcase.challenge}</p></article>
+        <article className="work-detail-groove-card rounded-2xl p-6"><p className={sectionTitle}>SOLUTION</p><p className="mt-4 text-sm leading-7 text-[#A7AFBF]">{showcase.solution}</p></article>
+        <article className="work-detail-glass-card rounded-2xl p-6"><p className={sectionTitle}>KEY FEATURES</p><ul className="mt-4 space-y-2">{showcase.keyFeatures?.map((feature) => <li key={feature} className="flex gap-2 text-sm text-[#A7AFBF]"><Check size={14} className="mt-1 shrink-0 text-blue-400" />{feature}</li>)}</ul></article>
       </section>}
 
       <section id="interactive-demo" className="scroll-mt-8 pt-10">
@@ -65,8 +66,13 @@ export default async function SampleDetailPage({ params }: { params: Promise<{ c
         <div className="grid gap-5 md:grid-cols-2">{showcase.videos.map((video) => <figure key={video.src}><video src={encodeURI(asset(video.src))} controls muted loop playsInline preload="metadata" className="aspect-video w-full rounded-2xl border border-white/10 bg-[#05070b] object-contain" /><figcaption className="mt-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/50">{video.label}</figcaption></figure>)}</div>
       </section>}
 
+      {showcase.gallery?.length && <section className="pt-14">
+        <div className="mb-5 flex items-end justify-between gap-4"><p className={sectionTitle}>PROJECT MEDIA</p><p className="text-[10px] tracking-[0.14em] text-white/40">CLICK ANY IMAGE TO OPEN THE SLIDE VIEWER</p></div>
+        <ProjectMediaGallery items={showcase.gallery} />
+      </section>}
+
       <section className="pt-14">
-        <div className="mb-5 flex items-end justify-between gap-4"><p className={sectionTitle}>RAW FILES</p><p className="text-[10px] tracking-[0.14em] text-white/40">PLACEHOLDERS · CLICK TO VIEW</p></div>
+        <div className="mb-5 flex items-end justify-between gap-4"><p className={sectionTitle}>RAW FILES</p><p className="text-[10px] tracking-[0.14em] text-white/40">ASSETS & COMPONENTS · CLICK TO VIEW</p></div>
         <RawGallery items={showcase.rawFiles} />
       </section>
 

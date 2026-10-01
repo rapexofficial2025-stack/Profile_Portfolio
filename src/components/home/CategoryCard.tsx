@@ -41,9 +41,9 @@ export function CategoryCard({ category, index }: { category: PortfolioCategory;
       {/* z-9: a clear glass pane overlays the text area (and the icon pit below it); title and subtitle sit on top of the glass */}
       <div className="work-card-body relative z-9 mt-2 flex flex-col">
         <span className="work-card-glass" aria-hidden="true" />
-        <h3 className="relative z-2 text-[0.9rem] font-semibold uppercase tracking-[0.035em] text-white/95">{category.title}</h3>
-        <p className="relative z-2 mt-2 text-[0.7rem] font-medium uppercase leading-5 tracking-[0.055em] text-[#8E98A9]">{category.description}</p>
-        <span className="neu-glass-pill relative mt-3 inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/2 px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-white/70 group-hover:border-white/15 group-hover:text-white">
+        <h3 className="relative z-2 text-[0.9625rem] font-semibold uppercase tracking-[0.035em] text-white/95">{category.title}</h3>
+        <p className="relative z-2 mt-2 text-[0.7625rem] font-medium uppercase leading-5 tracking-[0.055em] text-[#8E98A9]">{category.description}</p>
+        <span className="neu-glass-pill relative mt-3 inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/2 px-3 py-1.5 text-[0.6825rem] font-semibold uppercase tracking-[0.14em] text-white/70 group-hover:border-white/15 group-hover:text-white">
           <span>Open category</span>
           <ArrowUpRight size={14} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-1" aria-hidden="true" />
         </span>
