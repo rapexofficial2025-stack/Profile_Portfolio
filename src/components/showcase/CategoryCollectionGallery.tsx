@@ -13,6 +13,32 @@ import { InteractiveComponentLab } from "@/components/showcase/InteractiveCompon
 import type { PortfolioCategory } from "@/data/categories";
 import { buildCategoryProject, isGalleryCategory } from "@/data/category-gallery";
 import type { VisualArtProject } from "@/data/visual-art-gallery";
+function withBasePath(src?: string) {
+  if (!src) return "";
+
+  if (
+    src.startsWith("http://") ||
+    src.startsWith("https://") ||
+    src.startsWith("data:") ||
+    src.startsWith("blob:")
+  ) {
+    return src;
+  }
+
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+  if (!basePath) return src;
+
+  if (src.startsWith(`${basePath}/`)) {
+    return src;
+  }
+
+  if (src.startsWith("/")) {
+    return `${basePath}${src}`;
+  }
+
+  return `${basePath}/${src}`;
+}
 
 export function CategoryCollectionGallery({ category }: { category: PortfolioCategory }) {
   const [selectedProject, setSelectedProject] = useState<VisualArtProject | null>(null);
@@ -88,7 +114,7 @@ export function CategoryCollectionGallery({ category }: { category: PortfolioCat
 function ProjectCover({ src, title }: { src: string; title: string }) {
   return (
     <div className="relative aspect-16/10 overflow-hidden rounded-[1.25rem] border border-white/8 bg-[#090b11]">
-      <Image src={src} alt={`${title} visual reference`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-contain transition duration-700 group-hover:scale-[1.025]" />
+      <Image src={withBasePath(src)} alt={`${title} visual reference`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-contain transition duration-700 group-hover:scale-[1.025]" />
       <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/35 via-transparent to-white/8" />
       <span className="absolute bottom-3 left-3 rounded-full border border-white/15 bg-black/45 px-3 py-1.5 text-[8px] font-semibold uppercase tracking-[0.16em] text-white/78 backdrop-blur-md">Visual reference</span>
     </div>
