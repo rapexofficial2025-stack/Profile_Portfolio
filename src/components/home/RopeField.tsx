@@ -2,8 +2,9 @@
 
 import { useEffect, useRef } from "react";
 
-const ROPES = 13;
-const POINTS = 42;
+const ROPES = 10;
+const POINTS = 28;
+const FRAME_MS = 1000 / 30; // 30fps is plenty for this ambient effect and halves the work
 type Point = { x: number; y: number; vx: number; vy: number };
 
 /**
@@ -19,7 +20,8 @@ export function RopeField() {
     if (!canvas || !context) return;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    let width = 0, height = 0, frame = 0, time = 0, visible = true;
+    let width = 0, height = 0, frame = 0, time = 0, visible = true, last = 0;
+    let gradients: CanvasGradient[] = [], glowGradients: CanvasGradient[] = [];
     let ropes: Point[][] = [];
     const pointer = { x: -9999, y: -9999, active: false };
     let scatter = 0; // 1 right after a click, decays to 0: loosens the springs so the ropes fly
@@ -31,12 +33,22 @@ export function RopeField() {
     const restX = (i: number) => (i / (POINTS - 1)) * (width + 40) - 20;
 
     const resize = () => {
-      const dpr = Math.min(2, window.devicePixelRatio || 1);
+      const dpr = Math.min(1.25, window.devicePixelRatio || 1);
       width = canvas.clientWidth; height = canvas.clientHeight;
       canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
       context.setTransform(dpr, 0, 0, dpr, 0, 0);
       ropes = Array.from({ length: ROPES }, (_, rope) => Array.from({ length: POINTS }, (_, i) => ({ x: restX(i), y: restY(rope, i), vx: 0, vy: 0 })));
       context.fillStyle = "#070912"; context.fillRect(0, 0, width, height);
+      // gradients only depend on width, so build them once per resize instead of every frame
+      gradients = []; glowGradients = [];
+      for (let r = 0; r < ROPES; r++) {
+        const hue = 188 + (r / (ROPES - 1)) * 120; // cyan -> violet -> magenta
+        const line = context.createLinearGradient(0, 0, width, 0);
+        line.addColorStop(0, `hsla(${hue - 20}, 90%, 62%, 0.05)`); line.addColorStop(0.5, `hsla(${hue}, 95%, 66%, 0.85)`); line.addColorStop(1, `hsla(${hue + 25}, 90%, 62%, 0.05)`);
+        const glow = context.createLinearGradient(0, 0, width, 0);
+        glow.addColorStop(0, `hsla(${hue}, 95%, 65%, 0)`); glow.addColorStop(0.5, `hsla(${hue}, 95%, 65%, 0.16)`); glow.addColorStop(1, `hsla(${hue}, 95%, 65%, 0)`);
+        gradients.push(line); glowGradients.push(glow);
+      }
     };
 
     const step = () => {
@@ -68,21 +80,18 @@ export function RopeField() {
     const draw = () => {
       // translucent fill instead of clear: leaves soft motion trails
       context.globalCompositeOperation = "source-over";
-      context.fillStyle = "rgba(7, 9, 18, 0.34)"; context.fillRect(0, 0, width, height);
+      context.fillStyle = "rgba(7, 9, 18, 0.5)"; context.fillRect(0, 0, width, height);
       context.globalCompositeOperation = "lighter";
       context.lineCap = "round"; context.lineJoin = "round";
       for (let r = 0; r < ROPES; r++) {
-        const rope = ropes[r], t = r / (ROPES - 1);
-        const hue = 188 + t * 120 + Math.sin(time * 0.6 + r) * 10; // cyan -> violet -> magenta
-        const gradient = context.createLinearGradient(0, 0, width, 0);
-        gradient.addColorStop(0, `hsla(${hue - 20}, 90%, 62%, 0.05)`); gradient.addColorStop(0.5, `hsla(${hue}, 95%, 66%, 0.85)`); gradient.addColorStop(1, `hsla(${hue + 25}, 90%, 62%, 0.05)`);
-        context.strokeStyle = gradient; context.lineWidth = 1.3 + (1 - Math.abs(t - 0.5) * 2) * 0.9;
-        context.shadowColor = `hsla(${hue}, 95%, 65%, 0.8)`; context.shadowBlur = 8;
+        const rope = ropes[r], t = r / (ROPES - 1), core = 1.3 + (1 - Math.abs(t - 0.5) * 2) * 0.9;
         context.beginPath(); context.moveTo(rope[0].x, rope[0].y);
         for (let i = 1; i < POINTS - 1; i++) { const mx = (rope[i].x + rope[i + 1].x) / 2, my = (rope[i].y + rope[i + 1].y) / 2; context.quadraticCurveTo(rope[i].x, rope[i].y, mx, my); }
-        context.lineTo(rope[POINTS - 1].x, rope[POINTS - 1].y); context.stroke();
+        context.lineTo(rope[POINTS - 1].x, rope[POINTS - 1].y);
+        // cheap glow: a wide faint stroke under the core line instead of shadowBlur, which re-blurs every frame
+        context.strokeStyle = glowGradients[r]; context.lineWidth = core * 5; context.stroke();
+        context.strokeStyle = gradients[r]; context.lineWidth = core; context.stroke();
       }
-      context.shadowBlur = 0;
       if (pointer.active) { // soft light under the cursor
         const glow = context.createRadialGradient(pointer.x, pointer.y, 0, pointer.x, pointer.y, 42);
         glow.addColorStop(0, "rgba(167, 139, 250, 0.22)"); glow.addColorStop(1, "rgba(167, 139, 250, 0)");
@@ -90,7 +99,10 @@ export function RopeField() {
       }
     };
 
-    const loop = () => { step(); draw(); frame = visible && !document.hidden ? requestAnimationFrame(loop) : 0; };
+    const loop = (now: number) => {
+      if (now - last >= FRAME_MS) { last = now; step(); step(); draw(); }
+      frame = visible && !document.hidden ? requestAnimationFrame(loop) : 0;
+    };
     const start = () => { if (!frame) frame = requestAnimationFrame(loop); };
 
     // pointer position as a ratio of the element: correct at any page zoom
