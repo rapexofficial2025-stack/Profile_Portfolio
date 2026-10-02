@@ -42,19 +42,10 @@ export function PortfolioShell({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState<"dark" | "light">("light");
 
-  useEffect(() => {
-    const frame = window.requestAnimationFrame(() => {
-      const savedTheme = window.localStorage.getItem("portfolio-theme");
-      if (savedTheme === "dark") setTheme("dark");
-    });
-    return () => window.cancelAnimationFrame(frame);
-  }, []);
+  // Always open in light mode; the toggle only changes the current visit
+  useEffect(() => { window.localStorage.removeItem("portfolio-theme"); }, []);
 
-  const toggleTheme = () => setTheme((currentTheme) => {
-    const nextTheme = currentTheme === "dark" ? "light" : "dark";
-    window.localStorage.setItem("portfolio-theme", nextTheme);
-    return nextTheme;
-  });
+  const toggleTheme = () => setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"));
 
   return <div className={`portfolio-theme theme-${theme} relative isolate min-h-screen text-white`}>
     <CosmicBackground />
