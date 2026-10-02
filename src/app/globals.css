@@ -142,7 +142,7 @@ body {
 .sidebar-brand-groove + nav { margin-top: 1.75rem !important; }
 .mobile-brand-groove {
   border-radius: 1rem;
-  padding: 0.72rem 0.78rem 0.68rem;
+  padding: 0.45rem 0.72rem 0.48rem;
 }
 .mobile-brand-groove::before { border-radius: calc(1rem - 4px); }
 
